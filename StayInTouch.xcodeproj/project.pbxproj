@@ -7,13 +7,20 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46E2FEEA743E863A7BD90064 /* Pods_StayInTouchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C9F885A28C255E5DB07B84 /* Pods_StayInTouchTests.framework */; };
+		BA10C6051E510DC10014C47C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA10C6041E510DC10014C47C /* GoogleService-Info.plist */; };
+		BA41189B1E622E2500E25925 /* SignUpInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */; };
+		BA4274EB1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4274EA1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift */; };
+		BA4274ED1E5FE4EC00FED1B0 /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4274EC1E5FE4EC00FED1B0 /* Printer.swift */; };
 		BA764A4B1E4FEA0E00B6659A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A4A1E4FEA0E00B6659A /* AppDelegate.swift */; };
 		BA764A4D1E4FEA0E00B6659A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A4C1E4FEA0E00B6659A /* FirstViewController.swift */; };
 		BA764A4F1E4FEA0E00B6659A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A4E1E4FEA0E00B6659A /* SecondViewController.swift */; };
 		BA764A521E4FEA0E00B6659A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA764A501E4FEA0E00B6659A /* Main.storyboard */; };
 		BA764A541E4FEA0F00B6659A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA764A531E4FEA0F00B6659A /* Assets.xcassets */; };
-		BA764A571E4FEA0F00B6659A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA764A551E4FEA0F00B6659A /* LaunchScreen.storyboard */; };
 		BA764A621E4FEA1100B6659A /* StayInTouchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A611E4FEA1100B6659A /* StayInTouchTests.swift */; };
+		BA764A6D1E5013C300B6659A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A6C1E5013C300B6659A /* SignInViewController.swift */; };
+		BA9B648F1E56C18000DD6414 /* SessionCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B648E1E56C18000DD6414 /* SessionCheckViewController.swift */; };
+		DE4E1BF75DC1572CA540B300 /* Pods_StayInTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +34,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		3EAB95E939505C80B7C390CA /* Pods-StayInTouch.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayInTouch.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StayInTouch/Pods-StayInTouch.debug.xcconfig"; sourceTree = "<group>"; };
+		4A5A5ACEDDD661838FC9157B /* Pods-StayInTouch.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayInTouch.release.xcconfig"; path = "Pods/Target Support Files/Pods-StayInTouch/Pods-StayInTouch.release.xcconfig"; sourceTree = "<group>"; };
+		50C9F885A28C255E5DB07B84 /* Pods_StayInTouchTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayInTouchTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F754D2EBDB079A69C36E6CE /* Pods-StayInTouchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayInTouchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StayInTouchTests/Pods-StayInTouchTests.release.xcconfig"; sourceTree = "<group>"; };
+		82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayInTouch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA10C6041E510DC10014C47C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInfoTableViewController.swift; sourceTree = "<group>"; };
+		BA4274EA1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitSignUpViewController.swift; sourceTree = "<group>"; };
+		BA4274EC1E5FE4EC00FED1B0 /* Printer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Printer.swift; sourceTree = "<group>"; };
 		BA764A471E4FEA0E00B6659A /* StayInTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StayInTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA764A4A1E4FEA0E00B6659A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA764A4C1E4FEA0E00B6659A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		BA764A4E1E4FEA0E00B6659A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		BA764A511E4FEA0E00B6659A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BA764A531E4FEA0F00B6659A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		BA764A561E4FEA0F00B6659A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA764A581E4FEA0F00B6659A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA764A5D1E4FEA1100B6659A /* StayInTouchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = StayInTouchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA764A611E4FEA1100B6659A /* StayInTouchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayInTouchTests.swift; sourceTree = "<group>"; };
 		BA764A631E4FEA1100B6659A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA764A6C1E5013C300B6659A /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		BA9B648E1E56C18000DD6414 /* SessionCheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCheckViewController.swift; sourceTree = "<group>"; };
+		D07EDD4CEB75DFC56A2BABCC /* Pods-StayInTouchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayInTouchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StayInTouchTests/Pods-StayInTouchTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +63,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DE4E1BF75DC1572CA540B300 /* Pods_StayInTouch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +71,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46E2FEEA743E863A7BD90064 /* Pods_StayInTouchTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2C8BAFA26B55A69EF42AF0FC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */,
+				50C9F885A28C255E5DB07B84 /* Pods_StayInTouchTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		BA764A3E1E4FEA0E00B6659A = {
 			isa = PBXGroup;
 			children = (
 				BA764A491E4FEA0E00B6659A /* StayInTouch */,
 				BA764A601E4FEA1100B6659A /* StayInTouchTests */,
 				BA764A481E4FEA0E00B6659A /* Products */,
+				E4146E87803D40DB2A43B79C /* Pods */,
+				2C8BAFA26B55A69EF42AF0FC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +110,18 @@
 		BA764A491E4FEA0E00B6659A /* StayInTouch */ = {
 			isa = PBXGroup;
 			children = (
+				BA4274EA1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift */,
 				BA764A4A1E4FEA0E00B6659A /* AppDelegate.swift */,
 				BA764A4C1E4FEA0E00B6659A /* FirstViewController.swift */,
 				BA764A4E1E4FEA0E00B6659A /* SecondViewController.swift */,
+				BA764A6C1E5013C300B6659A /* SignInViewController.swift */,
+				BA9B648E1E56C18000DD6414 /* SessionCheckViewController.swift */,
 				BA764A501E4FEA0E00B6659A /* Main.storyboard */,
 				BA764A531E4FEA0F00B6659A /* Assets.xcassets */,
-				BA764A551E4FEA0F00B6659A /* LaunchScreen.storyboard */,
+				BA10C6041E510DC10014C47C /* GoogleService-Info.plist */,
 				BA764A581E4FEA0F00B6659A /* Info.plist */,
+				BA4274EC1E5FE4EC00FED1B0 /* Printer.swift */,
+				BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */,
 			);
 			path = StayInTouch;
 			sourceTree = "<group>";
@@ -99,6 +135,17 @@
 			path = StayInTouchTests;
 			sourceTree = "<group>";
 		};
+		E4146E87803D40DB2A43B79C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3EAB95E939505C80B7C390CA /* Pods-StayInTouch.debug.xcconfig */,
+				4A5A5ACEDDD661838FC9157B /* Pods-StayInTouch.release.xcconfig */,
+				D07EDD4CEB75DFC56A2BABCC /* Pods-StayInTouchTests.debug.xcconfig */,
+				5F754D2EBDB079A69C36E6CE /* Pods-StayInTouchTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +153,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA764A661E4FEA1100B6659A /* Build configuration list for PBXNativeTarget "StayInTouch" */;
 			buildPhases = (
+				DABEA5A12669305EAD6CE09E /* [CP] Check Pods Manifest.lock */,
 				BA764A431E4FEA0E00B6659A /* Sources */,
 				BA764A441E4FEA0E00B6659A /* Frameworks */,
 				BA764A451E4FEA0E00B6659A /* Resources */,
+				2A2C266B7091A220859E96B8 /* [CP] Embed Pods Frameworks */,
+				1A07FF6A29DEBE6EFB33D928 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +173,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA764A691E4FEA1100B6659A /* Build configuration list for PBXNativeTarget "StayInTouchTests" */;
 			buildPhases = (
+				A142D6117785EF98EA1A59AD /* [CP] Check Pods Manifest.lock */,
 				BA764A591E4FEA1100B6659A /* Sources */,
 				BA764A5A1E4FEA1100B6659A /* Frameworks */,
 				BA764A5B1E4FEA1100B6659A /* Resources */,
+				157D8EB0D0F1D52C556B37E9 /* [CP] Embed Pods Frameworks */,
+				8C4F8D67EC97EFA8D54CC886 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -182,7 +235,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA764A571E4FEA0F00B6659A /* LaunchScreen.storyboard in Resources */,
+				BA10C6051E510DC10014C47C /* GoogleService-Info.plist in Resources */,
 				BA764A541E4FEA0F00B6659A /* Assets.xcassets in Resources */,
 				BA764A521E4FEA0E00B6659A /* Main.storyboard in Resources */,
 			);
@@ -197,14 +250,112 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		157D8EB0D0F1D52C556B37E9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StayInTouchTests/Pods-StayInTouchTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A07FF6A29DEBE6EFB33D928 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StayInTouch/Pods-StayInTouch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2A2C266B7091A220859E96B8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StayInTouch/Pods-StayInTouch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8C4F8D67EC97EFA8D54CC886 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StayInTouchTests/Pods-StayInTouchTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A142D6117785EF98EA1A59AD /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		DABEA5A12669305EAD6CE09E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		BA764A431E4FEA0E00B6659A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA764A6D1E5013C300B6659A /* SignInViewController.swift in Sources */,
 				BA764A4F1E4FEA0E00B6659A /* SecondViewController.swift in Sources */,
 				BA764A4B1E4FEA0E00B6659A /* AppDelegate.swift in Sources */,
+				BA9B648F1E56C18000DD6414 /* SessionCheckViewController.swift in Sources */,
+				BA4274EB1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift in Sources */,
+				BA4274ED1E5FE4EC00FED1B0 /* Printer.swift in Sources */,
 				BA764A4D1E4FEA0E00B6659A /* FirstViewController.swift in Sources */,
+				BA41189B1E622E2500E25925 /* SignUpInfoTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,14 +384,6 @@
 				BA764A511E4FEA0E00B6659A /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		BA764A551E4FEA0F00B6659A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				BA764A561E4FEA0F00B6659A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -341,6 +484,7 @@
 		};
 		BA764A671E4FEA1100B6659A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EAB95E939505C80B7C390CA /* Pods-StayInTouch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StayInTouch/Info.plist;
@@ -353,6 +497,7 @@
 		};
 		BA764A681E4FEA1100B6659A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A5A5ACEDDD661838FC9157B /* Pods-StayInTouch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = StayInTouch/Info.plist;
@@ -365,6 +510,7 @@
 		};
 		BA764A6A1E4FEA1100B6659A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D07EDD4CEB75DFC56A2BABCC /* Pods-StayInTouchTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -379,6 +525,7 @@
 		};
 		BA764A6B1E4FEA1100B6659A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5F754D2EBDB079A69C36E6CE /* Pods-StayInTouchTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -410,6 +557,7 @@
 				BA764A681E4FEA1100B6659A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BA764A691E4FEA1100B6659A /* Build configuration list for PBXNativeTarget "StayInTouchTests" */ = {
 			isa = XCConfigurationList;
@@ -418,6 +566,7 @@
 				BA764A6B1E4FEA1100B6659A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
