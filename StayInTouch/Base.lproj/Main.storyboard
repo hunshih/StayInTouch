@@ -116,7 +116,7 @@
                                 <navigationItem title="Basic Info" id="GxK-MF-Bpa">
                                     <barButtonItem key="rightBarButtonItem" title="Save" id="jv7-dx-uLu">
                                         <connections>
-                                            <segue destination="49e-Tb-3d3" kind="presentation" id="Jbd-rg-O5X"/>
+                                            <action selector="saveInfo:" destination="cwb-MP-f2T" id="hrb-fj-FbZ"/>
                                         </connections>
                                     </barButtonItem>
                                 </navigationItem>
@@ -234,6 +234,7 @@
                         <outlet property="FirstName" destination="XBG-bV-pPS" id="5w7-yV-Sed"/>
                         <outlet property="LastName" destination="par-J4-cpv" id="fQw-V1-glR"/>
                         <outlet property="Profession" destination="sV3-67-Y8P" id="Hfv-cc-QSM"/>
+                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="CompleteUserInfoSeque" id="Vnz-W7-hCw"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GuC-id-wPm" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -510,7 +511,7 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="Jbd-rg-O5X"/>
+        <segue reference="Vnz-W7-hCw"/>
         <segue reference="6Vi-ya-bKQ"/>
     </inferredMetricsTieBreakers>
 </document>

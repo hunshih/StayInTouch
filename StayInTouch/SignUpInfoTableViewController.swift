@@ -54,14 +54,24 @@ class SignUpInfoTableViewController: UITableViewController, UITextFieldDelegate 
         else
         {
             textField.resignFirstResponder()
+            setUserInfo()
         }
         return false
     }
     
+    @IBAction func saveInfo(_ sender: UIBarButtonItem) {
+        setUserInfo()
+    }
     func hideKeyboard() {
         tableView.endEditing(true)
     }
 
+    func setUserInfo()
+    {
+        //
+        print(FirstName.text!)
+        self.performSegue(withIdentifier: "CompleteUserInfoSeque", sender: "")
+    }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)

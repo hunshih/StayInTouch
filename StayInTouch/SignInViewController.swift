@@ -23,7 +23,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.password.delegate = self
         
         self.email.returnKeyType = UIReturnKeyType.next
-        self.password.returnKeyType = UIReturnKeyType.done
+        self.password.returnKeyType = UIReturnKeyType.go
         self.email.autocorrectionType = .no
         
         
@@ -39,6 +39,11 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func signIn(_ sender: UIButton) {
+        executeSignIn()
+    }
+    
+    func executeSignIn()
+    {
         FIRAuth.auth()?.signIn(withEmail: email.text!, password: password.text!) { (user, error) in
             if error != nil
             {
@@ -65,7 +70,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         case .errorCodeWrongPassword:
             print("Incorrect Password")
         default:
-            print("Create User Error: \(error)")
+            print("Sign In Error: \(error)")
         }
     }    
     
@@ -79,6 +84,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         else
         {
             textField.resignFirstResponder()
+            executeSignIn()
             return true
         }
     }

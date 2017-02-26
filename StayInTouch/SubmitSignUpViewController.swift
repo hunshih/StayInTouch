@@ -26,7 +26,7 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
         
         email.returnKeyType = UIReturnKeyType.next
         OriginalPassword.returnKeyType = UIReturnKeyType.next
-        ConfirmPassword.returnKeyType = UIReturnKeyType.done
+        ConfirmPassword.returnKeyType = UIReturnKeyType.go
         email.autocorrectionType = .no
         SubmitButton.isEnabled = false
     }
@@ -38,6 +38,11 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func submitAction(_ sender: UIButton) {
+        executeSignUp()
+    }
+    
+    func executeSignUp()
+    {
         FIRAuth.auth()?.createUser(withEmail: self.email.text!, password: self.OriginalPassword.text!) { (user, error) in
             if error != nil
             {
@@ -83,6 +88,7 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
             return false
         default:
             textField.resignFirstResponder()
+            self.executeSignUp()
             return true
         }
     }
