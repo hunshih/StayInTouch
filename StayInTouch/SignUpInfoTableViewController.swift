@@ -27,10 +27,13 @@ class SignUpInfoTableViewController: UITableViewController, UITextFieldDelegate 
         self.Profession.delegate = self
         self.Age.delegate = self
         
+        self.FirstName.autocorrectionType = .no
+        self.LastName.autocorrectionType = .no
+        
         self.FirstName.returnKeyType = UIReturnKeyType.next
         self.LastName.returnKeyType = UIReturnKeyType.next
         self.Profession.returnKeyType = UIReturnKeyType.next
-        self.Age.returnKeyType = UIReturnKeyType.done
+        self.Age.keyboardType = UIKeyboardType.numberPad
         
         self.FirstName.tag = 0;
         self.LastName.tag = 1;
@@ -44,7 +47,7 @@ class SignUpInfoTableViewController: UITableViewController, UITextFieldDelegate 
         
         //create user entry in databse
         let userDbRef = self.dbRef.child((user?.uid)!)
-        userDbRef.setValue(["email" : (user?.email)!, "first_name" : "", "last_name" : "", "profession" : "", "age" : 0])
+        userDbRef.setValue([K.Db.Users.email : (user?.email)!, K.Db.Users.firstName : "", K.Db.Users.lastName : "", K.Db.Users.profession : "", K.Db.Users.age : 0])
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,12 +80,18 @@ class SignUpInfoTableViewController: UITableViewController, UITextFieldDelegate 
     func setUserInfo()
     {
         //save info to db
-        /*
-        let userDbRef = self.dbRef.child((user?.uid)!)
-        userDbRef.setValue(["first_name" : self.FirstName.text, "last_name"], withCompletionBlock: <#T##(Error?, FIRDatabaseReference) -> Void#>)
- */
         
-        self.performSegue(withIdentifier: "CompleteUserInfoSeque", sender: "")
+        let userDbRef = self.dbRef.child((user?.uid)!)
+        userDbRef.updateChildValues([K.Db.Users.firstName : self.FirstName.text, K.Db.Users.lastName : self.LastName.text, K.Db.Users.profession : self.Profession.text, K.Db.Users.age : Int(self.Age.text!)]) { (error, ref) in
+            if(error != nil)
+            {
+                print(error)
+            }
+            else
+            {
+                self.performSegue(withIdentifier: "CompleteUserInfoSeque", sender: "")
+            }
+        }
     }
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
