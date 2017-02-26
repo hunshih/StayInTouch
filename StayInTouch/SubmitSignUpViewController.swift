@@ -8,6 +8,7 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
 

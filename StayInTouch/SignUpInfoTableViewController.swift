@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class SignUpInfoTableViewController: UITableViewController, UITextFieldDelegate {
     
@@ -14,6 +16,8 @@ class SignUpInfoTableViewController: UITableViewController, UITextFieldDelegate 
     @IBOutlet weak var LastName: UITextField!
     @IBOutlet weak var Profession: UITextField!
     @IBOutlet weak var Age: UITextField!
+    var user = FIRAuth.auth()?.currentUser;
+    var dbRef = FIRDatabase.database().reference().child("users")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +41,10 @@ class SignUpInfoTableViewController: UITableViewController, UITextFieldDelegate 
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpInfoTableViewController.hideKeyboard))
         tapGesture.cancelsTouchesInView = true
         tableView.addGestureRecognizer(tapGesture)
+        
+        //create user entry in databse
+        let userDbRef = self.dbRef.child((user?.uid)!)
+        userDbRef.setValue(["email" : (user?.email)!, "first_name" : "", "last_name" : "", "profession" : "", "age" : 0])
     }
 
     override func didReceiveMemoryWarning() {
@@ -68,8 +76,12 @@ class SignUpInfoTableViewController: UITableViewController, UITextFieldDelegate 
 
     func setUserInfo()
     {
-        //
-        print(FirstName.text!)
+        //save info to db
+        /*
+        let userDbRef = self.dbRef.child((user?.uid)!)
+        userDbRef.setValue(["first_name" : self.FirstName.text, "last_name"], withCompletionBlock: <#T##(Error?, FIRDatabaseReference) -> Void#>)
+ */
+        
         self.performSegue(withIdentifier: "CompleteUserInfoSeque", sender: "")
     }
     /*
