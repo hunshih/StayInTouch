@@ -8,14 +8,23 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseDatabase
 
 class FirstViewController: UIViewController {
 
     @IBOutlet weak var SignOutButton: UIButton!
+    var user: FIRUser?
+    @IBOutlet weak var centerText: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        var ref = FIRDatabase.database().reference().child("users");
+        ref.child((user?.uid)!).observe(.value, with: { (snapshot) in
+            let snapshotValue = snapshot.value as? NSDictionary
+            let firstName = (snapshotValue?["first_name"] as? String)!
+            self.replaceText(input: firstName)
+        })
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +39,12 @@ class FirstViewController: UIViewController {
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
         }
+    }
+    
+    func replaceText(input: String)
+    {
+        let display = "Welcome " + input
+        centerText.text = display
     }
 
 }
