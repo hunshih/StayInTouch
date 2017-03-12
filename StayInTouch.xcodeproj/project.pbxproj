@@ -91,6 +91,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BA3546E11E74BF820091B09B /* FollowUp */ = {
+			isa = PBXGroup;
+			children = (
+				BA764A4C1E4FEA0E00B6659A /* FirstViewController.swift */,
+			);
+			name = FollowUp;
+			sourceTree = "<group>";
+		};
+		BA3546E21E74BFEA0091B09B /* People */ = {
+			isa = PBXGroup;
+			children = (
+				BA764A4E1E4FEA0E00B6659A /* SecondViewController.swift */,
+			);
+			name = People;
+			sourceTree = "<group>";
+		};
 		BA41189C1E62992600E25925 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
@@ -103,8 +119,6 @@
 		BA41189D1E62997700E25925 /* login */ = {
 			isa = PBXGroup;
 			children = (
-				BA764A4C1E4FEA0E00B6659A /* FirstViewController.swift */,
-				BA764A4E1E4FEA0E00B6659A /* SecondViewController.swift */,
 				BA764A6C1E5013C300B6659A /* SignInViewController.swift */,
 				BA9B648E1E56C18000DD6414 /* SessionCheckViewController.swift */,
 				BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */,
@@ -139,6 +153,8 @@
 			children = (
 				BA41189C1E62992600E25925 /* Utils */,
 				BA41189D1E62997700E25925 /* login */,
+				BA3546E11E74BF820091B09B /* FollowUp */,
+				BA3546E21E74BFEA0091B09B /* People */,
 				BA764A4A1E4FEA0E00B6659A /* AppDelegate.swift */,
 				BA764A501E4FEA0E00B6659A /* Main.storyboard */,
 				BA764A531E4FEA0F00B6659A /* Assets.xcassets */,
