@@ -40,7 +40,7 @@ class SignUpInfoTableViewController: UITableViewController, UITextFieldDelegate 
         self.Profession.tag = 2;
         self.Age.tag = 3
         
-        //gesture recognizer to hike keyboard
+        //gesture recognizer to hide keyboard
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(SignUpInfoTableViewController.hideKeyboard))
         tapGesture.cancelsTouchesInView = true
         tableView.addGestureRecognizer(tapGesture)

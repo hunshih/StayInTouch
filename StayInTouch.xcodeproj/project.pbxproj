@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		46E2FEEA743E863A7BD90064 /* Pods_StayInTouchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C9F885A28C255E5DB07B84 /* Pods_StayInTouchTests.framework */; };
 		BA10C6051E510DC10014C47C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA10C6041E510DC10014C47C /* GoogleService-Info.plist */; };
+		BA262F561E778D3400E4A614 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA262F551E778D3400E4A614 /* SettingsViewController.swift */; };
 		BA41189B1E622E2500E25925 /* SignUpInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */; };
 		BA41189F1E6299CC00E25925 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189E1E6299CC00E25925 /* Constants.swift */; };
 		BA4274EB1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4274EA1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift */; };
@@ -42,6 +43,7 @@
 		5F754D2EBDB079A69C36E6CE /* Pods-StayInTouchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayInTouchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StayInTouchTests/Pods-StayInTouchTests.release.xcconfig"; sourceTree = "<group>"; };
 		82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayInTouch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA10C6041E510DC10014C47C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA262F551E778D3400E4A614 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInfoTableViewController.swift; sourceTree = "<group>"; };
 		BA41189E1E6299CC00E25925 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA4274EA1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitSignUpViewController.swift; sourceTree = "<group>"; };
@@ -89,6 +91,14 @@
 				50C9F885A28C255E5DB07B84 /* Pods_StayInTouchTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA262F521E778CDD00E4A614 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				BA262F551E778D3400E4A614 /* SettingsViewController.swift */,
+			);
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		BA3546E11E74BF820091B09B /* FollowUp */ = {
@@ -155,8 +165,9 @@
 				BA41189D1E62997700E25925 /* login */,
 				BA3546E11E74BF820091B09B /* FollowUp */,
 				BA3546E21E74BFEA0091B09B /* People */,
-				BA764A4A1E4FEA0E00B6659A /* AppDelegate.swift */,
+				BA262F521E778CDD00E4A614 /* Settings */,
 				BA764A501E4FEA0E00B6659A /* Main.storyboard */,
+				BA764A4A1E4FEA0E00B6659A /* AppDelegate.swift */,
 				BA764A531E4FEA0F00B6659A /* Assets.xcassets */,
 				BA10C6041E510DC10014C47C /* GoogleService-Info.plist */,
 				BA764A581E4FEA0F00B6659A /* Info.plist */,
@@ -388,6 +399,7 @@
 			files = (
 				BA764A6D1E5013C300B6659A /* SignInViewController.swift in Sources */,
 				BA764A4F1E4FEA0E00B6659A /* SecondViewController.swift in Sources */,
+				BA262F561E778D3400E4A614 /* SettingsViewController.swift in Sources */,
 				BA764A4B1E4FEA0E00B6659A /* AppDelegate.swift in Sources */,
 				BA9B648F1E56C18000DD6414 /* SessionCheckViewController.swift in Sources */,
 				BA90BB781E67CA850062E419 /* HomeTabBarController.swift in Sources */,

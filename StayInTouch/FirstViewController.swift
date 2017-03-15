@@ -19,7 +19,9 @@ class FirstViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        var ref = FIRDatabase.database().reference().child("users");
+        let ref = FIRDatabase.database().reference().child("users");
+        print("Ref from first controller: \(ref)")
+        print("UID in first view: \(user?.uid)")
         ref.child((user?.uid)!).observe(.value, with: { (snapshot) in
             let snapshotValue = snapshot.value as? NSDictionary
             let firstName = (snapshotValue?["first_name"] as? String)!
