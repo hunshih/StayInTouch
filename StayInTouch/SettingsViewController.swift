@@ -18,7 +18,6 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
     var Age: String = "0";
     let user = FIRAuth.auth()?.currentUser;
     let ref = FIRDatabase.database().reference().child("users");
-    
     @IBOutlet weak var FirstNameField: UITextField!
     @IBOutlet weak var LastNameField: UITextField!
     @IBOutlet weak var ProfessionField: UITextField!
@@ -32,6 +31,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
         self.fillInfoFields();
         self.setAllTextField(canEdit: false);
         self.AgeField.keyboardType = UIKeyboardType.numberPad;
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -111,7 +111,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
         }
         else
         {
-            print("Changes saved");
+            print("Not on settings tab");
         }
         
     }

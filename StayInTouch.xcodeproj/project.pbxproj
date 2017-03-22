@@ -109,12 +109,12 @@
 			name = FollowUp;
 			sourceTree = "<group>";
 		};
-		BA3546E21E74BFEA0091B09B /* People */ = {
+		BA3546E21E74BFEA0091B09B /* Conversations */ = {
 			isa = PBXGroup;
 			children = (
 				BA764A4E1E4FEA0E00B6659A /* SecondViewController.swift */,
 			);
-			name = People;
+			name = Conversations;
 			sourceTree = "<group>";
 		};
 		BA41189C1E62992600E25925 /* Utils */ = {
@@ -164,7 +164,7 @@
 				BA41189C1E62992600E25925 /* Utils */,
 				BA41189D1E62997700E25925 /* login */,
 				BA3546E11E74BF820091B09B /* FollowUp */,
-				BA3546E21E74BFEA0091B09B /* People */,
+				BA3546E21E74BFEA0091B09B /* Conversations */,
 				BA262F521E778CDD00E4A614 /* Settings */,
 				BA764A501E4FEA0E00B6659A /* Main.storyboard */,
 				BA764A4A1E4FEA0E00B6659A /* AppDelegate.swift */,
