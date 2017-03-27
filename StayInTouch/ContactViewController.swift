@@ -25,6 +25,10 @@ class ContactViewController: UIViewController {
     }
     
     @IBAction func ContactAdded(segue:UIStoryboardSegue) {
+        let source = segue.source as! InterestsTableViewController;
+        print(source.basicInfo);
+        print(source.proInfo);
+        print(source.interestInfo);
     }
     /*
     // MARK: - Navigation

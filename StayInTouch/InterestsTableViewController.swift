@@ -1,21 +1,24 @@
 //
-//  ProfessionalProfileTableViewController.swift
+//  InterestsTableViewController.swift
 //  StayInTouch
 //
-//  Created by Hung-Yuan Shih on 3/25/17.
+//  Created by Hung-Yuan Shih on 3/26/17.
 //  Copyright © 2017 Hung-Yuan Shih. All rights reserved.
 //
 
 import UIKit
 
-class ProfessionalProfileTableViewController: UITableViewController {
+class InterestsTableViewController: UITableViewController {
     
+    var proInfo: ProInfo!;
     var basicInfo: BasicInfo!;
-
-    @IBOutlet weak var companyField: UITextField!
-    @IBOutlet weak var roleField: UITextField!
-    @IBOutlet weak var meetField: UITextField!
+    var interestInfo: InterestInfo!;
+    @IBOutlet weak var commonField: UITextField!
+    @IBOutlet weak var careField: UITextField!
+    @IBOutlet weak var involvedField: UITextField!
+    @IBOutlet weak var followField: UITextField!
     
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,11 +27,14 @@ class ProfessionalProfileTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        //Do it here for now
+        self.interestInfo = InterestInfo(common: "common", care: "care", involved: "involved", follow: "follow");
     }
     
-    override func viewDidAppear(_ animated: Bool)
-    {
-        //print(self.basicInfo.name)
+    override func viewDidAppear(_ animated: Bool) {
+        //print(self.basicInfo);
+        //print(self.proInfo);
     }
 
     override func didReceiveMemoryWarning() {
@@ -46,9 +52,6 @@ class ProfessionalProfileTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
-    }
-    
-    @IBAction func backToProfessionalController(segue:UIStoryboardSegue) {
     }
 
     /*
@@ -96,15 +99,14 @@ class ProfessionalProfileTableViewController: UITableViewController {
     }
     */
 
-    
+    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destination = segue.destination as! InterestsTableViewController;
-        let proInfo = ProInfo(company: self.companyField.text!, role: self.roleField.text!, meet: self.meetField.text!);
-        destination.basicInfo = self.basicInfo;
-        destination.proInfo = proInfo;
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
-    
+    */
+
 }

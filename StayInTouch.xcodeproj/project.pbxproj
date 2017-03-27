@@ -17,6 +17,8 @@
 		BA5CD7B31E86CE1E00196BE6 /* ContactBasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CD7B21E86CE1E00196BE6 /* ContactBasicInfoViewController.swift */; };
 		BA5CD7B51E86CEC900196BE6 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CD7B41E86CEC900196BE6 /* ContactViewController.swift */; };
 		BA5CD7B71E8707BF00196BE6 /* ProfessionalProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CD7B61E8707BF00196BE6 /* ProfessionalProfileTableViewController.swift */; };
+		BA5CD7B91E8877C600196BE6 /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CD7B81E8877C600196BE6 /* ContactInfo.swift */; };
+		BA5CD7BB1E887F7A00196BE6 /* InterestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CD7BA1E887F7A00196BE6 /* InterestsTableViewController.swift */; };
 		BA764A4B1E4FEA0E00B6659A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A4A1E4FEA0E00B6659A /* AppDelegate.swift */; };
 		BA764A4D1E4FEA0E00B6659A /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A4C1E4FEA0E00B6659A /* FirstViewController.swift */; };
 		BA764A4F1E4FEA0E00B6659A /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A4E1E4FEA0E00B6659A /* SecondViewController.swift */; };
@@ -54,6 +56,8 @@
 		BA5CD7B21E86CE1E00196BE6 /* ContactBasicInfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactBasicInfoViewController.swift; sourceTree = "<group>"; };
 		BA5CD7B41E86CEC900196BE6 /* ContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		BA5CD7B61E8707BF00196BE6 /* ProfessionalProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessionalProfileTableViewController.swift; sourceTree = "<group>"; };
+		BA5CD7B81E8877C600196BE6 /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
+		BA5CD7BA1E887F7A00196BE6 /* InterestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsTableViewController.swift; sourceTree = "<group>"; };
 		BA764A471E4FEA0E00B6659A /* StayInTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StayInTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA764A4A1E4FEA0E00B6659A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA764A4C1E4FEA0E00B6659A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +132,7 @@
 			children = (
 				BA4274EC1E5FE4EC00FED1B0 /* Printer.swift */,
 				BA41189E1E6299CC00E25925 /* Constants.swift */,
+				BA5CD7B81E8877C600196BE6 /* ContactInfo.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -150,6 +155,7 @@
 				BA5CD7B21E86CE1E00196BE6 /* ContactBasicInfoViewController.swift */,
 				BA5CD7B41E86CEC900196BE6 /* ContactViewController.swift */,
 				BA5CD7B61E8707BF00196BE6 /* ProfessionalProfileTableViewController.swift */,
+				BA5CD7BA1E887F7A00196BE6 /* InterestsTableViewController.swift */,
 			);
 			name = Contacts;
 			sourceTree = "<group>";
@@ -420,8 +426,10 @@
 				BA262F561E778D3400E4A614 /* SettingsViewController.swift in Sources */,
 				BA764A4B1E4FEA0E00B6659A /* AppDelegate.swift in Sources */,
 				BA5CD7B31E86CE1E00196BE6 /* ContactBasicInfoViewController.swift in Sources */,
+				BA5CD7B91E8877C600196BE6 /* ContactInfo.swift in Sources */,
 				BA5CD7B71E8707BF00196BE6 /* ProfessionalProfileTableViewController.swift in Sources */,
 				BA9B648F1E56C18000DD6414 /* SessionCheckViewController.swift in Sources */,
+				BA5CD7BB1E887F7A00196BE6 /* InterestsTableViewController.swift in Sources */,
 				BA90BB781E67CA850062E419 /* HomeTabBarController.swift in Sources */,
 				BA4274EB1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift in Sources */,
 				BA4274ED1E5FE4EC00FED1B0 /* Printer.swift in Sources */,
