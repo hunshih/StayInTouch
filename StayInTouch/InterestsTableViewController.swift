@@ -29,7 +29,6 @@ class InterestsTableViewController: UITableViewController {
         // self.navigationItem.rightBarButtonItem = self.editButtonItem()
         
         //Do it here for now
-        self.interestInfo = InterestInfo(common: "common", care: "care", involved: "involved", follow: "follow");
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -43,7 +42,7 @@ class InterestsTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
-
+/*
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
@@ -53,6 +52,7 @@ class InterestsTableViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return 0
     }
+ */
 
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -99,14 +99,15 @@ class InterestsTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        self.interestInfo = InterestInfo(common: self.commonField.text!, care: self.careField.text!, involved: self.involvedField.text!, follow: self.followField.text!);
     }
-    */
+    
 
 }

@@ -7,13 +7,18 @@
 //
 
 import UIKit
+import FirebaseDatabase
+import FirebaseAuth
 
 class ContactViewController: UIViewController {
-
+    
+    let user = FIRAuth.auth()?.currentUser;
+    let ref = FIRDatabase.database().reference().child("users");
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        print("UID in first view: \(user?.uid)")
 
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,9 +31,19 @@ class ContactViewController: UIViewController {
     
     @IBAction func ContactAdded(segue:UIStoryboardSegue) {
         let source = segue.source as! InterestsTableViewController;
-        print(source.basicInfo);
-        print(source.proInfo);
-        print(source.interestInfo);
+        saveCreatedContact(basic: source.basicInfo, pro: source.proInfo, interest: source.interestInfo);
+    }
+    
+    //Update contacts in database
+    func saveCreatedContact(basic: BasicInfo, pro: ProInfo, interest: InterestInfo)
+    {
+        let key = ref.child((user?.uid)!).childByAutoId().key;
+        let post = ["basic": "test"];
+        let childUpdates = ["/\((user?.uid)!)/contact_ids/\(key)": post];
+        ref.updateChildValues(childUpdates);
+        print(basic);
+        print(pro);
+        print(interest);
     }
     /*
     // MARK: - Navigation

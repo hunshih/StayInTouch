@@ -34,8 +34,16 @@ class ContactBasicInfoViewController: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         let basicInfo = BasicInfo(name: nameField.text!, email: emailField.text!);
-        let destination = segue.destination as! ProfessionalProfileTableViewController;
-        destination.basicInfo = basicInfo;
+        if(segue.identifier == "SegueToProfessional")
+        {
+            let destination = segue.destination as! ProfessionalProfileTableViewController;
+            destination.basicInfo = basicInfo;
+        }
+        else
+        {
+            self.nameField.text = "";
+            self.emailField.text = "";
+        }
     }
     
 
