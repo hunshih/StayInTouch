@@ -21,5 +21,16 @@ struct K
             static let age = "age"
             
         }
+        struct Contacts {
+            static let name = "name"
+            static let email = "email"
+            static let company = "company"
+            static let role = "role"
+            static let meet = "where_meet"
+            static let care = "care"
+            static let common = "common"
+            static let follow = "follow"
+            static let involved = "involved"
+        }
     }
 }

@@ -13,7 +13,7 @@ import FirebaseAuth
 class ContactViewController: UIViewController {
     
     let user = FIRAuth.auth()?.currentUser;
-    let ref = FIRDatabase.database().reference().child("users");
+    let parentRef = FIRDatabase.database().reference();;
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,10 +37,13 @@ class ContactViewController: UIViewController {
     //Update contacts in database
     func saveCreatedContact(basic: BasicInfo, pro: ProInfo, interest: InterestInfo)
     {
-        let key = ref.child((user?.uid)!).childByAutoId().key;
-        let post = ["basic": "test"];
-        let childUpdates = ["/\((user?.uid)!)/contact_ids/\(key)": post];
-        ref.updateChildValues(childUpdates);
+        let key = self.parentRef.child((user?.uid)!).childByAutoId().key;
+        let belong = ["belong": (user?.uid)!];
+        let addedBasic = [K.Db.Contacts.name: basic.name, K.Db.Contacts.email: basic.email];
+        let addedProf = [K.Db.Contacts.company: pro.company, K.Db.Contacts.role: pro.role, K.Db.Contacts.meet: pro.meet];
+        let addedInterest = [K.Db.Contacts.common: interest.common, K.Db.Contacts.care: interest.care, K.Db.Contacts.involved: interest.involved, K.Db.Contacts.follow: interest.follow]
+        let childUpdates = ["/users/\((user?.uid)!)/contact_ids/\(key)": belong, "/contact_names/\(key)": addedBasic, "/contact_professional/\(key)": addedProf, "/contact_interests/\(key)": addedInterest];
+        self.parentRef.updateChildValues(childUpdates);
         print(basic);
         print(pro);
         print(interest);
