@@ -131,7 +131,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
             self.FirstNameField.text = (snapshotValue?[K.Db.Users.firstName] as? String)!
             self.LastNameField.text = (snapshotValue?[K.Db.Users.lastName] as? String)!
             self.ProfessionField.text = (snapshotValue?[K.Db.Users.profession] as? String)!
-            let _age = (snapshotValue?[K.Db.Users.age] as? Int)!
+            let _age = (snapshotValue?[K.Db.Users.age] as? Int)
             self.AgeField.text = "\(_age)"
             self.cacheUserInfo();
         })
