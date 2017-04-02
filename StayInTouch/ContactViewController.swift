@@ -13,7 +13,7 @@ import FirebaseAuth
 class ContactViewController: UIViewController {
     
     let user = FIRAuth.auth()?.currentUser;
-    let parentRef = FIRDatabase.database().reference();;
+    let parentRef = FIRDatabase.database().reference();
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -38,11 +38,21 @@ class ContactViewController: UIViewController {
     func saveCreatedContact(basic: BasicInfo, pro: ProInfo, interest: InterestInfo)
     {
         let key = self.parentRef.child((user?.uid)!).childByAutoId().key;
-        let belong = ["belong": (user?.uid)!];
+        
+        let date = Date();
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let timestamp = NSDate().timeIntervalSince1970;
+        
+        let dateData = ["day": day, "month": month, "year": year, "timestamp": timestamp] as [String : Any];
+        var last_contacted = dateData;
+        last_contacted["belong"] = (user?.uid)!;
         let addedBasic = [K.Db.Contacts.name: basic.name, K.Db.Contacts.email: basic.email];
         let addedProf = [K.Db.Contacts.company: pro.company, K.Db.Contacts.role: pro.role, K.Db.Contacts.meet: pro.meet];
         let addedInterest = [K.Db.Contacts.common: interest.common, K.Db.Contacts.care: interest.care, K.Db.Contacts.involved: interest.involved, K.Db.Contacts.follow: interest.follow]
-        let childUpdates = ["/users/\((user?.uid)!)/contact_ids/\(key)": belong, "/contact_names/\(key)": addedBasic, "/contact_professional/\(key)": addedProf, "/contact_interests/\(key)": addedInterest];
+        let childUpdates = ["/users/\((user?.uid)!)/contact_ids/\(key)": dateData, "/contact_names/\(key)": addedBasic, "/contact_professional/\(key)": addedProf, "/contact_interests/\(key)": addedInterest, "/last_contacted/\(key)": last_contacted] as [String : Any];
         self.parentRef.updateChildValues(childUpdates);
         print(basic);
         print(pro);

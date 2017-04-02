@@ -33,4 +33,8 @@ struct K
             static let involved = "involved"
         }
     }
+    struct cloud
+    {
+        static let key = "f0fae3411e3179bc851dde290ab204112419cc73";
+    }
 }
