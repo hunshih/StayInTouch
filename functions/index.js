@@ -45,15 +45,26 @@ exports.makeUppercase = functions.database.ref('/messages/{pushId}/original')
 // [END all]
 
 exports.followUp = functions.https.onRequest((req, res) => {
-
-  //read from DB
-  const contacted_ref = firebase.database().ref('/last_contacted');
-  contacted_ref.once().then(function(snapshot) {
-  	var timestamp = snapshot.val().timestamp;
-  	console.log("timestamp: " + timestamp);
-  });
-  //Call a promise
+  //getContacts is a promise, thus non-blocking
+  getContacts();
   res.end();
 });
 
+/**
+This function returns a promise
+*/
+function getContacts(){
+	return admin.database().ref('/last_contacted').once('value', function(snapshot) {
+  		snapshot.forEach(function(childSnapshot) {
+		    //var childKey = childSnapshot.key;
+		    //var childData = childSnapshot.val();
+    		var day = childSnapshot.val().day;
+    		var month = childSnapshot.val().month;
+    		var year = childSnapshot.val().year;
+    		var timestamp = childSnapshot.val().timestamp;
+    		console.log("id: " + childSnapshot.key);
+    		console.log("day: " + day + ", month: " + month + ", year: " + year + ", timestamp: " + timestamp);
+  		});
+	});
+}
 
