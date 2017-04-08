@@ -18,17 +18,12 @@ This function returns a promise
 function getContacts(){
 	return admin.database().ref('/topics').once('value', function(topics) {
   		topics.forEach(function(topic) {
-		    //var childData = topic.val();
 		    console.log("topic: " + topic.key);
+		    var users = [];
 		    topic.forEach(function(user) {
-		    	var user_id = user.key;
-		    	var last_updated_date = user.val();
-		    	var day = last_updated_date.day;
-	    		var month = last_updated_date.month;
-	    		var year = last_updated_date.year;
-	    		var timestamp = last_updated_date.timestamp;
-	    		console.log("day: " + day + ", month: " + month + ", year: " + year + ", timestamp: " + timestamp);
+		    	users.push(user.key);
 		    })
+		    console.log("users: " + users);
     	});
 	});
 }
