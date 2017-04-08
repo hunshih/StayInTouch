@@ -106,7 +106,13 @@ class InterestsTableViewController: UITableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        self.interestInfo = InterestInfo(common: self.commonField.text!, care: self.careField.text!, involved: self.involvedField.text!, follow: self.followField.text!);
+        let common = StringUtil.trim(self.commonField.text!);
+        let care = StringUtil.trim(self.careField.text!);
+        let involved = StringUtil.trim(self.involvedField.text!);
+        let follow = StringUtil.trim(self.followField.text!);
+        
+        //Destination Seque will read this field
+        self.interestInfo = InterestInfo(common: common, care: care, involved: involved, follow: follow);
     }
     
 

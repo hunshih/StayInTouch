@@ -33,7 +33,9 @@ class ContactBasicInfoViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        let basicInfo = BasicInfo(name: nameField.text!, email: emailField.text!);
+        let name = StringUtil.trim(nameField.text!);
+        let email = StringUtil.trim(emailField.text!);
+        let basicInfo = BasicInfo(name: name, email: email);
         if(segue.identifier == "SegueToProfessional")
         {
             let destination = segue.destination as! ProfessionalProfileTableViewController;

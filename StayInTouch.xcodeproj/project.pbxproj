@@ -28,6 +28,7 @@
 		BA764A6D1E5013C300B6659A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A6C1E5013C300B6659A /* SignInViewController.swift */; };
 		BA90BB781E67CA850062E419 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90BB771E67CA850062E419 /* HomeTabBarController.swift */; };
 		BA9B648F1E56C18000DD6414 /* SessionCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B648E1E56C18000DD6414 /* SessionCheckViewController.swift */; };
+		BAFDC8781E993B4C009E6BBB /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDC8771E993B4C009E6BBB /* StringUtil.swift */; };
 		DE4E1BF75DC1572CA540B300 /* Pods_StayInTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */; };
 /* End PBXBuildFile section */
 
@@ -71,6 +72,7 @@
 		BA764A6C1E5013C300B6659A /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		BA90BB771E67CA850062E419 /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		BA9B648E1E56C18000DD6414 /* SessionCheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCheckViewController.swift; sourceTree = "<group>"; };
+		BAFDC8771E993B4C009E6BBB /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 		D07EDD4CEB75DFC56A2BABCC /* Pods-StayInTouchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayInTouchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StayInTouchTests/Pods-StayInTouchTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -133,6 +135,7 @@
 				BA4274EC1E5FE4EC00FED1B0 /* Printer.swift */,
 				BA41189E1E6299CC00E25925 /* Constants.swift */,
 				BA5CD7B81E8877C600196BE6 /* ContactInfo.swift */,
+				BAFDC8771E993B4C009E6BBB /* StringUtil.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -429,6 +432,7 @@
 				BA5CD7B91E8877C600196BE6 /* ContactInfo.swift in Sources */,
 				BA5CD7B71E8707BF00196BE6 /* ProfessionalProfileTableViewController.swift in Sources */,
 				BA9B648F1E56C18000DD6414 /* SessionCheckViewController.swift in Sources */,
+				BAFDC8781E993B4C009E6BBB /* StringUtil.swift in Sources */,
 				BA5CD7BB1E887F7A00196BE6 /* InterestsTableViewController.swift in Sources */,
 				BA90BB781E67CA850062E419 /* HomeTabBarController.swift in Sources */,
 				BA4274EB1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift in Sources */,

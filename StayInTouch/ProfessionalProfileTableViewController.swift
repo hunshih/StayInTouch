@@ -102,7 +102,10 @@ class ProfessionalProfileTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         let destination = segue.destination as! InterestsTableViewController;
-        let proInfo = ProInfo(company: self.companyField.text!, role: self.roleField.text!, meet: self.meetField.text!);
+        let company = StringUtil.trim(self.companyField.text!);
+        let role = StringUtil.trim(self.roleField.text!);
+        let meet = StringUtil.trim(self.meetField.text!);
+        let proInfo = ProInfo(company: company, role: role, meet: meet);
         destination.basicInfo = self.basicInfo;
         destination.proInfo = proInfo;
     }
