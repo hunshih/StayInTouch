@@ -2,12 +2,24 @@
 const functions = require('firebase-functions');
 const webhoseio = require('webhoseio');
 const webhoseClient = webhoseio.config({token: '29d2b0fb-fed2-4113-9d4e-f2021f774cd7'});
-
+const secureCompare = require('secure-compare');
 const admin = require('firebase-admin');
 admin.initializeApp(functions.config().firebase);
 // [END import]
 
 exports.followUp = functions.https.onRequest((req, res) => {
+  //check the API key
+  const key = req.query.key;
+
+  // Exit if the keys don't match
+  if (!secureCompare(key, functions.config().cron.key)) {
+    console.log('The key provided in the request does not match the key set in the environment. Check that', key,
+        'matches the cron.key attribute in `firebase env:get`');
+    res.status(403).send('Security key does not match. Make sure your "key" URL query parameter matches the ' +
+        'cron.key environment variable.');
+    return;
+  }  
+
   //getContacts is a promise, thus non-blocking
   getContacts();
   res.end();
