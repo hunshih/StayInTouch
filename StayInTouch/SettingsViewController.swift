@@ -12,6 +12,7 @@ import FirebaseAuth
 
 class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarControllerDelegate {
 
+    @IBOutlet weak var SignOutButton: UIButton!
     var FirstName: String = "";
     var LastName: String = "";
     var Profession: String = "";
@@ -58,7 +59,15 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
             self.setAllTextField(canEdit: false);
         }
     }
-    
+    @IBAction func SignoutUser(_ sender: UIButton) {
+        let firebaseAuth = FIRAuth.auth()
+        do {
+            try firebaseAuth?.signOut()
+            self.performSegue(withIdentifier: "SignOutSegue", sender: "");
+        } catch let signOutError as NSError {
+            print ("Error signing out: %@", signOutError)
+        }
+    }
     /**
      * Called when the user click on the view (outside the UITextField).
      */
@@ -111,7 +120,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
         }
         else
         {
-            print("Not on settings tab");
+            //print("Not on settings tab");
         }
         
     }

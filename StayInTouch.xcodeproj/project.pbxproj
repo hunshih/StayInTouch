@@ -49,6 +49,7 @@
 		5F754D2EBDB079A69C36E6CE /* Pods-StayInTouchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayInTouchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StayInTouchTests/Pods-StayInTouchTests.release.xcconfig"; sourceTree = "<group>"; };
 		82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayInTouch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA10C6041E510DC10014C47C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA2031461EA9B2C1005CD63C /* StayInTouch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StayInTouch.entitlements; sourceTree = "<group>"; };
 		BA262F551E778D3400E4A614 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInfoTableViewController.swift; sourceTree = "<group>"; };
 		BA41189E1E6299CC00E25925 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -186,6 +187,7 @@
 		BA764A491E4FEA0E00B6659A /* StayInTouch */ = {
 			isa = PBXGroup;
 			children = (
+				BA2031461EA9B2C1005CD63C /* StayInTouch.entitlements */,
 				BA41189C1E62992600E25925 /* Utils */,
 				BA41189D1E62997700E25925 /* login */,
 				BA3546E11E74BF820091B09B /* FollowUp */,
@@ -277,7 +279,13 @@
 				TargetAttributes = {
 					BA764A461E4FEA0E00B6659A = {
 						CreatedOnToolsVersion = 8.2;
+						DevelopmentTeam = KAFJCUEKP3;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 					BA764A5C1E4FEA1100B6659A = {
 						CreatedOnToolsVersion = 8.2;
@@ -571,6 +579,8 @@
 			baseConfigurationReference = 3EAB95E939505C80B7C390CA /* Pods-StayInTouch.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StayInTouch/StayInTouch.entitlements;
+				DEVELOPMENT_TEAM = KAFJCUEKP3;
 				INFOPLIST_FILE = StayInTouch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beta.StayInTouch;
@@ -584,6 +594,8 @@
 			baseConfigurationReference = 4A5A5ACEDDD661838FC9157B /* Pods-StayInTouch.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = StayInTouch/StayInTouch.entitlements;
+				DEVELOPMENT_TEAM = KAFJCUEKP3;
 				INFOPLIST_FILE = StayInTouch/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.beta.StayInTouch;

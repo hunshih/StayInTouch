@@ -13,6 +13,7 @@ class SessionCheckViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         // Do any additional setup after loading the view.
         FIRAuth.auth()?.addStateDidChangeListener { auth, user in
             if user != nil {

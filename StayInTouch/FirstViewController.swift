@@ -11,8 +11,7 @@ import FirebaseAuth
 import FirebaseDatabase
 
 class FirstViewController: UIViewController {
-
-    @IBOutlet weak var SignOutButton: UIButton!
+    
     var user: FIRUser?
     @IBOutlet weak var centerText: UILabel!
     
@@ -33,15 +32,6 @@ class FirstViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-    @IBAction func SignOutUser(_ sender: UIButton) {
-        let firebaseAuth = FIRAuth.auth()
-        do {
-            try firebaseAuth?.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-    }
     
     func replaceText(input: String)
     {
@@ -49,5 +39,12 @@ class FirstViewController: UIViewController {
         centerText.text = display
     }
 
+    @IBOutlet weak var EmailButton: UIButton!
+    @IBAction func CreateEmail(_ sender: UIButton) {
+        let email = "foo@bar.com"
+        if let url = URL(string: "mailto:\(email)") {
+            UIApplication.shared.open(url)
+        }
+    }
 }
 
