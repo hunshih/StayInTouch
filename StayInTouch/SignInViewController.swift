@@ -15,6 +15,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var password: UITextField!
     @IBOutlet weak var SignInButton: UIButton!
     @IBOutlet weak var SignUpButton: UIButton!
+    let ref = FIRDatabase.database().reference().child("users");
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,11 +52,20 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
             }
             else
             {
-                print("Successfully Sign In, you're in!")
+                print("Successfully Sign In, you're in! Will register device");
+                self.registerDevice();
                 self.performSegue(withIdentifier: "HomeScreenSegue", sender: "")
                 Printer.printUserDetails(user!)
             }
         }
+    }
+    
+    func registerDevice(){
+        let user = FIRAuth.auth()?.currentUser;
+        let userDbRef = self.ref.child((user?.uid)!).child(K.Db.Users.devices);
+        let token = FIRInstanceID.instanceID().token()!
+        print("token: \(token)");
+        userDbRef.childByAutoId().setValue(token);
     }
     
     func signInErrorHandling(_ error: FIRAuthErrorCode)

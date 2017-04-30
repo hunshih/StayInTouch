@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseDatabase
 import FirebaseAuth
+import Firebase
 
 class HomeTabBarController: UITabBarController {
 
@@ -18,15 +19,13 @@ class HomeTabBarController: UITabBarController {
         super.viewDidLoad()
         
         let FirstView: FirstViewController = self.viewControllers?.first as! FirstViewController
-        FirstView.user = self.user
+        FirstView.user = self.user;
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
     
     // MARK: - Navigation
     /*

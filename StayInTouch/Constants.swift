@@ -19,6 +19,7 @@ struct K
             static let firstName = "first_name"
             static let lastName = "last_name"
             static let age = "age"
+            static let devices = "devices"
             
         }
         struct Contacts {
