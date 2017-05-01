@@ -64,7 +64,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         let user = FIRAuth.auth()?.currentUser;
         let userDbRef = self.ref.child((user?.uid)!).child(K.Db.Users.devices);
         let token = FIRInstanceID.instanceID().token()!
-        print("token: \(token)");
+        //print("token: \(token)");
         userDbRef.childByAutoId().setValue(token);
     }
     

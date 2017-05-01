@@ -7,8 +7,7 @@
 //
 
 import UIKit
-import FirebaseDatabase
-import FirebaseAuth
+import Firebase
 
 class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarControllerDelegate {
 
@@ -62,7 +61,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
     @IBAction func SignoutUser(_ sender: UIButton) {
         let firebaseAuth = FIRAuth.auth()
         do {
-            try firebaseAuth?.signOut()
+            self.unregisterDevice();
+            try firebaseAuth?.signOut();
             self.performSegue(withIdentifier: "SignOutSegue", sender: "");
         } catch let signOutError as NSError {
             print ("Error signing out: %@", signOutError)
@@ -152,6 +152,34 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
         self.LastNameField.text = self.LastName;
         self.ProfessionField.text = self.Profession;
         self.AgeField.text = self.Age;
+    }
+    
+    func unregisterDevice()
+    {
+        let token = FIRInstanceID.instanceID().token()!;
+        var devicesToRemove = [String]();
+        let devicesRef = self.ref.child((user?.uid)!).child(K.Db.Users.devices);
+        
+        //read list to find keys of devices, if more than one
+        devicesRef.observeSingleEvent(of: .value, with: { (snapshot) in
+            // Get user value
+            let deviceNames = snapshot.value as? NSDictionary
+            for (key, deviceName) in deviceNames!
+            {
+                //print("key-\(key)|device-\(device)|token-\(token)");
+                if(deviceName as! String == token)
+                {
+                    //print("added key: \(key)");
+                    devicesToRemove.append(key as! String);
+                }
+                for device in devicesToRemove {
+                    let deviceRef = devicesRef.child(device);
+                    deviceRef.removeValue();
+                }
+            }
+        }) { (error) in
+            print("Failed to unregister device when signing out");
+        }
     }
     /*
     // MARK: - Navigation

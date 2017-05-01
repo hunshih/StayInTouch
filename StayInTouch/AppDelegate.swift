@@ -74,7 +74,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate,UNUserNotificationCenterDe
     
     func tokenRefreshNotification(_ notification: Notification) {
         if let refreshedToken = FIRInstanceID.instanceID().token() {
-            print("InstanceID token: \(refreshedToken)")
+            print("New token: \(refreshedToken)");
+            
+            //update registered token if device if user is logged in
+            if let user = FIRAuth.auth()?.currentUser
+            {
+                let userDbRef = FIRDatabase.database().reference().child("users").child((user.uid)).child(K.Db.Users.devices);
+                userDbRef.childByAutoId().setValue(refreshedToken);
+
+            }
         }
         
         // Connect to FCM since connection may have failed when attempted before having a token.
