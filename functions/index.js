@@ -32,12 +32,16 @@ function getContacts(){
     return admin.database().ref('/topics').once('value', function(topics) {
         topics.forEach(function(topic) {
             console.log("topic: " + topic.key);
-            searchArticles(topic.key);
+            //searchArticles(topic.key);
             var users = [];
             topic.forEach(function(user) {
                 users.push(user.key);
             })
             console.log("users: " + users);
+            //Find device of those users
+            getDevices(users);
+            //deliver to those devices
+            users = [];
         });
     });
 }
@@ -57,4 +61,19 @@ function searchArticles(topic) {
             console.log("title: " + output['posts'][0]['title']); // Print the text of the first post   
         }
     });
+}
+
+/**
+* Get a list of devices with given users
+*/
+function getDevices(users) {
+    //console.log("getting devices for: " + users);
+    for (var i = 0; i < users.length; i++) {
+        var ref = admin.database().ref("users/" + users[i] + "/devices/");
+        ref.once("value", function(devices) {
+            devices.forEach(function(device) {
+                console.log("device key: " + device.key + " | device value: " + device.val());
+            })
+        });
+    }
 }
