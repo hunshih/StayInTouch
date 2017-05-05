@@ -1,6 +1,7 @@
 "use strict";
 const functions = require('firebase-functions');
 const webhoseio = require('webhoseio');
+const request = require('request');
 const webhoseClient = webhoseio.config({token: '29d2b0fb-fed2-4113-9d4e-f2021f774cd7'});
 const secureCompare = require('secure-compare');
 const admin = require('firebase-admin');
@@ -37,7 +38,7 @@ function getContacts(){
             topic.forEach(function(user) {
                 users.push(user.key);
             })
-            console.log("users: " + users);
+            //console.log("users: " + users);
             //Find device of those users
             getDevices(users);
             //deliver to those devices
@@ -72,8 +73,44 @@ function getDevices(users) {
         var ref = admin.database().ref("users/" + users[i] + "/devices/");
         ref.once("value", function(devices) {
             devices.forEach(function(device) {
-                console.log("device key: " + device.key + " | device value: " + device.val());
+                //console.log("device key: " + device.key + " | device value: " + device.val());
+                sendMessageToUser(device.val(),'Hello puf');
             })
         });
     }
+}
+
+/**
+* Send Notification to a list of users
+*/
+function sendMessageToUser(deviceIds, message) {
+    console.log("sending notification to:" + deviceIds);
+    request({
+        url: 'https://fcm.googleapis.com/fcm/send',
+        method: 'POST',
+        headers: {
+          'Content-Type' :' application/json',
+          'Authorization': 'key=AAAAJh4i8mU:APA91bF1nMMWxv693VuJT7Yha-FLDQ8-7w9GEDxP_vsicVQ3u5KDXru-XBqiWtJnpGTjwUbfF6nA4SzLMhnIsaQl4PUZptDpt-ok2ZNmz7byo-xMj5hO5Tky_pN4b_BZFvMQQm4R8lHiUYyPosaVME-5pwLxHdrL7g'
+        },
+        body: JSON.stringify(
+          { 
+            "notification" : {
+              "body" : message,
+              "title" : "Test"
+            },
+            "to" : deviceIds,
+            "priority" : "high"
+          }
+        )
+        }, function(error, response, body) {
+        if (error) { 
+          console.error(error, response, body); 
+        }
+        else if (response.statusCode >= 400) { 
+          console.error('HTTP Error: '+response.statusCode+' - '+response.statusMessage+'\n'+body); 
+        }
+        else {
+          console.log('Done!')
+        }
+    });
 }
