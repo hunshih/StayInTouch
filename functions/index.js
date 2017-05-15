@@ -74,10 +74,13 @@ function getDevices(users) {
         ref.once("value", function(devices) {
             devices.forEach(function(device) {
                 //console.log("device key: " + device.key + " | device value: " + device.val());
-                sendMessageToUser(device.val(),'Hello puf');
+                sendMessageToUser(device.val(),'Share this article on Machine Learning with Yanjun');
             })
         });
     }
+
+    //Add add unread notification to user DB
+    addUnreadNotification(users);
 }
 
 /**
@@ -96,7 +99,7 @@ function sendMessageToUser(deviceIds, message) {
           { 
             "notification" : {
               "body" : message,
-              "title" : "Test"
+              "title" : "Follow-Up"
             },
             "to" : deviceIds,
             "priority" : "high"
@@ -113,4 +116,22 @@ function sendMessageToUser(deviceIds, message) {
           console.log('Done!')
         }
     });
+}
+
+/**
+add notification to the unread list under user
+*/
+function addUnreadNotification(users)
+{
+  for (var i = 0; i < users.length; i++)
+  {
+     var ref = admin.database().ref("users/" + users[i] + "/unread/");
+     ref.push().set({
+            contact: "YJ's id",
+            title: "Salesforce Use Machine Learning to summarize text",
+            link: "https://www.theverge.com/2017/5/14/15637588/salesforce-algorithm-automatically-summarizes-text-machine-learning-ai",
+            date: "2017/05/13"
+          });
+  }
+
 }
