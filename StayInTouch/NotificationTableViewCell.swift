@@ -9,9 +9,10 @@
 import UIKit
 
 class NotificationTableViewCell: UITableViewCell {
-
-    @IBOutlet weak var nameLabel: UILabel!
+    
+    @IBOutlet weak var name: UILabel!
     @IBOutlet weak var title: UITextView!
+    @IBOutlet weak var icon: UIImageView!
     
     override func awakeFromNib() {
         super.awakeFromNib()

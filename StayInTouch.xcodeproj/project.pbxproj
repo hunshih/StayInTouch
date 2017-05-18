@@ -10,6 +10,7 @@
 		46E2FEEA743E863A7BD90064 /* Pods_StayInTouchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C9F885A28C255E5DB07B84 /* Pods_StayInTouchTests.framework */; };
 		BA10C6051E510DC10014C47C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA10C6041E510DC10014C47C /* GoogleService-Info.plist */; };
 		BA262F561E778D3400E4A614 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA262F551E778D3400E4A614 /* SettingsViewController.swift */; };
+		BA3C43DC1ECD3BEC003D00A7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */; };
 		BA41189B1E622E2500E25925 /* SignUpInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */; };
 		BA41189F1E6299CC00E25925 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189E1E6299CC00E25925 /* Constants.swift */; };
 		BA4274EB1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4274EA1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift */; };
@@ -53,6 +54,7 @@
 		BA10C6041E510DC10014C47C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA2031461EA9B2C1005CD63C /* StayInTouch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StayInTouch.entitlements; sourceTree = "<group>"; };
 		BA262F551E778D3400E4A614 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInfoTableViewController.swift; sourceTree = "<group>"; };
 		BA41189E1E6299CC00E25925 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		BA4274EA1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubmitSignUpViewController.swift; sourceTree = "<group>"; };
@@ -124,6 +126,7 @@
 				BA764A4C1E4FEA0E00B6659A /* FirstViewController.swift */,
 				BAD94FD11EC7928B0077A355 /* FollowUpTableViewController.swift */,
 				BAD94FD51EC79CD50077A355 /* NotificationTableViewCell.swift */,
+				BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */,
 			);
 			name = FollowUp;
 			sourceTree = "<group>";
@@ -453,6 +456,7 @@
 				BA4274EB1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift in Sources */,
 				BAD94FD21EC7928B0077A355 /* FollowUpTableViewController.swift in Sources */,
 				BA4274ED1E5FE4EC00FED1B0 /* Printer.swift in Sources */,
+				BA3C43DC1ECD3BEC003D00A7 /* Notification.swift in Sources */,
 				BA764A4D1E4FEA0E00B6659A /* FirstViewController.swift in Sources */,
 				BA41189B1E622E2500E25925 /* SignUpInfoTableViewController.swift in Sources */,
 				BA41189F1E6299CC00E25925 /* Constants.swift in Sources */,

@@ -15,10 +15,12 @@ import FirebaseDatabase
 class FollowUpTableViewController: UITableViewController {
     
     var user: FIRUser?
+    var notifications = [Notification]();
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        loadNotifications();
         let ref = FIRDatabase.database().reference().child("users");
         print("Ref from first controller: \(ref)")
         print("UID in first view: \(user?.uid)")
@@ -26,7 +28,10 @@ class FollowUpTableViewController: UITableViewController {
             let snapshotValue = snapshot.value as? NSDictionary
             let firstName = (snapshotValue?["first_name"] as? String)!
             print("Welcome! \(firstName)");
+            
         })
+        //load all the unread notification into cells
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,24 +42,41 @@ class FollowUpTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1;
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return notifications.count;
+    }
+    
+    private func loadNotifications()
+    {
+        let icon = UIImage(named: "A");
+        guard let n1 = Notification(read: true, icon: icon, title: "Salesforce Machine Learning", name: "Barry Shih") else
+        {
+            fatalError("Can't init n1");
+        }
+        notifications.append(n1);
+        print("How many notifications? \(notifications.count)")
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        
+        let cellIdentifier = "NotificationTableViewCell";
+        
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: cellIdentifier, for: indexPath) as? NotificationTableViewCell else {
+            fatalError("the dequeue cell is not an instance of NotificationCell.")
+        }
 
+        let notification = notifications[indexPath.row];
+        cell.name.text = notification.name;
+        cell.icon.image = notification.icon;
+        cell.title.text = notification.title;
         // Configure the cell...
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.

@@ -46,8 +46,8 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="categoryLabel" destination="jd7-Lf-MjH" id="e0u-SJ-mdK"/>
-                                    <outlet property="nameLabel" destination="jd7-Lf-MjH" id="ikf-hq-QHR"/>
+                                    <outlet property="icon" destination="p6i-aN-vM8" id="oe4-dT-4PI"/>
+                                    <outlet property="name" destination="jd7-Lf-MjH" id="Fnl-dU-TeB"/>
                                     <outlet property="title" destination="t9L-J1-1SV" id="whq-XE-4ZB"/>
                                 </connections>
                             </tableViewCell>
