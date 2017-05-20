@@ -10,11 +10,16 @@ import UIKit
 import MessageUI
 
 class NotificationViewController: UIViewController, MFMailComposeViewControllerDelegate {
+    
+    @IBOutlet weak var navigation: UINavigationBar!
 
+    var notification: Notification?;
     @IBOutlet weak var emailButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //print("Notification dor: \(notification?.name)");
+        self.navigation.topItem?.title = "";
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,7 +38,7 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
         }*/
         let emailTitle = "Machine Learning at Salesforce"
         let messageBody = "Hey Barry here's a good article on Machine Learning at Salesforce, enjoy! https://www.theverge.com/2017/5/14/15637588/salesforce-algorithm-automatically-summarizes-text-machine-learning-ai";
-        let toRecipents = ["barry@gmail.com"];
+        let toRecipents = ["hunshih@gmail.com"];
         let mc: MFMailComposeViewController = MFMailComposeViewController();
         mc.mailComposeDelegate = self;
         mc.setSubject(emailTitle);
@@ -48,10 +53,14 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
         switch result {
         case MFMailComposeResult.cancelled:
             print("Mail cancelled")
+            break;
         case MFMailComposeResult.saved:
             print("Mail saved")
+            break;
         case MFMailComposeResult.sent:
-            print("Mail sent")
+            print("Mail sent");
+            notification?.read = true;
+            break;
         case MFMailComposeResult.failed:
             print("Mail sent failure: \(error.localizedDescription)")
         default:
