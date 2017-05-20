@@ -27,6 +27,8 @@
 		BA764A541E4FEA0F00B6659A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA764A531E4FEA0F00B6659A /* Assets.xcassets */; };
 		BA764A621E4FEA1100B6659A /* StayInTouchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A611E4FEA1100B6659A /* StayInTouchTests.swift */; };
 		BA764A6D1E5013C300B6659A /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A6C1E5013C300B6659A /* SignInViewController.swift */; };
+		BA77CDC11ECFEEF8009D891B /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA77CDC01ECFEEF8009D891B /* NotificationViewController.swift */; };
+		BA77CDC31ECFF74E009D891B /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA77CDC21ECFF74E009D891B /* ArticleViewController.swift */; };
 		BA90BB781E67CA850062E419 /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90BB771E67CA850062E419 /* HomeTabBarController.swift */; };
 		BA9B648F1E56C18000DD6414 /* SessionCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B648E1E56C18000DD6414 /* SessionCheckViewController.swift */; };
 		BAD94FD21EC7928B0077A355 /* FollowUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD94FD11EC7928B0077A355 /* FollowUpTableViewController.swift */; };
@@ -75,6 +77,8 @@
 		BA764A611E4FEA1100B6659A /* StayInTouchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StayInTouchTests.swift; sourceTree = "<group>"; };
 		BA764A631E4FEA1100B6659A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA764A6C1E5013C300B6659A /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
+		BA77CDC01ECFEEF8009D891B /* NotificationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationViewController.swift; sourceTree = "<group>"; };
+		BA77CDC21ECFF74E009D891B /* ArticleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ArticleViewController.swift; sourceTree = "<group>"; };
 		BA90BB771E67CA850062E419 /* HomeTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeTabBarController.swift; sourceTree = "<group>"; };
 		BA9B648E1E56C18000DD6414 /* SessionCheckViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionCheckViewController.swift; sourceTree = "<group>"; };
 		BAD94FD11EC7928B0077A355 /* FollowUpTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowUpTableViewController.swift; sourceTree = "<group>"; };
@@ -127,6 +131,8 @@
 				BAD94FD11EC7928B0077A355 /* FollowUpTableViewController.swift */,
 				BAD94FD51EC79CD50077A355 /* NotificationTableViewCell.swift */,
 				BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */,
+				BA77CDC01ECFEEF8009D891B /* NotificationViewController.swift */,
+				BA77CDC21ECFF74E009D891B /* ArticleViewController.swift */,
 			);
 			name = FollowUp;
 			sourceTree = "<group>";
@@ -445,6 +451,7 @@
 				BA5CD7B51E86CEC900196BE6 /* ContactViewController.swift in Sources */,
 				BA262F561E778D3400E4A614 /* SettingsViewController.swift in Sources */,
 				BA764A4B1E4FEA0E00B6659A /* AppDelegate.swift in Sources */,
+				BA77CDC31ECFF74E009D891B /* ArticleViewController.swift in Sources */,
 				BA5CD7B31E86CE1E00196BE6 /* ContactBasicInfoViewController.swift in Sources */,
 				BAD94FD61EC79CD50077A355 /* NotificationTableViewCell.swift in Sources */,
 				BA5CD7B91E8877C600196BE6 /* ContactInfo.swift in Sources */,
@@ -457,6 +464,7 @@
 				BAD94FD21EC7928B0077A355 /* FollowUpTableViewController.swift in Sources */,
 				BA4274ED1E5FE4EC00FED1B0 /* Printer.swift in Sources */,
 				BA3C43DC1ECD3BEC003D00A7 /* Notification.swift in Sources */,
+				BA77CDC11ECFEEF8009D891B /* NotificationViewController.swift in Sources */,
 				BA764A4D1E4FEA0E00B6659A /* FirstViewController.swift in Sources */,
 				BA41189B1E622E2500E25925 /* SignUpInfoTableViewController.swift in Sources */,
 				BA41189F1E6299CC00E25925 /* Constants.swift in Sources */,
