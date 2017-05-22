@@ -10,8 +10,6 @@ import UIKit
 import MessageUI
 
 class NotificationViewController: UIViewController, MFMailComposeViewControllerDelegate {
-    
-    @IBOutlet weak var navigation: UINavigationBar!
 
     var notification: Notification?;
     @IBOutlet weak var emailButton: UIButton!
@@ -19,7 +17,7 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
     override func viewDidLoad() {
         super.viewDidLoad()
         //print("Notification dor: \(notification?.name)");
-        self.navigation.topItem?.title = "";
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,11 +29,12 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
         //no-ops for now
     }
     
-    @IBAction func GenerateEmail(_ sender: UIButton) {
+    @IBAction func createEmail(_ sender: UIButton)
+    {
         /*let email = "barry@gmail.com"
-        if let url = URL(string: "mailto:\(email)") {
-            UIApplication.shared.open(url)
-        }*/
+         if let url = URL(string: "mailto:\(email)") {
+         UIApplication.shared.open(url)
+         }*/
         let emailTitle = "Machine Learning at Salesforce"
         let messageBody = "Hey Barry here's a good article on Machine Learning at Salesforce, enjoy! https://www.theverge.com/2017/5/14/15637588/salesforce-algorithm-automatically-summarizes-text-machine-learning-ai";
         let toRecipents = ["hunshih@gmail.com"];
@@ -47,7 +46,6 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
         
         self.present(mc, animated: true, completion: nil)
     }
-    
     @objc(mailComposeController:didFinishWithResult:error:)
     func mailComposeController(controller:MFMailComposeViewController, didFinishWithResult result:MFMailComposeResult, error:NSError) {
         switch result {

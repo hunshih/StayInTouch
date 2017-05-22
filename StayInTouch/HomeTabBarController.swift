@@ -18,8 +18,8 @@ class HomeTabBarController: UITabBarController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let homeView: FollowUpTableViewController = self.viewControllers?.first as! FollowUpTableViewController;
-        homeView.user = self.user;
+        /*let homeView: FollowUpTableViewController = self.viewControllers?.first as! FollowUpTableViewController;
+        homeView.user = self.user;*/
     }
 
     override func didReceiveMemoryWarning() {

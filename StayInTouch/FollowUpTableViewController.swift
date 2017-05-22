@@ -20,6 +20,7 @@ class FollowUpTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        user = FIRAuth.auth()?.currentUser;
         loadNotifications();
         let ref = FIRDatabase.database().reference().child("users");
         print("Ref from first controller: \(ref)")
@@ -130,6 +131,7 @@ class FollowUpTableViewController: UITableViewController {
         }
         let selectedNotification = notifications[indexPath.row];
         notificationViewController.notification = selectedNotification;
+        notificationViewController.hidesBottomBarWhenPushed = true;
     }
  
 
