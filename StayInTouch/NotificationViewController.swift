@@ -48,6 +48,7 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
     }
     @objc(mailComposeController:didFinishWithResult:error:)
     func mailComposeController(controller:MFMailComposeViewController, didFinishWithResult result:MFMailComposeResult, error:NSError) {
+        var emailSent = false;
         switch result {
         case MFMailComposeResult.cancelled:
             print("Mail cancelled")
@@ -58,13 +59,25 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
         case MFMailComposeResult.sent:
             print("Mail sent");
             notification?.read = true;
+            emailSent = true;
             break;
         case MFMailComposeResult.failed:
             print("Mail sent failure: \(error.localizedDescription)")
         default:
             break
         }
-        self.dismiss(animated: true, completion: nil)
+        if(emailSent)
+        {
+            self.dismiss(animated: true, completion: self.returnToNotification)
+        }
+        else{
+            self.dismiss(animated: true, completion:nil)
+        }
+    }
+    
+    func returnToNotification()
+    {
+        self.navigationController?.popViewController(animated: true);
     }
     /*
     // MARK: - Navigation
