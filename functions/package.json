@@ -6,11 +6,12 @@
     "firebase-admin": "^4.1.1",
     "firebase-functions": "^0.5.1",
     "googleapis": "^16.1.0",
+    "https": "^1.0.0",
+    "querystring": "^0.2.0",
     "request": "^2.81.0",
     "request-promise": "^4.1.1",
     "request-promise-native": "^1.0.3",
-    "secure-compare": "^3.0.1",
-    "webhoseio": "^1.0.2"
+    "secure-compare": "^3.0.1"
   },
   "private": true
 }

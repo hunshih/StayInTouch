@@ -17,7 +17,7 @@ class ArticleViewController: UIViewController {
 
         //webview experiment
         self.navigation.topItem?.title = "Salesforce created an algorithm";
-        let url = NSURL (string: "https://www.theverge.com/2017/5/14/15637588/salesforce-algorithm-automatically-summarizes-text-machine-learning-ai");
+        let url = NSURL (string: "https://www.theguardian.com/film/2016/oct/13/jurassic-world-sequel-will-be-an-animal-rights-parable");
         let requestObj = NSURLRequest(url: url! as URL);
         webView.loadRequest(requestObj as URLRequest);
     }

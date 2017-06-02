@@ -1,10 +1,10 @@
 "use strict";
 const functions = require('firebase-functions');
-const webhoseio = require('webhoseio');
 const request = require('request');
-const webhoseClient = webhoseio.config({token: '29d2b0fb-fed2-4113-9d4e-f2021f774cd7'});
 const secureCompare = require('secure-compare');
 const admin = require('firebase-admin');
+const https = require('https');
+const querystring = require('querystring');
 admin.initializeApp(functions.config().firebase);
 // [END import]
 
@@ -33,7 +33,7 @@ function getContacts(){
     return admin.database().ref('/topics').once('value', function(topics) {
         topics.forEach(function(topic) {
             console.log("topic: " + topic.key);
-            //searchArticles(topic.key);
+            searchArticles(topic.key);
             var users = [];
             topic.forEach(function(user) {
                 users.push(user.key);
@@ -51,17 +51,29 @@ function getContacts(){
 * Make call to webhose to search articles
 */
 function searchArticles(topic) {
-    var query = '\"' + topic + '\" language:(english) performance_score:>6 (site_type:news OR site_type:blogs)';
-    webhoseClient.query('filterWebData', {q: query})
-      .then(output => {
-        console.log("posts length: " + output['posts'].length);
-        if(output['posts'].length > 0)
-        {
-            console.log("from: " + output['posts'][0]['thread']['site'])
-            console.log("url: " + output['posts'][0]['thread']['url']); // Print the text of the first post
-            console.log("title: " + output['posts'][0]['title']); // Print the text of the first post   
-        }
+	var key = '52de3693-c644-4ba0-a6be-9e8e78f74806';
+    var query_path = '/search?api-key=' + key + '&q=' + querystring.escape(topic);
+    var options = {
+        host :  'content.guardianapis.com',
+        port : 443,
+        path : query_path,
+        method : 'GET'
+    }
+    console.log('path: ' + query_path);
+
+    //making the https get call
+    var getReq = https.request(options, function(res) {
+        console.log("\nstatus code: ", res.statusCode);
+        res.on('data', function(data) {
+            console.log( JSON.parse(data) );
+        });
     });
+ 
+    //end the request
+    getReq.end();
+    getReq.on('error', function(err){
+        console.log("Error: ", err);
+    }); 
 }
 
 /**
