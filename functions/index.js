@@ -22,30 +22,64 @@ exports.followUp = functions.https.onRequest((req, res) => {
   }  
 
   //getContacts is a promise, thus non-blocking
-  getContacts();
+  var articles;
+  var articleSearchPromises = [];
+  var promise = getAllTopics();
+  promise
+  .then(
+  	function(topics){
+  		articles = getArticles(topics);
+  	})
+  .then(
+  	function(){
+  		console.log(articles);
+  		articles.forEach(function(topic)
+  		{
+  			articleSearchPromises.push(searchArticles(topic));
+  		})
+  	})
+  .then(articleSearchPromises);
   res.end();
 });
 
 /**
 This function returns a promise
 */
-function getContacts(){
-    return admin.database().ref('/topics').once('value', function(topics) {
+function getAllTopics(){
+    return admin.database().ref('/topics').once('value');
+}
+
+function getArticles(topics){
+	var result = [];
+	topics.forEach(function(topic) {
+		//console.log("topic: " + topic.key);
+		result.push(topic.key);
+	})
+	return result;
+}
+/*
+    , function(topics) {
+
         topics.forEach(function(topic) {
-            console.log("topic: " + topic.key);
-            searchArticles(topic.key);
+            //console.log("topic: " + topic.key);
+            /*var guardianData = searchArticles(topic.key);
+            console.log("status: " + guardianData["status"]);
+            console.log("total: " + guardianData["total"]);
             var users = [];
             topic.forEach(function(user) {
                 users.push(user.key);
             })
+            
             //console.log("users: " + users);
             //Find device of those users
-            getDevices(users);
+            //getDevices(users);
             //deliver to those devices
             users = [];
         });
+
     });
 }
+*/
     
 /**
 * Make call to webhose to search articles
@@ -63,9 +97,10 @@ function searchArticles(topic) {
 
     //making the https get call
     var getReq = https.request(options, function(res) {
-        console.log("\nstatus code: ", res.statusCode);
+        //console.log("\nstatus code: ", res.statusCode);
         res.on('data', function(data) {
-            console.log( JSON.parse(data) );
+            var data = JSON.parse(data);
+            console.log("total: " + data.response.results[0].webTitle);
         });
     });
  
@@ -73,7 +108,7 @@ function searchArticles(topic) {
     getReq.end();
     getReq.on('error', function(err){
         console.log("Error: ", err);
-    }); 
+    });
 }
 
 /**
@@ -99,7 +134,7 @@ function getDevices(users) {
 * Send Notification to a list of users
 */
 function sendMessageToUser(deviceIds, message) {
-    console.log("sending notification to:" + deviceIds);
+    //console.log("sending notification to:" + deviceIds);
     request({
         url: 'https://fcm.googleapis.com/fcm/send',
         method: 'POST',
