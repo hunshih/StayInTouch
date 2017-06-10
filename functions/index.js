@@ -11,6 +11,9 @@ admin.initializeApp(functions.config().firebase);
 //Global Variable
 var allTopics = new Map();
 
+//record the topics subscribed by each user
+var allUserSubscribe = new Map();
+
 exports.followUp = functions.https.onRequest((req, res) => {
   //check the API key
   const key = req.query.key;
@@ -35,7 +38,6 @@ exports.followUp = functions.https.onRequest((req, res) => {
   	})
   .then(
   	function(){
-  		console.log(articles);
   		articles.forEach(function(topic)
   		{
   			articleSearchPromises.push(searchArticles(topic));
@@ -59,11 +61,23 @@ function getAllTopics(){
     return admin.database().ref('/topics').once('value');
 }
 
+/**
+* Make a copy of the topics list and modify the <user,topicList> map
+*/
 function getArticles(topics){
 	var result = [];
 	topics.forEach(function(topic) {
-		//console.log("topic: " + topic.key);
 		result.push(topic.key);
+		topic.forEach(function(user) {
+				var topicList = [];
+				if(allUserSubscribe.get(user.key) !== undefined)
+				{
+					topicList = allUserSubscribe.get(user.key);
+				}
+				topicList.push(topic.key);
+				allUserSubscribe.set(user.key, topicList);
+         })
+
 	})
 	return result;
 }
@@ -106,18 +120,15 @@ function searchArticles(topic) {
 		        path : query_path,
 		        method : 'GET'
 		    }
-		    console.log('path: ' + query_path);
 
 		    //making the https get call
 		    var getReq = https.request(options, function(res) {
-		        //console.log("\nstatus code: ", res.statusCode);
 		        res.on('data', function(data) {
 		            var data = JSON.parse(data);
 		            var articleResult = new Map();
 		            articleResult.set("title", data.response.results[0].webTitle);
 		            articleResult.set("url", data.response.results[0].webUrl);
 		        	allTopics.set(topic, articleResult);
-		        	console.log("size: " + allTopics.size);
 		        	resolve(allTopics.size);
 		        });
 		    });
@@ -135,12 +146,10 @@ function searchArticles(topic) {
 * Get a list of devices with given users
 */
 function getDevices(users) {
-    //console.log("getting devices for: " + users);
     for (var i = 0; i < users.length; i++) {
         var ref = admin.database().ref("users/" + users[i] + "/devices/");
         ref.once("value", function(devices) {
             devices.forEach(function(device) {
-                //console.log("device key: " + device.key + " | device value: " + device.val());
                 sendMessageToUser(device.val(),'Share this article on Machine Learning with Yanjun');
             })
         });
@@ -154,7 +163,6 @@ function getDevices(users) {
 * Send Notification to a list of users
 */
 function sendMessageToUser(deviceIds, message) {
-    //console.log("sending notification to:" + deviceIds);
     request({
         url: 'https://fcm.googleapis.com/fcm/send',
         method: 'POST',
