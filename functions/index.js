@@ -41,7 +41,10 @@ exports.followUp = functions.https.onRequest((req, res) => {
   			articleSearchPromises.push(searchArticles(topic));
   		})
   	})
-  .then(articleSearchPromises)
+  .then(
+  	function(){
+  	return Promise.all(articleSearchPromises);
+  })
   .then(
   	function(){
   		console.log("map size: " + allTopics.size);
@@ -92,35 +95,40 @@ function getArticles(topics){
 * Make call to webhose to search articles
 */
 function searchArticles(topic) {
-	
-	var key = '52de3693-c644-4ba0-a6be-9e8e78f74806';
-    var query_path = '/search?api-key=' + key + '&q=' + querystring.escape(topic);
-    var options = {
-        host :  'content.guardianapis.com',
-        port : 443,
-        path : query_path,
-        method : 'GET'
-    }
-    console.log('path: ' + query_path);
 
-    //making the https get call
-    var getReq = https.request(options, function(res) {
-        //console.log("\nstatus code: ", res.statusCode);
-        res.on('data', function(data) {
-            var data = JSON.parse(data);
-            var articleResult = new Map();
-            articleResult.set("title", data.response.results[0].webTitle);
-            articleResult.set("url", data.response.results[0].webUrl);
-        	allTopics.set(topic, articleResult);
-        	console.log("size: " + allTopics.size);
-        });
-    });
- 
-    //end the request
-    getReq.end();
-    getReq.on('error', function(err){
-        console.log("Error: ", err);
-    });
+	return new Promise(
+		function(resolve, reject){
+			var key = '52de3693-c644-4ba0-a6be-9e8e78f74806';
+		    var query_path = '/search?api-key=' + key + '&q=' + querystring.escape(topic);
+		    var options = {
+		        host :  'content.guardianapis.com',
+		        port : 443,
+		        path : query_path,
+		        method : 'GET'
+		    }
+		    console.log('path: ' + query_path);
+
+		    //making the https get call
+		    var getReq = https.request(options, function(res) {
+		        //console.log("\nstatus code: ", res.statusCode);
+		        res.on('data', function(data) {
+		            var data = JSON.parse(data);
+		            var articleResult = new Map();
+		            articleResult.set("title", data.response.results[0].webTitle);
+		            articleResult.set("url", data.response.results[0].webUrl);
+		        	allTopics.set(topic, articleResult);
+		        	console.log("size: " + allTopics.size);
+		        	resolve(allTopics.size);
+		        });
+		    });
+		 
+		    //end the request
+		    getReq.end();
+		    getReq.on('error', function(err){
+		        console.log("Error: ", err);
+		    });
+		}
+	);
 }
 
 /**
