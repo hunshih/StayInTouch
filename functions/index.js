@@ -8,6 +8,9 @@ const querystring = require('querystring');
 admin.initializeApp(functions.config().firebase);
 // [END import]
 
+//Global Variable
+var allTopics = new Map();
+
 exports.followUp = functions.https.onRequest((req, res) => {
   //check the API key
   const key = req.query.key;
@@ -38,7 +41,11 @@ exports.followUp = functions.https.onRequest((req, res) => {
   			articleSearchPromises.push(searchArticles(topic));
   		})
   	})
-  .then(articleSearchPromises);
+  .then(articleSearchPromises)
+  .then(
+  	function(){
+  		console.log("map size: " + allTopics.size);
+  });
   res.end();
 });
 
@@ -85,6 +92,7 @@ function getArticles(topics){
 * Make call to webhose to search articles
 */
 function searchArticles(topic) {
+	
 	var key = '52de3693-c644-4ba0-a6be-9e8e78f74806';
     var query_path = '/search?api-key=' + key + '&q=' + querystring.escape(topic);
     var options = {
@@ -100,7 +108,11 @@ function searchArticles(topic) {
         //console.log("\nstatus code: ", res.statusCode);
         res.on('data', function(data) {
             var data = JSON.parse(data);
-            console.log("total: " + data.response.results[0].webTitle);
+            var articleResult = new Map();
+            articleResult.set("title", data.response.results[0].webTitle);
+            articleResult.set("url", data.response.results[0].webUrl);
+        	allTopics.set(topic, articleResult);
+        	console.log("size: " + allTopics.size);
         });
     });
  
