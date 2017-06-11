@@ -49,8 +49,9 @@ exports.followUp = functions.https.onRequest((req, res) => {
   })
   .then(
   	function(){
-  		console.log("map size: " + allTopics.size);
-  });
+  		addUnreadNotification();
+  	}
+  );
   res.end();
 });
 
@@ -81,29 +82,6 @@ function getArticles(topics){
 	})
 	return result;
 }
-/*
-    , function(topics) {
-
-        topics.forEach(function(topic) {
-            //console.log("topic: " + topic.key);
-            /*var guardianData = searchArticles(topic.key);
-            console.log("status: " + guardianData["status"]);
-            console.log("total: " + guardianData["total"]);
-            var users = [];
-            topic.forEach(function(user) {
-                users.push(user.key);
-            })
-            
-            //console.log("users: " + users);
-            //Find device of those users
-            //getDevices(users);
-            //deliver to those devices
-            users = [];
-        });
-
-    });
-}
-*/
     
 /**
 * Make call to webhose to search articles
@@ -154,9 +132,6 @@ function getDevices(users) {
             })
         });
     }
-
-    //Add add unread notification to user DB
-    addUnreadNotification(users);
 }
 
 /**
@@ -196,17 +171,44 @@ function sendMessageToUser(deviceIds, message) {
 /**
 add notification to the unread list under user
 */
-function addUnreadNotification(users)
+function addUnreadNotification()
 {
-  for (var i = 0; i < users.length; i++)
-  {
-     var ref = admin.database().ref("users/" + users[i] + "/unread/");
-     ref.push().set({
-            contact: "YJ's id",
-            title: "Salesforce Use Machine Learning to summarize text",
-            link: "https://www.theverge.com/2017/5/14/15637588/salesforce-algorithm-automatically-summarizes-text-machine-learning-ai",
-            date: "2017/05/13"
-          });
-  }
+	var todayDate = today();
+	allUserSubscribe.forEach(function(item, key, mapObj){
+		var ref = admin.database().ref("users/" + key + "/unread/");
+		for(var index in item){
+			var articleDetails = allTopics.get(item[index]);
+			if(articleDetails !== undefined)
+			{
+				ref.push().set({
+		            title: articleDetails.get("title"),
+		            link: articleDetails.get("url"),
+		            date: todayDate
+		        });
+			}
+		}
+		
+	});
+}
 
+/**
+* get today's date in the form of mm/dd/yyyy
+*/
+function today()
+{
+	var today = new Date();
+	var dd = today.getDate();
+	var mm = today.getMonth()+1; //January is 0!
+	var yyyy = today.getFullYear();
+
+	if(dd<10) {
+	    dd='0'+dd
+	} 
+
+	if(mm<10) {
+	    mm='0'+mm
+	} 
+
+	today = mm+'/'+dd+'/'+yyyy;
+	return today;
 }
