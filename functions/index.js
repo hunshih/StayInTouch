@@ -15,6 +15,11 @@ var allTopics = new Map();
 var allUserSubscribe = new Map();
 
 exports.followUp = functions.https.onRequest((req, res) => {
+
+	//clear all global maps
+	allTopics.clear();
+	allUserSubscribe.clear();
+
   //check the API key
   const key = req.query.key;
 
@@ -49,6 +54,8 @@ exports.followUp = functions.https.onRequest((req, res) => {
   })
   .then(
   	function(){
+  		//printAllTopics();
+  		//printAllUserSubscribe();
   		addUnreadNotification();
   	}
   );
@@ -70,13 +77,17 @@ function getArticles(topics){
 	topics.forEach(function(topic) {
 		result.push(topic.key);
 		topic.forEach(function(user) {
-				var topicList = [];
+				var userMap = new Map();
 				if(allUserSubscribe.get(user.key) !== undefined)
 				{
-					topicList = allUserSubscribe.get(user.key);
+					userMap = allUserSubscribe.get(user.key);
 				}
-				topicList.push(topic.key);
-				allUserSubscribe.set(user.key, topicList);
+				var contacts = [];
+				user.forEach(function(contact){
+					contacts.push(contact.key);
+				});
+				userMap.set(topic.key, contacts);
+				allUserSubscribe.set(user.key, userMap);
          })
 
 	})
@@ -176,18 +187,21 @@ function addUnreadNotification()
 	var todayDate = today();
 	allUserSubscribe.forEach(function(item, key, mapObj){
 		var ref = admin.database().ref("users/" + key + "/unread/");
-		for(var index in item){
-			var articleDetails = allTopics.get(item[index]);
+		item.forEach(function(contacts, topic, userMapObj){
+			var articleDetails = allTopics.get(topic);
 			if(articleDetails !== undefined)
 			{
-				ref.push().set({
-		            title: articleDetails.get("title"),
-		            link: articleDetails.get("url"),
-		            date: todayDate
-		        });
+				for(var index in contacts)
+				{
+					ref.push().set({
+			            title: articleDetails.get("title"),
+			            link: articleDetails.get("url"),
+			            date: todayDate,
+			            contact: contacts[index]
+		        	});
+				}
 			}
-		}
-		
+		})
 	});
 }
 
@@ -211,4 +225,28 @@ function today()
 
 	today = mm+'/'+dd+'/'+yyyy;
 	return today;
+}
+
+/**
+* Print allUserSubscribe
+*/
+function printAllUserSubscribe(){
+	allUserSubscribe.forEach(function(contactMap, user, mapObj){
+		console.log("user: ", user);
+		contactMap.forEach(function(contacts, topic, contactMapObj){
+			console.log("topic: ", topic);
+			console.log("contacts: ", contacts);
+		});
+	});
+}
+
+/**
+* Print allTopics
+*/
+function printAllTopics(){
+	allTopics.forEach(function(articleDetails, topic, mapObj){
+		console.log("topic: ", topic);
+		console.log("title: ", articleDetails.get("title"));
+		console.log("url: ", articleDetails.get("url"));
+	});
 }

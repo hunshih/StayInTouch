@@ -53,7 +53,7 @@ class ContactViewController: UIViewController {
         let addedProf = [K.Db.Contacts.company: pro.company, K.Db.Contacts.role: pro.role, K.Db.Contacts.meet: pro.meet];
         let addedInterest = [K.Db.Contacts.common: interest.common, K.Db.Contacts.care: interest.care, K.Db.Contacts.involved: interest.involved, K.Db.Contacts.follow: interest.follow]
         let dummy = ["dummy": "none"];
-        let childUpdates = ["/users/\((user?.uid)!)/contact_ids/\(key)": dateData, "/contact_names/\(key)": addedBasic, "/contact_professional/\(key)": addedProf, "/contact_interests/\(key)": addedInterest, "/last_contacted/\(key)": last_contacted, "/topics/\(interest.care)/\((user?.uid)!)": dummy] as [String : Any];
+        let childUpdates = ["/users/\((user?.uid)!)/contact_ids/\(key)": dateData, "/contact_names/\(key)": addedBasic, "/contact_professional/\(key)": addedProf, "/contact_interests/\(key)": addedInterest, "/last_contacted/\(key)": last_contacted, "/topics/\(interest.care)/\((user?.uid)!)/\(key)": dummy] as [String : Any];
         self.parentRef.updateChildValues(childUpdates);
         print(basic);
         print(pro);
