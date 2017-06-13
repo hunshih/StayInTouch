@@ -58,6 +58,11 @@ exports.followUp = functions.https.onRequest((req, res) => {
   		//printAllUserSubscribe();
   		addUnreadNotification();
   	}
+  ).then(
+  	function(){
+  		//test getting random topic and contact
+  		sendNotifications();
+  	}
   );
   res.end();
 });
@@ -132,9 +137,22 @@ function searchArticles(topic) {
 }
 
 /**
-* Get a list of devices with given users
+* Send notifications to user
 */
-function getDevices(users) {
+function sendNotifications() {
+	allUserSubscribe.forEach(function(subscription, user, mapObj){
+		var topicAndContact = getRandomTopicAndContact(user);
+		var ref = admin.database().ref("contact_names/" + topicAndContact[1] + "/");
+		ref.once("value", function(info) {
+            console.log("name: ", info.val().name);
+        });
+
+	});
+
+
+
+	//////Original//////
+	/*
     for (var i = 0; i < users.length; i++) {
         var ref = admin.database().ref("users/" + users[i] + "/devices/");
         ref.once("value", function(devices) {
@@ -142,7 +160,7 @@ function getDevices(users) {
                 sendMessageToUser(device.val(),'Share this article on Machine Learning with Yanjun');
             })
         });
-    }
+    }*/
 }
 
 /**
@@ -249,4 +267,31 @@ function printAllTopics(){
 		console.log("title: ", articleDetails.get("title"));
 		console.log("url: ", articleDetails.get("url"));
 	});
+}
+
+/**
+* Get a random number between 0 and X (NOT inclusive)
+*/
+function getRandom(max){
+	return Math.floor(Math.random() * max);
+}
+
+/**
+* Get a random pair of topic and contactID
+* [topic, contactID]
+*/
+function getRandomTopicAndContact(user){
+	var subscription = allUserSubscribe.get(user);
+	var mapIter = subscription[Symbol.iterator]();
+	var topicIndex = Math.max(getRandom(subscription.size), 0);
+	var randomResult;
+	for(var i = 0; i <= topicIndex; i++)
+	{
+		randomResult = mapIter.next().value;
+	}
+	var randomTopic = randomResult[0];
+	var contactIndex = Math.max(getRandom(randomResult[1].length), 0);
+	var randomContact = randomResult[1][contactIndex];
+	var result = [randomTopic, randomContact];
+	return result;
 }
