@@ -14,11 +14,15 @@ var allTopics = new Map();
 //record the topics subscribed by each user
 var allUserSubscribe = new Map();
 
+//All Users
+var allUserNotification = new Map();
+
 exports.followUp = functions.https.onRequest((req, res) => {
 
 	//clear all global maps
 	allTopics.clear();
 	allUserSubscribe.clear();
+	allUserNotification.clear();
 
   //check the API key
   const key = req.query.key;
@@ -35,6 +39,7 @@ exports.followUp = functions.https.onRequest((req, res) => {
   //getContacts is a promise, thus non-blocking
   var articles;
   var articleSearchPromises = [];
+  var fillNotificationPromises = [];
   var promise = getAllTopics();
   promise
   .then(
@@ -61,8 +66,18 @@ exports.followUp = functions.https.onRequest((req, res) => {
   ).then(
   	function(){
   		//test getting random topic and contact
-  		sendNotifications();
+  		allUserSubscribe.forEach(function(subscription, user, mapObj){
+  			fillNotificationPromises.push(fillNotificationTable(user));
+  		});
   	}
+  ).then(
+  	function(){
+  		return Promise.all(fillNotificationPromises);
+  	}
+  ).then(
+	function(){
+		sendNotification();
+	}
   );
   res.end();
 });
@@ -122,6 +137,7 @@ function searchArticles(topic) {
 		            var articleResult = new Map();
 		            articleResult.set("title", data.response.results[0].webTitle);
 		            articleResult.set("url", data.response.results[0].webUrl);
+		            articleResult.set("source", "The Guardian");
 		        	allTopics.set(topic, articleResult);
 		        	resolve(allTopics.size);
 		        });
@@ -137,36 +153,49 @@ function searchArticles(topic) {
 }
 
 /**
-* Send notifications to user
+* fill notification table
 */
-function sendNotifications() {
-	allUserSubscribe.forEach(function(subscription, user, mapObj){
-		var topicAndContact = getRandomTopicAndContact(user);
-		var ref = admin.database().ref("contact_names/" + topicAndContact[1] + "/");
-		ref.once("value", function(info) {
-            console.log("name: ", info.val().name);
-        });
-
+function fillNotificationTable(user) {
+	return new Promise(
+		function(resolve, reject){
+			var topicAndContact = getRandomTopicAndContact(user);
+			var ref = admin.database().ref("contact_names/" + topicAndContact[1] + "/");
+			ref.once("value", function(info) {
+				var notification = new Map();
+				notification.set("name", info.val().name);
+				notification.set("title", allTopics.get(topicAndContact[0]).get("title"));
+				notification.set("source", allTopics.get(topicAndContact[0]).get("source"));
+				notification.set("tag", topicAndContact[0]);
+	            allUserNotification.set(user, notification);
+	            resolve();
+	    });
 	});
+}
 
-
-
-	//////Original//////
-	/*
-    for (var i = 0; i < users.length; i++) {
-        var ref = admin.database().ref("users/" + users[i] + "/devices/");
+function sendNotification(){
+	allUserNotification.forEach(function(notification, user, mapObj){
+		var ref = admin.database().ref("users/" + user + "/devices/");
         ref.once("value", function(devices) {
             devices.forEach(function(device) {
-                sendMessageToUser(device.val(),'Share this article on Machine Learning with Yanjun');
+                sendMessageToUser(device.val(),notification);
             })
         });
-    }*/
+	});
 }
 
 /**
-* Send Notification to a list of users
+* Send Notification to a user with content in "notification"
 */
-function sendMessageToUser(deviceIds, message) {
+function sendMessageToUser(deviceIds, notification) {
+	var message = "Hey! We think " 
+				  + notification.get("name")
+				  + " will be interested in this article from "
+				  + notification.get("source")
+				  + " about "
+				  + notification.get("tag")
+				  + ", reach out now!";
+	console.log("message: ", message);
+
     request({
         url: 'https://fcm.googleapis.com/fcm/send',
         method: 'POST',
@@ -178,7 +207,7 @@ function sendMessageToUser(deviceIds, message) {
           { 
             "notification" : {
               "body" : message,
-              "title" : "Follow-Up"
+              "title" : notification.get("title")
             },
             "to" : deviceIds,
             "priority" : "high"
@@ -270,6 +299,17 @@ function printAllTopics(){
 }
 
 /**
+* Print allNotification map
+*/
+function printAllNotification(){
+	allUserNotification.forEach(function(notification, user, mapObj){
+		console.log("user: ", user);
+		console.log("title: ", notification.get("title"));
+		console.log("name: ", notification.get("name"));		
+	});
+}
+
+/**
 * Get a random number between 0 and X (NOT inclusive)
 */
 function getRandom(max){
@@ -279,6 +319,7 @@ function getRandom(max){
 /**
 * Get a random pair of topic and contactID
 * [topic, contactID]
+* [Big Data, ksfljakdjald]
 */
 function getRandomTopicAndContact(user){
 	var subscription = allUserSubscribe.get(user);
