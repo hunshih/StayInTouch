@@ -12,13 +12,17 @@ import FirebaseAuth
 
 class ContactViewController: UIViewController {
     
+    @IBOutlet weak var getStarted: UIStackView!
+    
     let user = FIRAuth.auth()?.currentUser;
     let parentRef = FIRDatabase.database().reference();
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("UID in first view: \(user?.uid)")
-
+        let tap = UITapGestureRecognizer(target: self, action: #selector(ContactViewController.startAdding));
+        getStarted.addGestureRecognizer(tap);
+        //getStarted.isUserInteractionEnabled = true;
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,6 +36,11 @@ class ContactViewController: UIViewController {
     @IBAction func ContactAdded(segue:UIStoryboardSegue) {
         let source = segue.source as! InterestsTableViewController;
         saveCreatedContact(basic: source.basicInfo, pro: source.proInfo, interest: source.interestInfo);
+    }
+    
+    func startAdding()
+    {
+        print("success!");
     }
     
     //Update contacts in database

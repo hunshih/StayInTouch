@@ -6,7 +6,9 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -134,8 +136,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1a-O9-Zx2">
+                                <rect key="frame" x="101" y="49" width="150" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Useful Tips"/>
+                                <connections>
+                                    <segue destination="zoL-O8-UTh" kind="show" id="sJ5-Xc-Sdz"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fp4-8W-79R">
-                                <rect key="frame" x="112" y="221" width="150" height="30"/>
+                                <rect key="frame" x="111" y="87" width="150" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Get Started"/>
@@ -143,21 +153,72 @@
                                     <segue destination="lPY-o7-mfJ" kind="presentation" id="fZU-D1-r85"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W1a-O9-Zx2">
-                                <rect key="frame" x="112" y="442" width="150" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Useful Tips"/>
-                                <connections>
-                                    <segue destination="zoL-O8-UTh" kind="show" id="sJ5-Xc-Sdz"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="up6-6t-hyX" userLabel="Tips">
+                                <rect key="frame" x="61" y="276" width="93" height="115"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="tips" translatesAutoresizingMaskIntoConstraints="NO" id="y6O-3s-wbS" userLabel="tipsImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="y6O-3s-wbS" secondAttribute="height" multiplier="1:1" id="edR-v4-IzW"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Useful Tips" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YWt-tp-GVo">
+                                        <rect key="frame" x="0.0" y="98" width="93" height="17"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="YWt-tp-GVo" firstAttribute="width" secondItem="y6O-3s-wbS" secondAttribute="width" id="bob-Qe-Oll"/>
+                                    <constraint firstItem="y6O-3s-wbS" firstAttribute="width" secondItem="up6-6t-hyX" secondAttribute="width" multiplier="0.3" constant="65" id="rUw-KE-5m3"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2GY-ye-goQ" userLabel="GetStarted">
+                                <rect key="frame" x="223" y="276" width="93" height="115"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GetStarted" translatesAutoresizingMaskIntoConstraints="NO" id="0mp-fD-Ud0" userLabel="GetStartedImage">
+                                        <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="0mp-fD-Ud0" secondAttribute="height" multiplier="1:1" id="BAm-3y-Egx"/>
+                                        </constraints>
+                                    </imageView>
+                                    <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Get Started" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zMZ-Sw-bcQ">
+                                        <rect key="frame" x="0.0" y="98" width="93" height="17"/>
+                                        <accessibility key="accessibilityConfiguration">
+                                            <accessibilityTraits key="traits" notEnabled="YES"/>
+                                            <bool key="isElement" value="NO"/>
+                                        </accessibility>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="0mp-fD-Ud0" firstAttribute="width" secondItem="2GY-ye-goQ" secondAttribute="width" multiplier="0.3" constant="65" id="lRX-Iz-KFa"/>
+                                    <constraint firstItem="zMZ-Sw-bcQ" firstAttribute="width" secondItem="0mp-fD-Ud0" secondAttribute="width" id="tQ4-ib-05E"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2GY-ye-goQ" firstAttribute="centerX" secondItem="pSy-u6-jZy" secondAttribute="trailingMargin" multiplier="0.75" id="LNd-p1-KIp"/>
+                            <constraint firstItem="up6-6t-hyX" firstAttribute="centerX" secondItem="pSy-u6-jZy" secondAttribute="trailingMargin" multiplier="0.3" id="LTu-bU-zY4"/>
+                            <constraint firstItem="up6-6t-hyX" firstAttribute="centerY" secondItem="pSy-u6-jZy" secondAttribute="centerY" id="WcW-ge-XnE"/>
+                            <constraint firstItem="2GY-ye-goQ" firstAttribute="centerY" secondItem="pSy-u6-jZy" secondAttribute="centerY" id="sR4-aJ-fcn"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Contact" id="OVB-un-muP">
                         <barButtonItem key="backBarButtonItem" title=" " id="E05-39-Hfv"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="getStarted" destination="2GY-ye-goQ" id="zYX-7e-TMc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oEm-wV-bsd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1314,8 +1375,10 @@
         <image name="Add" width="25" height="25"/>
         <image name="Convo" width="25" height="25"/>
         <image name="Followup" width="25" height="25"/>
+        <image name="GetStarted" width="100" height="100"/>
         <image name="Insights" width="25" height="25"/>
         <image name="Settings" width="25" height="25"/>
+        <image name="tips" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="Nw5-SL-EBM"/>
