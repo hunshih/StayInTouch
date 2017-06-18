@@ -14,15 +14,18 @@ class ContactViewController: UIViewController {
     
     @IBOutlet weak var getStarted: UIStackView!
     
+    @IBOutlet weak var usefulTips: UIStackView!
+    
     let user = FIRAuth.auth()?.currentUser;
     let parentRef = FIRDatabase.database().reference();
     override func viewDidLoad() {
         super.viewDidLoad()
         
         print("UID in first view: \(user?.uid)")
-        let tap = UITapGestureRecognizer(target: self, action: #selector(ContactViewController.startAdding));
-        getStarted.addGestureRecognizer(tap);
-        //getStarted.isUserInteractionEnabled = true;
+        let tapStart = UITapGestureRecognizer(target: self, action: #selector(ContactViewController.startAdding));
+        let tapTip = UITapGestureRecognizer(target: self, action: #selector(ContactViewController.showTips));
+        getStarted.addGestureRecognizer(tapStart);
+        usefulTips.addGestureRecognizer(tapTip);
     }
 
     override func didReceiveMemoryWarning() {
@@ -41,6 +44,11 @@ class ContactViewController: UIViewController {
     func startAdding()
     {
         performSegue(withIdentifier: "GetStartedSegue", sender: nil);
+    }
+    
+    func showTips()
+    {
+        performSegue(withIdentifier: "TipsSegue", sender: nil);
     }
     
     //Update contacts in database
