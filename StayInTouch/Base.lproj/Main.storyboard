@@ -150,7 +150,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <state key="normal" title="Get Started"/>
                                 <connections>
-                                    <segue destination="lPY-o7-mfJ" kind="presentation" id="fZU-D1-r85"/>
+                                    <segue destination="lPY-o7-mfJ" kind="presentation" identifier="GetStartedSegue" id="fZU-D1-r85"/>
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="up6-6t-hyX" userLabel="Tips">
@@ -1259,6 +1259,7 @@
         <!--Navigation Controller-->
         <scene sceneID="WZR-64-sdP">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gr5-rQ-KcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="lPY-o7-mfJ" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="QFJ-7o-7OP">
@@ -1270,7 +1271,6 @@
                         <segue destination="CJ7-St-BJU" kind="relationship" relationship="rootViewController" id="Vdz-MA-gbt"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gr5-rQ-KcG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1382" y="2690"/>
         </scene>

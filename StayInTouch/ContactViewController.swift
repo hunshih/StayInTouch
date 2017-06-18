@@ -40,7 +40,7 @@ class ContactViewController: UIViewController {
     
     func startAdding()
     {
-        print("success!");
+        performSegue(withIdentifier: "GetStartedSegue", sender: nil);
     }
     
     //Update contacts in database
