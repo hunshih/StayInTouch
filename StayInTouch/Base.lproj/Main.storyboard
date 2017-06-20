@@ -1035,13 +1035,13 @@
                                         <rect key="frame" x="0.0" y="0.0" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dGe-SS-x8R">
                                         <rect key="frame" x="0.0" y="30" width="343" height="30"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                        <textInputTraits key="textInputTraits"/>
                                     </textField>
                                 </subviews>
                                 <constraints>
@@ -1076,6 +1076,8 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ConfirmPassword" destination="K4u-ec-1rG" id="fHR-Ed-zbn"/>
+                        <outlet property="FirstName" destination="KXa-Ll-kpe" id="AJv-RT-oK8"/>
+                        <outlet property="LastName" destination="dGe-SS-x8R" id="qIL-T4-yVW"/>
                         <outlet property="OriginalPassword" destination="2fg-JP-FRV" id="IJ4-3L-zdi"/>
                         <outlet property="SubmitButton" destination="Rj3-PZ-Jm6" id="sZQ-1o-42m"/>
                         <outlet property="email" destination="JRx-D2-jXz" id="5VP-ty-7CN"/>
@@ -1433,6 +1435,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="6Vi-ya-bKQ"/>
-        <segue reference="I6V-We-ywh"/>
+        <segue reference="pYN-gc-eO3"/>
     </inferredMetricsTieBreakers>
 </document>

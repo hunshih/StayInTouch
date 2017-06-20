@@ -15,6 +15,8 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var email: UITextField!
     @IBOutlet weak var OriginalPassword: UITextField!
     @IBOutlet weak var ConfirmPassword: UITextField!
+    @IBOutlet weak var FirstName: UITextField!
+    @IBOutlet weak var LastName: UITextField!
     @IBOutlet weak var SubmitButton: UIButton!
     
     override func viewDidLoad() {
@@ -24,10 +26,15 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
         email.delegate = self
         OriginalPassword.delegate = self
         ConfirmPassword.delegate = self
+        FirstName.delegate = self
+        LastName.delegate = self
         
         email.returnKeyType = UIReturnKeyType.next
         OriginalPassword.returnKeyType = UIReturnKeyType.next
-        ConfirmPassword.returnKeyType = UIReturnKeyType.go
+        ConfirmPassword.returnKeyType = UIReturnKeyType.next;
+        FirstName.returnKeyType = UIReturnKeyType.next;
+        FirstName.autocorrectionType = .no
+        LastName.autocorrectionType = .no
         email.autocorrectionType = .no
         SubmitButton.isEnabled = false
     }
@@ -87,6 +94,12 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
         case self.OriginalPassword:
             self.ConfirmPassword.becomeFirstResponder()
             return false
+        case self.ConfirmPassword:
+            self.FirstName.becomeFirstResponder()
+            return false
+        case self.FirstName:
+            self.LastName.becomeFirstResponder()
+            return false;
         default:
             textField.resignFirstResponder()
             self.executeSignUp()
@@ -96,9 +109,13 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
     
     func textFieldDidEndEditing(_ textField: UITextField) {
         if( !(OriginalPassword.text?.isEmpty)! &&
-            OriginalPassword.text == ConfirmPassword.text)
+            (OriginalPassword.text == ConfirmPassword.text) && !((FirstName.text?.isEmpty)!) && !((LastName.text?.isEmpty)!))
         {
             SubmitButton.isEnabled = true;
+        }
+        else
+        {
+            SubmitButton.isEnabled = false;
         }
     }
     
