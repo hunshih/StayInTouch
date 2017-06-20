@@ -31,7 +31,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
         self.fillInfoFields();
         self.setAllTextField(canEdit: false);
         self.AgeField.keyboardType = UIKeyboardType.numberPad;
-        
+        self.FirstNameField.autocorrectionType = .no;
+        self.LastNameField.autocorrectionType = .no;
     }
 
     override func didReceiveMemoryWarning() {
@@ -77,7 +78,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
     
     func saveUserInfo() {
         let userDbRef = self.ref.child((user?.uid)!)
-        userDbRef.updateChildValues([K.Db.Users.firstName : self.FirstNameField.text, K.Db.Users.lastName : self.LastNameField.text, K.Db.Users.profession : self.ProfessionField.text, K.Db.Users.age : Int(self.AgeField.text!)]) { (error, ref) in
+        userDbRef.updateChildValues([K.Db.Users.firstName : self.FirstNameField.text, K.Db.Users.lastName : self.LastNameField.text]) { (error, ref) in
             if(error != nil)
             {
                 print(error)
@@ -139,9 +140,9 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
             let snapshotValue = snapshot.value as? NSDictionary
             self.FirstNameField.text = (snapshotValue?[K.Db.Users.firstName] as? String)!
             self.LastNameField.text = (snapshotValue?[K.Db.Users.lastName] as? String)!
-            self.ProfessionField.text = (snapshotValue?[K.Db.Users.profession] as? String)!
-            let _age = (snapshotValue?[K.Db.Users.age] as? Int)
-            self.AgeField.text = "\(_age)"
+            //self.ProfessionField.text = (snapshotValue?[K.Db.Users.profession] as? String)!
+            //let _age = (snapshotValue?[K.Db.Users.age] as? Int)
+            //self.AgeField.text = "\(_age)"
             self.cacheUserInfo();
         })
     }

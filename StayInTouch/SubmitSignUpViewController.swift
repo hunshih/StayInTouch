@@ -59,7 +59,8 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
             else
             {
                 print("Successfully Sign Up, you're in!")
-                self.performSegue(withIdentifier: "SubmitCredSegue", sender: "")
+                self.setUserInfo();
+                self.performSegue(withIdentifier: "CompleteUserInfoSeque", sender: "")
                 Printer.printUserDetails(user!)
             }
         }
@@ -128,6 +129,23 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func cancelSignUp(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func setUserInfo()
+    {
+        var user = FIRAuth.auth()?.currentUser;
+        var dbRef = FIRDatabase.database().reference().child("users");
+        let userDbRef = dbRef.child((user?.uid)!);
+        userDbRef.updateChildValues([K.Db.Users.email : (user?.email)!, K.Db.Users.firstName : self.FirstName.text, K.Db.Users.lastName : self.LastName.text]) { (error, ref) in
+            if(error != nil)
+            {
+                print(error)
+            }
+            else
+            {
+                print("User info setup!")
+            }
+        }
     }
     /*
     // MARK: - Navigation

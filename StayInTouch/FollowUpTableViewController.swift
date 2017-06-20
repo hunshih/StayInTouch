@@ -27,8 +27,8 @@ class FollowUpTableViewController: UITableViewController {
         print("UID in first view: \(user?.uid)")
         ref.child((user?.uid)!).observe(.value, with: { (snapshot) in
             let snapshotValue = snapshot.value as? NSDictionary
-            let firstName = (snapshotValue?["first_name"] as? String)!
-            print("Welcome! \(firstName)");
+            //let firstName = (snapshotValue?["first_name"] as? String)!
+            //print("Welcome! \(firstName)");
             
         })
         //load all the unread notification into cells
