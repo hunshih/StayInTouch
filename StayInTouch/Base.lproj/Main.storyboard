@@ -152,13 +152,13 @@
                                 <rect key="frame" x="223" y="276" width="93" height="115"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="GetStarted" translatesAutoresizingMaskIntoConstraints="NO" id="0mp-fD-Ud0" userLabel="GetStartedImage">
-                                        <rect key="frame" x="0.5" y="0.0" width="93" height="93"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
                                         <constraints>
                                             <constraint firstAttribute="width" secondItem="0mp-fD-Ud0" secondAttribute="height" multiplier="1:1" id="BAm-3y-Egx"/>
                                         </constraints>
                                     </imageView>
                                     <textField opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Get Started" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="zMZ-Sw-bcQ">
-                                        <rect key="frame" x="0.5" y="98" width="93" height="17"/>
+                                        <rect key="frame" x="0.0" y="98" width="93" height="17"/>
                                         <accessibility key="accessibilityConfiguration">
                                             <accessibilityTraits key="traits" notEnabled="YES"/>
                                             <bool key="isElement" value="NO"/>
@@ -316,6 +316,7 @@
                                                 <segue destination="B1a-0I-2sN" kind="unwind" unwindAction="handleWebViewReturnWithSegue:" id="pFw-ro-nAG"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="4BG-Rn-eGc"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
@@ -631,7 +632,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52z-Eb-4HR">
-                                <rect key="frame" x="36" y="50" width="303" height="30"/>
+                                <rect key="frame" x="36" y="94" width="303" height="30"/>
                                 <state key="normal" title="Edit Info"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
@@ -649,7 +650,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bGH-EO-Cld" userLabel="FirstName">
-                                <rect key="frame" x="16" y="100" width="343" height="30"/>
+                                <rect key="frame" x="16" y="144" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gn1-iw-Qsh">
                                         <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
@@ -669,7 +670,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="BD6-na-GFS" userLabel="LastName">
-                                <rect key="frame" x="16" y="140" width="343" height="30"/>
+                                <rect key="frame" x="16" y="184" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Last Name:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zyc-UE-cSy">
                                         <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
@@ -689,7 +690,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="c62-nr-Ral" userLabel="Profession">
-                                <rect key="frame" x="16" y="180" width="343" height="30"/>
+                                <rect key="frame" x="16" y="224" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Profession:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oFE-br-hET">
                                         <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
@@ -709,7 +710,7 @@
                                 </constraints>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4nE-cV-Dcz" userLabel="Age">
-                                <rect key="frame" x="16" y="220" width="343" height="30"/>
+                                <rect key="frame" x="16" y="264" width="343" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Age:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="44q-RT-iAo">
                                         <rect key="frame" x="0.0" y="0.0" width="171.5" height="30"/>
@@ -729,7 +730,7 @@
                                 </constraints>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eza-ps-akI">
-                                <rect key="frame" x="46" y="607" width="283" height="30"/>
+                                <rect key="frame" x="46" y="558" width="283" height="30"/>
                                 <color key="backgroundColor" red="1" green="0.35466837886950087" blue="0.36597616391685139" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <state key="normal" title="SignOut">
                                     <color key="titleColor" red="0.96214874550716301" green="1" blue="0.91590073038933184" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -772,6 +773,7 @@
                         <outlet property="FirstNameField" destination="cM6-Qx-ZOf" id="feb-9x-Ibw"/>
                         <outlet property="LastNameField" destination="8oN-Iu-RQ9" id="bsi-9E-c6g"/>
                         <outlet property="ProfessionField" destination="KGw-TG-oNd" id="Q2x-rr-NoP"/>
+                        <outlet property="SignOutButton" destination="Eza-ps-akI" id="X9x-de-YpG"/>
                         <segue destination="Ylz-YK-S22" kind="show" identifier="SignOutSegue" id="5H6-hf-JR1"/>
                     </connections>
                 </viewController>
@@ -1281,7 +1283,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Y59-KT-FNa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="813.60000000000002" y="26.53673163418291"/>
+            <point key="canvasLocation" x="812" y="27"/>
         </scene>
     </scenes>
     <resources>
@@ -1296,6 +1298,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5H6-hf-JR1"/>
-        <segue reference="I6V-We-ywh"/>
+        <segue reference="pYN-gc-eO3"/>
     </inferredMetricsTieBreakers>
 </document>

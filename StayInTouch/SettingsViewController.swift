@@ -11,6 +11,7 @@ import Firebase
 
 class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarControllerDelegate {
 
+    
     @IBOutlet weak var SignOutButton: UIButton!
     var FirstName: String = "";
     var LastName: String = "";
@@ -24,6 +25,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
     @IBOutlet weak var AgeField: UITextField!
     @IBOutlet weak var EditInfo: UIButton!
     var ButtonClicked: Bool = false;
+    var lightGreen = UIColor(red:0.00, green:1.00, blue:0.64, alpha:1.0);
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,6 +35,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
         self.AgeField.keyboardType = UIKeyboardType.numberPad;
         self.FirstNameField.autocorrectionType = .no;
         self.LastNameField.autocorrectionType = .no;
+        self.SignOutButton.isEnabled = true;
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,11 +47,13 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
         ButtonClicked = !ButtonClicked;
         if(ButtonClicked)
         {
-            sender.backgroundColor = UIColor.lightGray;
+            sender.backgroundColor = lightGreen;
             sender.tintColor = UIColor.white;
             sender.setTitle("Save Info", for: .normal);
             self.setAllTextField(canEdit: true);
             self.FirstNameField.becomeFirstResponder();
+            self.SignOutButton.isEnabled = false;
+            self.SignOutButton.backgroundColor = UIColor.lightGray;
         }
         else
         {
@@ -57,6 +62,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
             sender.tintColor = nil;
             sender.setTitle("Edit Info", for: .normal);
             self.setAllTextField(canEdit: false);
+            self.SignOutButton.isEnabled = true;
+            self.SignOutButton.backgroundColor = UIColor.red;
         }
     }
     @IBAction func SignoutUser(_ sender: UIButton) {
@@ -118,6 +125,8 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
             EditInfo.setTitle("Edit Info", for: .normal);
             self.setAllTextField(canEdit: false);
             self.resetInfoFromCache();
+            self.SignOutButton.isEnabled = true;
+            self.SignOutButton.backgroundColor = UIColor.red;
         }
         else
         {
