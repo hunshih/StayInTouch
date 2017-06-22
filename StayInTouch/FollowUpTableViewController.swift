@@ -16,23 +16,10 @@ class FollowUpTableViewController: UITableViewController {
     
     var user: FIRUser?
     var notifications = [Notification]();
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-        user = FIRAuth.auth()?.currentUser;
         loadNotifications();
-        let ref = FIRDatabase.database().reference().child("users");
-        print("Ref from first controller: \(ref)")
-        print("UID in first view: \(user?.uid)")
-        ref.child((user?.uid)!).observe(.value, with: { (snapshot) in
-            let snapshotValue = snapshot.value as? NSDictionary
-            //let firstName = (snapshotValue?["first_name"] as? String)!
-            //print("Welcome! \(firstName)");
-            
-        })
-        //load all the unread notification into cells
-        
     }
 
     override func didReceiveMemoryWarning() {
@@ -48,21 +35,29 @@ class FollowUpTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
+        print(self.notifications.count)
         return notifications.count;
     }
     
     private func loadNotifications()
     {
         let icon = UIImage(named: "A");
-        guard let n1 = Notification(read: false, icon: icon, title: "Salesforce Machine Learning", name: "Barry Shih") else
-        {
-            fatalError("Can't init n1");
-        }
-        if(!n1.read)
-        {
-            notifications.append(n1);
-        }
-        print("How many notifications? \(notifications.count)")
+        user = FIRAuth.auth()?.currentUser;
+        let ref = FIRDatabase.database().reference().child("users").child((user?.uid)!).child("unread");
+        ref.observe(.value, with: { (snapshot) in
+            let snapshotValue = snapshot.value as? NSDictionary
+            self.notifications.removeAll();
+            print("Number of unread: \(snapshotValue?.count)");
+            for (key, details) in snapshotValue!
+            {
+                let map = details as? NSDictionary;
+                let title = map?["title"] as? String;
+                self.notifications.append(Notification(read: false, icon: icon, title: title!, name: "Barry Shih")!);
+            }
+            print("length: \(self.notifications.count)")
+            self.tableView.reloadData();
+        })
+
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
