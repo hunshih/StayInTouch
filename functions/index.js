@@ -104,7 +104,11 @@ function getArticles(topics){
 				}
 				var contacts = [];
 				user.forEach(function(contact){
-					contacts.push(contact.key);
+					var pair = [];
+					pair.push(contact.key);
+					pair.push(contact.val().name);
+					console.log("value: ", contact.val().name);
+					contacts.push(pair);
 				});
 				userMap.set(topic.key, contacts);
 				allUserSubscribe.set(user.key, userMap);
@@ -244,7 +248,8 @@ function addUnreadNotification()
 			            title: articleDetails.get("title"),
 			            link: articleDetails.get("url"),
 			            date: todayDate,
-			            contact: contacts[index]
+			            contactID: contacts[index][0],
+			            contactName: contacts[index][1]
 		        	});
 				}
 			}
