@@ -67,12 +67,8 @@ exports.followUp = functions.https.onRequest((req, res) => {
   	function(){
   		//test getting random topic and contact
   		allUserSubscribe.forEach(function(subscription, user, mapObj){
-  			fillNotificationPromises.push(fillNotificationTable(user));
+  			fillNotificationTable(user);
   		});
-  	}
-  ).then(
-  	function(){
-  		return Promise.all(fillNotificationPromises);
   	}
   ).then(
 	function(){
@@ -107,7 +103,6 @@ function getArticles(topics){
 					var pair = [];
 					pair.push(contact.key);
 					pair.push(contact.val().name);
-					console.log("value: ", contact.val().name);
 					contacts.push(pair);
 				});
 				userMap.set(topic.key, contacts);
@@ -160,20 +155,13 @@ function searchArticles(topic) {
 * fill notification table
 */
 function fillNotificationTable(user) {
-	return new Promise(
-		function(resolve, reject){
-			var topicAndContact = getRandomTopicAndContact(user);
-			var ref = admin.database().ref("contact_names/" + topicAndContact[1] + "/");
-			ref.once("value", function(info) {
-				var notification = new Map();
-				notification.set("name", info.val().name);
-				notification.set("title", allTopics.get(topicAndContact[0]).get("title"));
-				notification.set("source", allTopics.get(topicAndContact[0]).get("source"));
-				notification.set("tag", topicAndContact[0]);
-	            allUserNotification.set(user, notification);
-	            resolve();
-	    });
-	});
+	var topicAndContact = getRandomTopicAndContact(user);
+	var notification = new Map();
+	notification.set("name", topicAndContact[1]);
+	notification.set("title", allTopics.get(topicAndContact[0]).get("title"));
+	notification.set("source", allTopics.get(topicAndContact[0]).get("source"));
+	notification.set("tag", topicAndContact[0]);
+    allUserNotification.set(user, notification);
 }
 
 function sendNotification(){
@@ -337,7 +325,8 @@ function getRandomTopicAndContact(user){
 	}
 	var randomTopic = randomResult[0];
 	var contactIndex = Math.max(getRandom(randomResult[1].length), 0);
-	var randomContact = randomResult[1][contactIndex];
+	//randomresult is: |topic|[[id1,name1], [id2, name2]], thus 1/index/1 to get name
+	var randomContact = randomResult[1][contactIndex][1];
 	var result = [randomTopic, randomContact];
 	return result;
 }

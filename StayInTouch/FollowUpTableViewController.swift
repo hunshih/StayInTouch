@@ -52,7 +52,8 @@ class FollowUpTableViewController: UITableViewController {
             {
                 let map = details as? NSDictionary;
                 let title = map?["title"] as? String;
-                self.notifications.append(Notification(read: false, icon: icon, title: title!, name: "Barry Shih")!);
+                let target = map?["contactName"] as? String;
+                self.notifications.append(Notification(read: false, icon: icon, title: title!, name: target!)!);
             }
             print("length: \(self.notifications.count)")
             self.tableView.reloadData();
