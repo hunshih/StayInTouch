@@ -14,12 +14,14 @@ class Notification {
     var icon: UIImage?;
     var title: String;
     var name: String;
+    var link: String;
     
-    init?(read: Bool, icon: UIImage?, title: String, name: String) {
+    init?(read: Bool, icon: UIImage?, title: String, name: String, link: String) {
         self.read = read;
         self.icon = icon;
         self.title = title;
         self.name = name;
+        self.link = link;
         if title.isEmpty || name.isEmpty{
             return nil;
         }

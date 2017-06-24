@@ -12,11 +12,15 @@ import MessageUI
 class NotificationViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     var notification: Notification?;
-    @IBOutlet weak var emailButton: UIButton!
+    
+    @IBOutlet weak var webView: UIWebView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         //print("Notification dor: \(notification?.name)");
+        let url = NSURL (string: (notification?.link)!);
+        let requestObj = NSURLRequest(url: url! as URL);
+        webView.loadRequest(requestObj as URLRequest);
         
     }
 

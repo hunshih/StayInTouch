@@ -35,7 +35,6 @@ class FollowUpTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        print(self.notifications.count)
         return notifications.count;
     }
     
@@ -53,7 +52,8 @@ class FollowUpTableViewController: UITableViewController {
                 let map = details as? NSDictionary;
                 let title = map?["title"] as? String;
                 let target = map?["contactName"] as? String;
-                self.notifications.append(Notification(read: false, icon: icon, title: title!, name: target!)!);
+                let url = map?["link"] as? String;
+                self.notifications.append(Notification(read: false, icon: icon, title: title!, name: target!, link: url!)!);
             }
             print("length: \(self.notifications.count)")
             self.tableView.reloadData();
