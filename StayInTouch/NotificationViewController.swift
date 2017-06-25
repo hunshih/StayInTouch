@@ -40,7 +40,7 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
          UIApplication.shared.open(url)
          }*/
         let emailTitle = self.notification?.title
-        let messageBody = "Hey Barry here's a good article on Machine Learning at Salesforce, enjoy! https://www.theverge.com/2017/5/14/15637588/salesforce-algorithm-automatically-summarizes-text-machine-learning-ai";
+        let messageBody = "Hey \((self.notification?.name)!),\nHere's a good article about \((self.notification?.tag)!), I think you'll like it. Enjoy!\n\n \((self.notification?.link)!)";
         let recepient = self.notification?.email as! String;
         let toRecipents = [recepient];
         let mc: MFMailComposeViewController = MFMailComposeViewController();

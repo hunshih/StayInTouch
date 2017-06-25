@@ -54,7 +54,8 @@ class FollowUpTableViewController: UITableViewController {
                 let target = map?["contactName"] as? String;
                 let url = map?["link"] as? String;
                 let email = map?["email"] as? String;
-                self.notifications.append(Notification(read: false, icon: icon, title: title!, name: target!, link: url!, email: email!)!);
+                let tag = map?["tag"] as? String;
+                self.notifications.append(Notification(read: false, icon: icon, title: title!, name: target!, link: url!, email: email!, tag: tag!)!);
             }
             print("length: \(self.notifications.count)")
             self.tableView.reloadData();

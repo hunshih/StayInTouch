@@ -239,7 +239,8 @@ function addUnreadNotification()
 			            date: todayDate,
 			            contactID: contacts[index].get("id"),
 			            contactName: contacts[index].get("name"),
-			            email: contacts[index].get("email")
+			            email: contacts[index].get("email"),
+			            tag: topic
 		        	});
 				}
 			}
