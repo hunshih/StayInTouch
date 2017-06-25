@@ -15,13 +15,15 @@ class Notification {
     var title: String;
     var name: String;
     var link: String;
+    var email: String;
     
-    init?(read: Bool, icon: UIImage?, title: String, name: String, link: String) {
+    init?(read: Bool, icon: UIImage?, title: String, name: String, link: String, email: String) {
         self.read = read;
         self.icon = icon;
         self.title = title;
         self.name = name;
         self.link = link;
+        self.email = email;
         if title.isEmpty || name.isEmpty{
             return nil;
         }

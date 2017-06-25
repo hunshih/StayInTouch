@@ -33,18 +33,19 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
         //no-ops for now
     }
     
-    @IBAction func createEmail(_ sender: UIButton)
+    func createEmail()
     {
         /*let email = "barry@gmail.com"
          if let url = URL(string: "mailto:\(email)") {
          UIApplication.shared.open(url)
          }*/
-        let emailTitle = "Machine Learning at Salesforce"
+        let emailTitle = self.notification?.title
         let messageBody = "Hey Barry here's a good article on Machine Learning at Salesforce, enjoy! https://www.theverge.com/2017/5/14/15637588/salesforce-algorithm-automatically-summarizes-text-machine-learning-ai";
-        let toRecipents = ["hunshih@gmail.com"];
+        let recepient = self.notification?.email as! String;
+        let toRecipents = [recepient];
         let mc: MFMailComposeViewController = MFMailComposeViewController();
         mc.mailComposeDelegate = self;
-        mc.setSubject(emailTitle);
+        mc.setSubject(emailTitle!);
         mc.setMessageBody(messageBody, isHTML: false);
         mc.setToRecipients(toRecipents);
         
@@ -83,6 +84,27 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
     {
         self.navigationController?.popViewController(animated: true);
     }
+    
+    @IBAction func showActionSheet(_ sender: Any) {
+        let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
+        
+        let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
+            (alert: UIAlertAction!) -> Void in
+            self.createEmail()
+        })
+        
+        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: {
+            (alert: UIAlertAction!) -> Void in
+            print("Cancelled")
+        })
+        
+        optionMenu.addAction(shareAction)
+        optionMenu.addAction(cancelAction)
+        
+        self.present(optionMenu, animated: true, completion: nil)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

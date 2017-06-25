@@ -44,21 +44,22 @@ class FollowUpTableViewController: UITableViewController {
         user = FIRAuth.auth()?.currentUser;
         let ref = FIRDatabase.database().reference().child("users").child((user?.uid)!).child("unread");
         ref.observe(.value, with: { (snapshot) in
-            let snapshotValue = snapshot.value as? NSDictionary
+            if let snapshotValue = snapshot.value as? NSDictionary {
             self.notifications.removeAll();
-            print("Number of unread: \(snapshotValue?.count)");
-            for (key, details) in snapshotValue!
+            print("Unread User: \((self.user?.uid)!)");
+            for (key, details) in snapshotValue
             {
                 let map = details as? NSDictionary;
                 let title = map?["title"] as? String;
                 let target = map?["contactName"] as? String;
                 let url = map?["link"] as? String;
-                self.notifications.append(Notification(read: false, icon: icon, title: title!, name: target!, link: url!)!);
+                let email = map?["email"] as? String;
+                self.notifications.append(Notification(read: false, icon: icon, title: title!, name: target!, link: url!, email: email!)!);
             }
             print("length: \(self.notifications.count)")
             self.tableView.reloadData();
+            }
         })
-
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

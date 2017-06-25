@@ -100,10 +100,11 @@ function getArticles(topics){
 				}
 				var contacts = [];
 				user.forEach(function(contact){
-					var pair = [];
-					pair.push(contact.key);
-					pair.push(contact.val().name);
-					contacts.push(pair);
+					var userInfo = new Map();
+					userInfo.set("id", contact.key);
+					userInfo.set("name",contact.val().name);
+					userInfo.set("email", contact.val().email);
+					contacts.push(userInfo);
 				});
 				userMap.set(topic.key, contacts);
 				allUserSubscribe.set(user.key, userMap);
@@ -236,8 +237,9 @@ function addUnreadNotification()
 			            title: articleDetails.get("title"),
 			            link: articleDetails.get("url"),
 			            date: todayDate,
-			            contactID: contacts[index][0],
-			            contactName: contacts[index][1]
+			            contactID: contacts[index].get("id"),
+			            contactName: contacts[index].get("name"),
+			            email: contacts[index].get("email")
 		        	});
 				}
 			}
@@ -311,8 +313,8 @@ function getRandom(max){
 
 /**
 * Get a random pair of topic and contactID
-* [topic, contactID]
-* [Big Data, ksfljakdjald]
+* [topic, name]
+* [Big Data, henry]
 */
 function getRandomTopicAndContact(user){
 	var subscription = allUserSubscribe.get(user);
@@ -326,7 +328,7 @@ function getRandomTopicAndContact(user){
 	var randomTopic = randomResult[0];
 	var contactIndex = Math.max(getRandom(randomResult[1].length), 0);
 	//randomresult is: |topic|[[id1,name1], [id2, name2]], thus 1/index/1 to get name
-	var randomContact = randomResult[1][contactIndex][1];
+	var randomContact = randomResult[1][contactIndex].get("name");
 	var result = [randomTopic, randomContact];
 	return result;
 }
