@@ -28,28 +28,30 @@
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="A" translatesAutoresizingMaskIntoConstraints="NO" id="p6i-aN-vM8">
-                                            <rect key="frame" x="0.0" y="0.0" width="91" height="90"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-Lf-MjH">
-                                            <rect key="frame" x="99" y="8" width="268" height="21"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jd7-Lf-MjH">
+                                            <rect key="frame" x="38" y="13" width="329" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="D1T-92-PTq"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t9L-J1-1SV">
-                                            <rect key="frame" x="99" y="37" width="244" height="45"/>
+                                            <rect key="frame" x="100" y="38" width="244" height="45"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
+                                    <constraints>
+                                        <constraint firstItem="jd7-Lf-MjH" firstAttribute="trailing" secondItem="d92-I7-jzA" secondAttribute="trailingMargin" id="5Zg-PW-U4i"/>
+                                        <constraint firstItem="jd7-Lf-MjH" firstAttribute="top" secondItem="d92-I7-jzA" secondAttribute="topMargin" constant="5" id="YZY-ZL-a2v"/>
+                                        <constraint firstItem="jd7-Lf-MjH" firstAttribute="leading" secondItem="d92-I7-jzA" secondAttribute="leadingMargin" constant="30" id="cYe-05-1Tg"/>
+                                    </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="icon" destination="p6i-aN-vM8" id="oe4-dT-4PI"/>
                                     <outlet property="name" destination="jd7-Lf-MjH" id="Fnl-dU-TeB"/>
                                     <outlet property="title" destination="t9L-J1-1SV" id="whq-XE-4ZB"/>
                                     <segue destination="qlg-zA-D1a" kind="show" identifier="ShowDetails" id="Cex-oQ-Okc"/>
@@ -1242,7 +1244,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="A" width="45" height="45"/>
         <image name="Add" width="25" height="25"/>
         <image name="Convo" width="25" height="25"/>
         <image name="Followup" width="25" height="25"/>

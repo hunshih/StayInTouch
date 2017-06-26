@@ -73,7 +73,7 @@ class FollowUpTableViewController: UITableViewController {
 
         let notification = notifications[indexPath.row];
         cell.name.text = notification.name;
-        cell.icon.image = notification.icon;
+        //cell.icon.image = notification.icon;
         cell.title.text = notification.title;
         // Configure the cell...
 
