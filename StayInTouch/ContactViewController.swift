@@ -37,8 +37,8 @@ class ContactViewController: UIViewController {
     }
     
     @IBAction func ContactAdded(segue:UIStoryboardSegue) {
-        let source = segue.source as! InterestsTableViewController;
-        saveCreatedContact(basic: source.basicInfo, pro: source.proInfo, interest: source.interestInfo);
+        let source = segue.source as! ContactBasicInfoViewController;
+        saveCreatedContact(basic: source.basicInfo);
     }
     
     func startAdding()
@@ -52,7 +52,7 @@ class ContactViewController: UIViewController {
     }
     
     //Update contacts in database
-    func saveCreatedContact(basic: BasicInfo, pro: ProInfo, interest: InterestInfo)
+    func saveCreatedContact(basic: BasicInfo)
     {
         let key = self.parentRef.child((user?.uid)!).childByAutoId().key;
         
@@ -67,14 +67,11 @@ class ContactViewController: UIViewController {
         var last_contacted = dateData;
         last_contacted["belong"] = (user?.uid)!;
         let addedBasic = [K.Db.Contacts.name: basic.name, K.Db.Contacts.email: basic.email];
-        let addedProf = [K.Db.Contacts.company: pro.company, K.Db.Contacts.role: pro.role, K.Db.Contacts.meet: pro.meet];
-        let addedInterest = [K.Db.Contacts.common: interest.common, K.Db.Contacts.care: interest.care, K.Db.Contacts.involved: interest.involved, K.Db.Contacts.follow: interest.follow]
+        let addedInterest = [K.Db.Contacts.common: basic.interest, K.Db.Contacts.follow: basic.follow]
         //let dummy = [K.Db.Contacts.name : basic.name];
-        let childUpdates = ["/users/\((user?.uid)!)/contact_ids/\(key)": dateData, "/contact_names/\(key)": addedBasic, "/contact_professional/\(key)": addedProf, "/contact_interests/\(key)": addedInterest, "/last_contacted/\(key)": last_contacted, "/topics/\(interest.care)/\((user?.uid)!)/\(key)": addedBasic] as [String : Any];
+        let childUpdates = ["/users/\((user?.uid)!)/contact_ids/\(key)": dateData, "/contact_names/\(key)": addedBasic, "/contact_interests/\(key)": addedInterest, "/last_contacted/\(key)": last_contacted, "/topics/\(basic.interest)/\((user?.uid)!)/\(key)": addedBasic] as [String : Any];
         self.parentRef.updateChildValues(childUpdates);
         print(basic);
-        print(pro);
-        print(interest);
     }
     /*
     // MARK: - Navigation

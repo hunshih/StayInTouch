@@ -13,6 +13,8 @@ struct BasicInfo
 {
     let name: String;
     let email: String;
+    let interest: String;
+    let follow: String;
 }
 
 struct ProInfo {

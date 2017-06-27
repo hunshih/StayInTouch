@@ -10,8 +10,11 @@ import Foundation
 
 class StringUtil {
     static func trim(_ input: String) -> String{
-        var result = input.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines);
+        var result = StringUtil.trimKeepCase(input);
         result = result.lowercased();
         return result;
+    }
+    static func trimKeepCase(_ input: String) -> String{
+        return input.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines);
     }
 }

@@ -37,6 +37,7 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
         LastName.autocorrectionType = .no
         email.autocorrectionType = .no
         SubmitButton.isEnabled = false
+        self.email.keyboardType = UIKeyboardType.emailAddress;
     }
     
 

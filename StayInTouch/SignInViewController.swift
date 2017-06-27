@@ -26,6 +26,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.email.returnKeyType = UIReturnKeyType.next
         self.password.returnKeyType = UIReturnKeyType.go
         self.email.autocorrectionType = .no
+        self.email.keyboardType = UIKeyboardType.emailAddress;
         
         
         // check keychain, if not signed out, continue
