@@ -7,11 +7,11 @@ These are the Maps:<br />
 	 	- key: Topics<br />
 	 	- Value: Map that containts "Title", "URL", "Source"<br />
 	 	- Example:<br />
-| Key | Value |
-| ------ | ------ |
-| Machine Learning | www.google.com |
-|  | "How Google uses machine learning to make better prediction" |
-|  | "The Guardian" |
+Key | Value
+------ | ------
+Machine Learning | www.google.com
+   | "How Google uses machine learning to make better prediction"
+   | "The Guardian"
 
 ### Process
 Here 
