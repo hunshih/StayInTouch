@@ -37,7 +37,7 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t9L-J1-1SV">
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="t9L-J1-1SV">
                                             <rect key="frame" x="100" y="38" width="244" height="45"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

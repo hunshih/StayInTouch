@@ -135,10 +135,13 @@ function searchArticles(topic) {
 		        res.on('data', function(data) {
 		            var data = JSON.parse(data);
 		            var articleResult = new Map();
-		            articleResult.set("title", data.response.results[0].webTitle);
-		            articleResult.set("url", data.response.results[0].webUrl);
-		            articleResult.set("source", "The Guardian");
-		        	allTopics.set(topic, articleResult);
+		            if(data.response.results.length > 0)
+		            {
+			            articleResult.set("title", data.response.results[0].webTitle);
+			            articleResult.set("url", data.response.results[0].webUrl);
+			            articleResult.set("source", "The Guardian");
+			        	allTopics.set(topic, articleResult);
+		        	}
 		        	resolve(allTopics.size);
 		        });
 		    });
@@ -158,10 +161,13 @@ function searchArticles(topic) {
 function fillNotificationTable(user) {
 	var topicAndContact = getRandomTopicAndContact(user);
 	var notification = new Map();
-	notification.set("name", topicAndContact[1]);
-	notification.set("title", allTopics.get(topicAndContact[0]).get("title"));
-	notification.set("source", allTopics.get(topicAndContact[0]).get("source"));
-	notification.set("tag", topicAndContact[0]);
+	if(allTopics.has(topicAndContact[0]))
+	{
+		notification.set("name", topicAndContact[1]);
+		notification.set("title", allTopics.get(topicAndContact[0]).get("title"));
+		notification.set("source", allTopics.get(topicAndContact[0]).get("source"));
+		notification.set("tag", topicAndContact[0]);
+	}
     allUserNotification.set(user, notification);
 }
 
