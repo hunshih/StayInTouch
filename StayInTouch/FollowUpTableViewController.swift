@@ -133,8 +133,16 @@ class FollowUpTableViewController: UITableViewController {
         }
         let selectedNotification = notifications[indexPath.row];
         notificationViewController.notification = selectedNotification;
+        notificationViewController.currentRow = indexPath.row;
         notificationViewController.hidesBottomBarWhenPushed = true;
     }
- 
-
+    
+    @IBAction func updateNotificationList(segue:UIStoryboardSegue)
+    {
+        let source = segue.source as! NotificationViewController;
+        print("shared index: \(source.currentRow)");
+        notifications.remove(at: source.currentRow!);
+        self.tableView.reloadData();
+        //Successfully removed notifications from view. Needs to update unread in DB
+    }
 }

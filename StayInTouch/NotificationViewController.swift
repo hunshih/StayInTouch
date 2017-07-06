@@ -12,6 +12,7 @@ import MessageUI
 class NotificationViewController: UIViewController, MFMailComposeViewControllerDelegate {
 
     var notification: Notification?;
+    var currentRow: Int?
     
     @IBOutlet weak var webView: UIWebView!
     
@@ -21,7 +22,7 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
         let url = NSURL (string: (notification?.link)!);
         let requestObj = NSURLRequest(url: url! as URL);
         webView.loadRequest(requestObj as URLRequest);
-        
+        print("Index is: \(currentRow)")
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,6 +84,7 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
     func returnToNotification()
     {
         self.navigationController?.popViewController(animated: true);
+        self.performSegue(withIdentifier: "unwindUpdateNotificationSeque", sender: nil);
     }
     
     @IBAction func showActionSheet(_ sender: Any) {
