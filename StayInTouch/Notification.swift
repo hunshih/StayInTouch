@@ -17,8 +17,9 @@ class Notification {
     var link: String;
     var email: String;
     var tag: String;
+    var key: String;
     
-    init?(read: Bool, icon: UIImage?, title: String, name: String, link: String, email: String, tag: String) {
+    init?(read: Bool, icon: UIImage?, title: String, name: String, link: String, email: String, tag: String, key: String) {
         self.read = read;
         self.icon = icon;
         self.title = title;
@@ -26,6 +27,7 @@ class Notification {
         self.link = link;
         self.email = email;
         self.tag = tag;
+        self.key = key;
         if title.isEmpty || name.isEmpty{
             return nil;
         }

@@ -55,7 +55,7 @@ class FollowUpTableViewController: UITableViewController {
                 let url = map?["link"] as? String;
                 let email = map?["email"] as? String;
                 let tag = map?["tag"] as? String;
-                self.notifications.append(Notification(read: false, icon: icon, title: title!, name: target!, link: url!, email: email!, tag: tag!)!);
+                self.notifications.append(Notification(read: false, icon: icon, title: title!, name: target!, link: url!, email: email!, tag: tag!, key: key as! String)!);
             }
             print("length: \(self.notifications.count)")
             self.tableView.reloadData();
@@ -141,8 +141,46 @@ class FollowUpTableViewController: UITableViewController {
     {
         let source = segue.source as! NotificationViewController;
         print("shared index: \(source.currentRow)");
+        //Move Notification under shared
+        moveToShared(row: source.currentRow!);
+        
+        //Delete from unread
+        removeFromUnread(key: notifications[source.currentRow!].key);
+        
+        //Remove from tableView
         notifications.remove(at: source.currentRow!);
         self.tableView.reloadData();
-        //Successfully removed notifications from view. Needs to update unread in DB
+    }
+    
+    func moveToShared(row: Int)
+    {
+        //get today's date
+        let date = Date();
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let dateString = "\(month)/\(day)/\(year)";
+        let timestamp = NSDate().timeIntervalSince1970;
+        
+        //TODO: Order by date
+        let ref = FIRDatabase.database().reference().child("users").child((user?.uid)!).child("shared");
+        let key = ref.childByAutoId().key;
+        let post = ["title": notifications[row].title,
+                    "name": notifications[row].name,
+                    "link": notifications[row].link,
+                    "email": notifications[row].email,
+                    "tag": notifications[row].tag,
+                    "timestamp": timestamp,
+                    "date": dateString] as [String : Any];
+        
+        let childUpdates = ["\(key)": post];
+        ref.updateChildValues(childUpdates)
+    }
+    
+    func removeFromUnread(key: String)
+    {
+        let ref = FIRDatabase.database().reference().child("users").child((user?.uid)!).child("unread");
+        ref.child(key).removeValue();
     }
 }
