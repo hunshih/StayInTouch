@@ -10,6 +10,7 @@
 		46E2FEEA743E863A7BD90064 /* Pods_StayInTouchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C9F885A28C255E5DB07B84 /* Pods_StayInTouchTests.framework */; };
 		BA0561371EF8D21F006D7FC8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0561361EF8D21F006D7FC8 /* WelcomeViewController.swift */; };
 		BA10C6051E510DC10014C47C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA10C6041E510DC10014C47C /* GoogleService-Info.plist */; };
+		BA1C0D541F112E9D002569C9 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D531F112E9D002569C9 /* Contact.swift */; };
 		BA262F561E778D3400E4A614 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA262F551E778D3400E4A614 /* SettingsViewController.swift */; };
 		BA3C43DC1ECD3BEC003D00A7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */; };
 		BA41189B1E622E2500E25925 /* SignUpInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */; };
@@ -56,6 +57,7 @@
 		82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayInTouch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA0561361EF8D21F006D7FC8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BA10C6041E510DC10014C47C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA1C0D531F112E9D002569C9 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BA2031461EA9B2C1005CD63C /* StayInTouch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StayInTouch.entitlements; sourceTree = "<group>"; };
 		BA262F551E778D3400E4A614 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				BA764A4E1E4FEA0E00B6659A /* SecondViewController.swift */,
+				BA1C0D531F112E9D002569C9 /* Contact.swift */,
 			);
 			name = Conversations;
 			sourceTree = "<group>";
@@ -461,6 +464,7 @@
 				BA5CD7B91E8877C600196BE6 /* ContactInfo.swift in Sources */,
 				BA5CD7B71E8707BF00196BE6 /* ProfessionalProfileTableViewController.swift in Sources */,
 				BA9B648F1E56C18000DD6414 /* SessionCheckViewController.swift in Sources */,
+				BA1C0D541F112E9D002569C9 /* Contact.swift in Sources */,
 				BAFDC8781E993B4C009E6BBB /* StringUtil.swift in Sources */,
 				BA5CD7BB1E887F7A00196BE6 /* InterestsTableViewController.swift in Sources */,
 				BA90BB781E67CA850062E419 /* HomeTabBarController.swift in Sources */,

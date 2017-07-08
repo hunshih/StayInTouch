@@ -10,7 +10,6 @@ import UIKit
 
 class Notification {
     
-    var read: Bool;
     var icon: UIImage?;
     var title: String;
     var name: String;
@@ -18,9 +17,9 @@ class Notification {
     var email: String;
     var tag: String;
     var key: String;
+    var contactID: String;
     
-    init?(read: Bool, icon: UIImage?, title: String, name: String, link: String, email: String, tag: String, key: String) {
-        self.read = read;
+    init?(icon: UIImage?, title: String, name: String, link: String, email: String, tag: String, key: String, contact: String) {
         self.icon = icon;
         self.title = title;
         self.name = name;
@@ -28,6 +27,7 @@ class Notification {
         self.email = email;
         self.tag = tag;
         self.key = key;
+        self.contactID = contact;
         if title.isEmpty || name.isEmpty{
             return nil;
         }

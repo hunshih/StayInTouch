@@ -64,7 +64,6 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
             break;
         case MFMailComposeResult.sent:
             print("Mail sent");
-            notification?.read = true;
             emailSent = true;
             break;
         case MFMailComposeResult.failed:

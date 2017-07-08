@@ -55,7 +55,8 @@ class FollowUpTableViewController: UITableViewController {
                 let url = map?["link"] as? String;
                 let email = map?["email"] as? String;
                 let tag = map?["tag"] as? String;
-                self.notifications.append(Notification(read: false, icon: icon, title: title!, name: target!, link: url!, email: email!, tag: tag!, key: key as! String)!);
+                let contactID = map?["contactID"] as? String;
+                self.notifications.append(Notification(icon: icon, title: title!, name: target!, link: url!, email: email!, tag: tag!, key: key as! String, contact: contactID!)!);
             }
             print("length: \(self.notifications.count)")
             self.tableView.reloadData();
@@ -164,7 +165,7 @@ class FollowUpTableViewController: UITableViewController {
         let timestamp = NSDate().timeIntervalSince1970;
         
         //TODO: Order by date
-        let ref = FIRDatabase.database().reference().child("users").child((user?.uid)!).child("shared");
+        let ref = FIRDatabase.database().reference().child("contact_shared").child(notifications[row].contactID);
         let key = ref.childByAutoId().key;
         let post = ["title": notifications[row].title,
                     "name": notifications[row].name,

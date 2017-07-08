@@ -61,15 +61,15 @@ class ContactViewController: UIViewController {
         let year = calendar.component(.year, from: date)
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
+        let readableDate = "\(month)/\(day)/\(year);"
         let timestamp = NSDate().timeIntervalSince1970;
         
-        let dateData = ["day": day, "month": month, "year": year, "timestamp": timestamp] as [String : Any];
-        var last_contacted = dateData;
-        last_contacted["belong"] = (user?.uid)!;
+        let contactWithDate = ["name":basic.name,"added": readableDate,"timestamp": timestamp] as [String : Any];
+        let last_contacted = ["date": readableDate, "belong": (user?.uid)!,"timestamp": timestamp] as [String : Any];
         let addedBasic = [K.Db.Contacts.name: basic.name, K.Db.Contacts.email: basic.email];
         let addedInterest = [K.Db.Contacts.common: basic.interest, K.Db.Contacts.follow: basic.follow]
         //let dummy = [K.Db.Contacts.name : basic.name];
-        let childUpdates = ["/users/\((user?.uid)!)/contact_ids/\(key)": dateData, "/contact_names/\(key)": addedBasic, "/contact_interests/\(key)": addedInterest, "/last_contacted/\(key)": last_contacted, "/topics/\(basic.interest)/\((user?.uid)!)/\(key)": addedBasic] as [String : Any];
+        let childUpdates = ["/users/\((user?.uid)!)/contact_ids/\(key)": contactWithDate, "/contact_names/\(key)": addedBasic, "/contact_interests/\(key)": addedInterest, "/last_contacted/\(key)": last_contacted, "/topics/\(basic.interest)/\((user?.uid)!)/\(key)": addedBasic] as [String : Any];
         self.parentRef.updateChildValues(childUpdates);
         print(basic);
     }
