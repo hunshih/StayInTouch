@@ -285,6 +285,68 @@
             </objects>
             <point key="canvasLocation" x="-1036" y="3439.4302848575717"/>
         </scene>
+        <!--Contact Page View Controller-->
+        <scene sceneID="UgH-ef-GG6">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="FNP-rv-ITb" customClass="ContactPageViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5nR-sV-xmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-71" y="3439"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="5Du-xe-0rp">
+            <objects>
+                <viewController storyboardIdentifier="ContactInfoBoard" id="65y-M7-2Md" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6Z3-rC-h78"/>
+                        <viewControllerLayoutGuide type="bottom" id="ohu-dO-eXp"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="T45-aj-kls">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPd-ie-s0m">
+                                <rect key="frame" x="144" y="311" width="87" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ouk-ye-SQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-370.39999999999998" y="4236.4317841079464"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="uw7-FK-oht">
+            <objects>
+                <viewController storyboardIdentifier="PastMessageBoard" id="xgS-LZ-ZWm" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JaS-y5-zxq"/>
+                        <viewControllerLayoutGuide type="bottom" id="OD9-JS-5mk"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pkk-Jv-IIk">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYD-dZ-9It">
+                                <rect key="frame" x="144" y="311" width="87" height="45"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yYN-fA-6Gl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="430" y="4240"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="8ol-3L-iRv">
             <objects>
@@ -1070,6 +1132,7 @@
                                 <connections>
                                     <outlet property="date" destination="PEN-Tc-cdf" id="wR3-ln-va8"/>
                                     <outlet property="name" destination="Glb-lO-Yiz" id="CKx-Jd-UMc"/>
+                                    <segue destination="FNP-rv-ITb" kind="show" id="p2W-aA-yZI"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
