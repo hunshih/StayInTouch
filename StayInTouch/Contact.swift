@@ -12,10 +12,12 @@ class Contact
 {
     var name: String;
     var ID: String;
+    var addedDate: String;
     
-    init?(name: String, id: String) {
+    init?(name: String, id: String, added: String) {
         self.name = name;
         self.ID = id;
+        self.addedDate = added;
         if name.isEmpty || id.isEmpty{
             return nil;
         }

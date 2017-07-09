@@ -11,6 +11,8 @@
 		BA0561371EF8D21F006D7FC8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0561361EF8D21F006D7FC8 /* WelcomeViewController.swift */; };
 		BA10C6051E510DC10014C47C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA10C6041E510DC10014C47C /* GoogleService-Info.plist */; };
 		BA1C0D541F112E9D002569C9 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D531F112E9D002569C9 /* Contact.swift */; };
+		BA1C0D581F116262002569C9 /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D571F116262002569C9 /* ContactViewCell.swift */; };
+		BA1C0D5A1F116710002569C9 /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D591F116710002569C9 /* ConversationTableViewController.swift */; };
 		BA262F561E778D3400E4A614 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA262F551E778D3400E4A614 /* SettingsViewController.swift */; };
 		BA3C43DC1ECD3BEC003D00A7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */; };
 		BA41189B1E622E2500E25925 /* SignUpInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */; };
@@ -58,6 +60,8 @@
 		BA0561361EF8D21F006D7FC8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BA10C6041E510DC10014C47C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA1C0D531F112E9D002569C9 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
+		BA1C0D571F116262002569C9 /* ContactViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewCell.swift; sourceTree = "<group>"; };
+		BA1C0D591F116710002569C9 /* ConversationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableViewController.swift; sourceTree = "<group>"; };
 		BA2031461EA9B2C1005CD63C /* StayInTouch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StayInTouch.entitlements; sourceTree = "<group>"; };
 		BA262F551E778D3400E4A614 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
@@ -146,6 +150,8 @@
 			children = (
 				BA764A4E1E4FEA0E00B6659A /* SecondViewController.swift */,
 				BA1C0D531F112E9D002569C9 /* Contact.swift */,
+				BA1C0D571F116262002569C9 /* ContactViewCell.swift */,
+				BA1C0D591F116710002569C9 /* ConversationTableViewController.swift */,
 			);
 			name = Conversations;
 			sourceTree = "<group>";
@@ -468,6 +474,7 @@
 				BAFDC8781E993B4C009E6BBB /* StringUtil.swift in Sources */,
 				BA5CD7BB1E887F7A00196BE6 /* InterestsTableViewController.swift in Sources */,
 				BA90BB781E67CA850062E419 /* HomeTabBarController.swift in Sources */,
+				BA1C0D5A1F116710002569C9 /* ConversationTableViewController.swift in Sources */,
 				BA4274EB1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift in Sources */,
 				BAD94FD21EC7928B0077A355 /* FollowUpTableViewController.swift in Sources */,
 				BA4274ED1E5FE4EC00FED1B0 /* Printer.swift in Sources */,
@@ -476,6 +483,7 @@
 				BA764A4D1E4FEA0E00B6659A /* FirstViewController.swift in Sources */,
 				BA41189B1E622E2500E25925 /* SignUpInfoTableViewController.swift in Sources */,
 				BA41189F1E6299CC00E25925 /* Constants.swift in Sources */,
+				BA1C0D581F116262002569C9 /* ContactViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

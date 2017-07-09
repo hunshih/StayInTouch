@@ -1027,45 +1027,49 @@
         <!--Conversations-->
         <scene sceneID="24E-Zg-daf">
             <objects>
-                <tableViewController id="ua8-sV-EJz" customClass="FollowUpTableViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ua8-sV-EJz" customClass="ConversationTableViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ww8-TR-Pn3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationTableViewCell" rowHeight="90" id="YuG-Bh-cPG" customClass="NotificationTableViewCell" customModule="StayInTouch" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="90" id="YuG-Bh-cPG" customClass="ContactViewCell" customModule="StayInTouch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YuG-Bh-cPG" id="81L-bg-ZtB" customClass="NotificationTableViewCell" customModule="StayInTouch" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OZz-ZW-Vfb">
-                                            <rect key="frame" x="38" y="13" width="329" height="20"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glb-lO-Yiz">
+                                            <rect key="frame" x="38" y="18" width="120" height="53.5"/>
                                             <constraints>
-                                                <constraint firstAttribute="height" constant="20" id="l9C-mb-Muh"/>
+                                                <constraint firstAttribute="width" constant="120" id="bfI-gc-vyy"/>
                                             </constraints>
-                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="E8H-R9-4yD">
-                                            <rect key="frame" x="100" y="38" width="244" height="45"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="date" translatesAutoresizingMaskIntoConstraints="NO" id="PEN-Tc-cdf">
+                                            <rect key="frame" x="158" y="0.0" width="217" height="89.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="9"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         </textView>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="OZz-ZW-Vfb" firstAttribute="trailing" secondItem="81L-bg-ZtB" secondAttribute="trailingMargin" id="Bmr-x0-prF"/>
-                                        <constraint firstItem="OZz-ZW-Vfb" firstAttribute="leading" secondItem="81L-bg-ZtB" secondAttribute="leadingMargin" constant="30" id="P64-Nc-yjc"/>
-                                        <constraint firstItem="OZz-ZW-Vfb" firstAttribute="top" secondItem="81L-bg-ZtB" secondAttribute="topMargin" constant="5" id="QrR-Oh-y6c"/>
+                                        <constraint firstItem="PEN-Tc-cdf" firstAttribute="leading" secondItem="Glb-lO-Yiz" secondAttribute="trailing" id="4Dr-mn-ZI8"/>
+                                        <constraint firstAttribute="trailing" secondItem="PEN-Tc-cdf" secondAttribute="trailing" id="OjA-tC-Sqk"/>
+                                        <constraint firstItem="PEN-Tc-cdf" firstAttribute="top" secondItem="81L-bg-ZtB" secondAttribute="top" id="eIW-yk-aHX"/>
+                                        <constraint firstItem="Glb-lO-Yiz" firstAttribute="top" secondItem="81L-bg-ZtB" secondAttribute="topMargin" constant="10" id="gBD-bP-ujX"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Glb-lO-Yiz" secondAttribute="bottom" constant="10" id="giE-Nh-Bwd"/>
+                                        <constraint firstItem="Glb-lO-Yiz" firstAttribute="leading" secondItem="81L-bg-ZtB" secondAttribute="leadingMargin" constant="30" id="omO-Rx-H8K"/>
+                                        <constraint firstItem="Glb-lO-Yiz" firstAttribute="centerY" secondItem="81L-bg-ZtB" secondAttribute="centerY" id="s3c-5p-PSG"/>
+                                        <constraint firstAttribute="bottom" secondItem="PEN-Tc-cdf" secondAttribute="bottom" id="uTn-p6-pjJ"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <outlet property="name" destination="OZz-ZW-Vfb" id="JaL-E3-Xfl"/>
-                                    <outlet property="title" destination="E8H-R9-4yD" id="F0v-0S-D2X"/>
+                                    <outlet property="date" destination="PEN-Tc-cdf" id="wR3-ln-va8"/>
+                                    <outlet property="name" destination="Glb-lO-Yiz" id="CKx-Jd-UMc"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
