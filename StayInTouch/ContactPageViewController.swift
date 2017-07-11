@@ -14,6 +14,8 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
 
     var pageControl = UIPageControl()
     
+    var contact: Contact?;
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.delegate = self
@@ -28,6 +30,12 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
         setViewControllers([p1], direction: UIPageViewControllerNavigationDirection.forward, animated: false, completion: nil)
         
         self.configurePageControl();
+        
+        //load top title
+        self.title = contact?.name;
+        
+        //
+        self.automaticallyAdjustsScrollViewInsets = false;
     }
 
     override func didReceiveMemoryWarning() {
@@ -98,13 +106,24 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
     //create and set location of dots
     func configurePageControl() {
         // The total number of pages that are available is based on how many available colors we have.
-        pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 50))
+        let barHeight = self.navigationController?.navigationBar.bounds.height;
+        pageControl = UIPageControl(frame: CGRect(x: 0,y: barHeight! - 10,width: UIScreen.main.bounds.width,height: 0))
         self.pageControl.numberOfPages = pages.count
         self.pageControl.currentPage = 0
-        self.pageControl.tintColor = UIColor.white
+        self.pageControl.tintColor = self.view.tintColor
         self.pageControl.pageIndicatorTintColor = UIColor.gray
-        self.pageControl.currentPageIndicatorTintColor = UIColor.white
-        self.view.addSubview(pageControl)
+        self.pageControl.currentPageIndicatorTintColor = self.view.tintColor
+        //self.view.addSubview(pageControl)
+        self.navigationController?.navigationBar.addSubview(pageControl);
+    }
+    
+    //Need to remove dots when leaving
+    override func viewWillDisappear(_ animated : Bool) {
+        super.viewWillDisappear(animated)
+        
+        if (self.isMovingFromParentViewController){
+            self.pageControl.removeFromSuperview();
+        }
     }
     
     //allow dots to update

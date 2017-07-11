@@ -114,22 +114,18 @@ class ConversationTableViewController: UITableViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     //Comment out prepare for now
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        /*
         super.prepare(for: segue, sender: sender);
-        guard let notificationViewController = segue.destination as? NotificationViewController else {
+        guard let contactViewController = segue.destination as? ContactPageViewController else {
             fatalError("Unexpected destination: \(segue.destination)")
         }
-        guard let selectedCell = sender as? NotificationTableViewCell else {
+        guard let selectedCell = sender as? ContactViewCell else {
             fatalError("Unexpected sender: \(sender)")
         }
         guard let indexPath = tableView.indexPath(for: selectedCell) else {
             fatalError("The selected cell is not being displayed by the table")
         }
         let selectedContact = contacts[indexPath.row];
-        notificationViewController.notification = selectedContact;
-        notificationViewController.currentRow = indexPath.row;
-        notificationViewController.hidesBottomBarWhenPushed = true;
- */
+        contactViewController.contact = selectedContact;
     }
     
     @IBAction func updateNotificationList(segue:UIStoryboardSegue)

@@ -1142,7 +1142,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Conversations" id="4kc-NX-FMM">
-                        <barButtonItem key="backBarButtonItem" title="Conversations" id="3Bd-JM-aiM"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="3Bd-JM-aiM"/>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="P2I-nb-2Aj" userLabel="First Responder" sceneMemberID="firstResponder"/>
