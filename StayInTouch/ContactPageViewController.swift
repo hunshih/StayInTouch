@@ -21,7 +21,7 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
         self.delegate = self
         self.dataSource = self
         // Do any additional setup after loading the view.
-        let p1: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "ContactInfoBoard")
+        let p1: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "ContactInfoBoard") as! EditContactViewController;
         let p2: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "PastMessageBoard")
         
         pages.append(p1)
@@ -117,7 +117,7 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
         self.navigationController?.navigationBar.addSubview(pageControl);
     }
     
-    //Need to remove dots when leaving
+    //Need to hide dots when leaving
     override func viewWillDisappear(_ animated : Bool) {
         super.viewWillDisappear(animated)
         

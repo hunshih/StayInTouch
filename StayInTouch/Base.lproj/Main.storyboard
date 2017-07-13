@@ -293,10 +293,10 @@
             </objects>
             <point key="canvasLocation" x="-71" y="3439"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Contact View Controller-->
         <scene sceneID="5Du-xe-0rp">
             <objects>
-                <viewController storyboardIdentifier="ContactInfoBoard" id="65y-M7-2Md" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactInfoBoard" id="65y-M7-2Md" customClass="EditContactViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Z3-rC-h78"/>
                         <viewControllerLayoutGuide type="bottom" id="ohu-dO-eXp"/>
@@ -305,8 +305,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VCU-qI-oLe">
+                                <rect key="frame" x="131" y="177" width="115" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Contact Info" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HPd-ie-s0m">
-                                <rect key="frame" x="144" y="311" width="87" height="45"/>
+                                <rect key="frame" x="131" y="276" width="115" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -315,10 +322,14 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="idLabel" destination="VCU-qI-oLe" id="qYX-xs-qld"/>
+                        <outlet property="interestLabel" destination="HPd-ie-s0m" id="LcC-ox-vXE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ouk-ye-SQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-370.39999999999998" y="4236.4317841079464"/>
+            <point key="canvasLocation" x="-410.39999999999998" y="4208.5457271364321"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="uw7-FK-oht">
@@ -345,7 +356,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yYN-fA-6Gl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="430" y="4240"/>
+            <point key="canvasLocation" x="345" y="4209"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8ol-3L-iRv">
