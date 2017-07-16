@@ -134,6 +134,9 @@ class FollowUpTableViewController: UITableViewController {
         notificationViewController.notification = selectedNotification;
         notificationViewController.currentRow = indexPath.row;
         notificationViewController.hidesBottomBarWhenPushed = true;
+        
+        //There are actions specific to logic from follow up
+        notificationViewController.source = WebviewSource.followUp;
     }
     
     @IBAction func updateNotificationList(segue:UIStoryboardSegue)

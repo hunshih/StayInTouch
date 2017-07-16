@@ -283,7 +283,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v3O-BS-6Td" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="w4S-nj-sHE" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-1036" y="3439.4302848575717"/>
+            <point key="canvasLocation" x="-1036" y="5124"/>
         </scene>
         <!--Contact Page View Controller-->
         <scene sceneID="UgH-ef-GG6">
@@ -1196,6 +1196,7 @@
                                 <connections>
                                     <outlet property="date" destination="qwy-Yq-dUf" id="RvL-Zx-fRP"/>
                                     <outlet property="title" destination="Lgn-7p-OgM" id="tcN-SU-IjC"/>
+                                    <segue destination="qlg-zA-D1a" kind="show" id="0ly-3V-1xD"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -1223,6 +1224,7 @@
         <image name="tips" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="0ly-3V-1xD"/>
         <segue reference="uiB-zN-mtI"/>
         <segue reference="5H6-hf-JR1"/>
     </inferredMetricsTieBreakers>

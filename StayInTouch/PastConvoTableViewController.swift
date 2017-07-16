@@ -111,7 +111,7 @@ class PastConvoTableViewController: UITableViewController {
         guard let notificationViewController = segue.destination as? NotificationViewController else {
             fatalError("Unexpected destination: \(segue.destination)")
         }
-        guard let selectedCell = sender as? NotificationTableViewCell else {
+        guard let selectedCell = sender as? ConvoTableViewCell else {
             fatalError("Unexpected sender: \(sender)")
         }
         guard let indexPath = tableView.indexPath(for: selectedCell) else {
@@ -121,6 +121,7 @@ class PastConvoTableViewController: UITableViewController {
         notificationViewController.notification = selectedNotification;
         notificationViewController.currentRow = indexPath.row;
         notificationViewController.hidesBottomBarWhenPushed = true;
+        notificationViewController.source = WebviewSource.convoHistory;
     }
     
     @IBAction func updateNotificationList(segue:UIStoryboardSegue)

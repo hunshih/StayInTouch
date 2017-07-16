@@ -42,6 +42,7 @@
 		BAFDC8781E993B4C009E6BBB /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDC8771E993B4C009E6BBB /* StringUtil.swift */; };
 		BAFFF1B61F1AC4610015D943 /* PastConvoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1B51F1AC4610015D943 /* PastConvoTableViewController.swift */; };
 		BAFFF1B81F1AC5D20015D943 /* ConvoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1B71F1AC5D20015D943 /* ConvoTableViewCell.swift */; };
+		BAFFF1BA1F1BC7670015D943 /* FollowUpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1B91F1BC7670015D943 /* FollowUpUtil.swift */; };
 		DE4E1BF75DC1572CA540B300 /* Pods_StayInTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */; };
 /* End PBXBuildFile section */
 
@@ -100,6 +101,7 @@
 		BAFDC8771E993B4C009E6BBB /* StringUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtil.swift; sourceTree = "<group>"; };
 		BAFFF1B51F1AC4610015D943 /* PastConvoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastConvoTableViewController.swift; sourceTree = "<group>"; };
 		BAFFF1B71F1AC5D20015D943 /* ConvoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvoTableViewCell.swift; sourceTree = "<group>"; };
+		BAFFF1B91F1BC7670015D943 /* FollowUpUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowUpUtil.swift; sourceTree = "<group>"; };
 		D07EDD4CEB75DFC56A2BABCC /* Pods-StayInTouchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayInTouchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StayInTouchTests/Pods-StayInTouchTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -171,6 +173,7 @@
 				BA5CD7B81E8877C600196BE6 /* ContactInfo.swift */,
 				BAFDC8771E993B4C009E6BBB /* StringUtil.swift */,
 				BA4274EC1E5FE4EC00FED1B0 /* Printer.swift */,
+				BAFFF1B91F1BC7670015D943 /* FollowUpUtil.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -491,6 +494,7 @@
 				BA1C0D5A1F116710002569C9 /* ConversationTableViewController.swift in Sources */,
 				BA4274EB1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift in Sources */,
 				BAD94FD21EC7928B0077A355 /* FollowUpTableViewController.swift in Sources */,
+				BAFFF1BA1F1BC7670015D943 /* FollowUpUtil.swift in Sources */,
 				BAFFF1B81F1AC5D20015D943 /* ConvoTableViewCell.swift in Sources */,
 				BA4274ED1E5FE4EC00FED1B0 /* Printer.swift in Sources */,
 				BA3C43DC1ECD3BEC003D00A7 /* Notification.swift in Sources */,

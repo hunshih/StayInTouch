@@ -13,6 +13,7 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
 
     var notification: Notification?;
     var currentRow: Int?
+    var source: WebviewSource?;
     
     @IBOutlet weak var webView: UIWebView!
     
@@ -73,7 +74,15 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
         }
         if(emailSent)
         {
-            self.dismiss(animated: true, completion: self.returnToNotification)
+            if(source == WebviewSource.followUp)
+            {
+                self.dismiss(animated: true, completion: self.returnToNotification);
+            }
+            else
+            {
+                self.dismiss(animated: true, completion: nil);
+            }
+            
         }
         else{
             self.dismiss(animated: true, completion:nil)
