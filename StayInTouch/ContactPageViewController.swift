@@ -22,7 +22,7 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
         self.dataSource = self
         // Do any additional setup after loading the view.
         let p1: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "ContactInfoBoard") as! EditContactViewController;
-        let p2: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "PastMessageBoard")
+        let p2: UITableViewController! = storyboard?.instantiateViewController(withIdentifier: "PastMessageBoard") as! PastConvoTableViewController;
         
         pages.append(p1)
         pages.append(p2)
@@ -36,6 +36,8 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
         
         //
         self.automaticallyAdjustsScrollViewInsets = false;
+        self.view.backgroundColor = UIColor.white;
+        self.navigationController?.navigationBar.isTranslucent = false;
     }
 
     override func didReceiveMemoryWarning() {

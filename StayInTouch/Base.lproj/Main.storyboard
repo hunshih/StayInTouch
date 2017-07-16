@@ -288,7 +288,9 @@
         <!--Contact Page View Controller-->
         <scene sceneID="UgH-ef-GG6">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="FNP-rv-ITb" customClass="ContactPageViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController"/>
+                <pageViewController storyboardIdentifier="ContactPageBoard" autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="FNP-rv-ITb" customClass="ContactPageViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                    <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
+                </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nR-sV-xmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-71" y="3439"/>
@@ -330,33 +332,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ouk-ye-SQm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-410.39999999999998" y="4208.5457271364321"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="uw7-FK-oht">
-            <objects>
-                <viewController storyboardIdentifier="PastMessageBoard" id="xgS-LZ-ZWm" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="JaS-y5-zxq"/>
-                        <viewControllerLayoutGuide type="bottom" id="OD9-JS-5mk"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Pkk-Jv-IIk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="messages" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zYD-dZ-9It">
-                                <rect key="frame" x="144" y="311" width="87" height="45"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="yYN-fA-6Gl" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="345" y="4209"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="8ol-3L-iRv">
@@ -1104,13 +1079,13 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ww8-TR-Pn3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.99484291599999997" green="0.98672604230000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="90" id="YuG-Bh-cPG" customClass="ContactViewCell" customModule="StayInTouch" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YuG-Bh-cPG" id="81L-bg-ZtB" customClass="NotificationTableViewCell" customModule="StayInTouch" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Glb-lO-Yiz">
@@ -1178,6 +1153,64 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yHL-Bf-ogA" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-71" y="1855"/>
+        </scene>
+        <!--Follow Up-->
+        <scene sceneID="rG1-LN-qAY">
+            <objects>
+                <tableViewController storyboardIdentifier="PastMessageBoard" id="AbB-67-KvT" customClass="PastConvoTableViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PastMessageBoard" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="D7X-zz-P5a">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConvoTableViewCell" rowHeight="90" id="geQ-Me-FSz" customClass="ConvoTableViewCell" customModule="StayInTouch" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="90"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="geQ-Me-FSz" id="Lgk-8m-w0B" customClass="NotificationTableViewCell" customModule="StayInTouch" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qwy-Yq-dUf">
+                                            <rect key="frame" x="38" y="13" width="329" height="20"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="20" id="Xzl-eB-ust"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Title" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Lgn-7p-OgM">
+                                            <rect key="frame" x="100" y="38" width="244" height="45"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="qwy-Yq-dUf" firstAttribute="trailing" secondItem="Lgk-8m-w0B" secondAttribute="trailingMargin" id="O1Z-sD-k86"/>
+                                        <constraint firstItem="qwy-Yq-dUf" firstAttribute="top" secondItem="Lgk-8m-w0B" secondAttribute="topMargin" constant="5" id="dZu-8U-uqV"/>
+                                        <constraint firstItem="qwy-Yq-dUf" firstAttribute="leading" secondItem="Lgk-8m-w0B" secondAttribute="leadingMargin" constant="30" id="yWf-dM-TBK"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="date" destination="qwy-Yq-dUf" id="RvL-Zx-fRP"/>
+                                    <outlet property="title" destination="Lgn-7p-OgM" id="tcN-SU-IjC"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AbB-67-KvT" id="DoK-zl-8gu"/>
+                            <outlet property="delegate" destination="AbB-67-KvT" id="iZ4-Ki-6K3"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Follow Up" id="lAK-Zf-Fuc">
+                        <barButtonItem key="backBarButtonItem" title="Follow Up" id="xeU-DN-F4g"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dzB-DH-shC" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="476" y="4209"/>
         </scene>
     </scenes>
     <resources>

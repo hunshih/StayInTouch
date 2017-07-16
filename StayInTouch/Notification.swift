@@ -18,6 +18,7 @@ class Notification {
     var tag: String;
     var key: String;
     var contactID: String;
+    var date: String?;
     
     init?(icon: UIImage?, title: String, name: String, link: String, email: String, tag: String, key: String, contact: String) {
         self.icon = icon;
@@ -31,5 +32,9 @@ class Notification {
         if title.isEmpty || name.isEmpty{
             return nil;
         }
+    }
+    func setDate(date: String)
+    {
+        self.date = date;
     }
 }
