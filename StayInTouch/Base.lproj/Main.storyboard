@@ -187,31 +187,20 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Promised Follow up" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="W17-dh-0wk" userLabel="Promised Follow up">
-                                <rect key="frame" x="66" y="310" width="243" height="30"/>
-                                <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="mhw-MG-VK9" firstAttribute="width" secondItem="dM5-AV-fSE" secondAttribute="width" id="4HE-Eo-sf8"/>
                             <constraint firstItem="dM5-AV-fSE" firstAttribute="centerX" secondItem="idU-WU-zcG" secondAttribute="centerX" id="58S-Po-eot"/>
-                            <constraint firstItem="W17-dh-0wk" firstAttribute="top" secondItem="xuL-Lz-6CL" secondAttribute="bottom" constant="50" id="5L4-md-MAc"/>
                             <constraint firstAttribute="trailingMargin" secondItem="dM5-AV-fSE" secondAttribute="trailing" constant="50" id="7ZA-Un-Ckd"/>
                             <constraint firstItem="dM5-AV-fSE" firstAttribute="leading" secondItem="idU-WU-zcG" secondAttribute="leadingMargin" constant="50" id="91Z-e6-Y05"/>
                             <constraint firstItem="xuL-Lz-6CL" firstAttribute="width" secondItem="dM5-AV-fSE" secondAttribute="width" id="DP3-h6-8Vm"/>
                             <constraint firstItem="dM5-AV-fSE" firstAttribute="top" secondItem="mhw-MG-VK9" secondAttribute="bottom" constant="50" id="Fjd-ZF-jqu"/>
                             <constraint firstItem="xuL-Lz-6CL" firstAttribute="top" secondItem="dM5-AV-fSE" secondAttribute="bottom" constant="50" id="IW0-6v-efx"/>
                             <constraint firstItem="mhw-MG-VK9" firstAttribute="leading" secondItem="idU-WU-zcG" secondAttribute="leadingMargin" constant="50" id="JNX-k4-5qO"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="W17-dh-0wk" secondAttribute="trailing" constant="50" id="NkD-PF-Mfz"/>
                             <constraint firstItem="mhw-MG-VK9" firstAttribute="top" secondItem="qUI-2s-CBx" secondAttribute="bottom" constant="50" id="QKl-GF-39h"/>
                             <constraint firstItem="xuL-Lz-6CL" firstAttribute="leading" secondItem="idU-WU-zcG" secondAttribute="leadingMargin" constant="50" id="Qjg-TC-xum"/>
-                            <constraint firstItem="W17-dh-0wk" firstAttribute="centerX" secondItem="idU-WU-zcG" secondAttribute="centerX" id="U4Q-bW-irQ"/>
-                            <constraint firstItem="W17-dh-0wk" firstAttribute="width" secondItem="xuL-Lz-6CL" secondAttribute="width" id="Vhb-1g-ELM"/>
                             <constraint firstItem="xuL-Lz-6CL" firstAttribute="centerX" secondItem="idU-WU-zcG" secondAttribute="centerX" id="Wqt-1H-Elz"/>
-                            <constraint firstItem="W17-dh-0wk" firstAttribute="leading" secondItem="idU-WU-zcG" secondAttribute="leadingMargin" constant="50" id="jAM-eq-Vgh"/>
                             <constraint firstItem="mhw-MG-VK9" firstAttribute="centerX" secondItem="idU-WU-zcG" secondAttribute="centerX" id="jJB-fZ-8I7"/>
                             <constraint firstAttribute="trailingMargin" secondItem="mhw-MG-VK9" secondAttribute="trailing" constant="50" id="quN-Ea-O8G"/>
                             <constraint firstAttribute="trailingMargin" secondItem="xuL-Lz-6CL" secondAttribute="trailing" constant="50" id="sya-xV-MdB"/>
@@ -232,7 +221,6 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emailField" destination="dM5-AV-fSE" id="I0J-UT-qet"/>
-                        <outlet property="followUpField" destination="W17-dh-0wk" id="CQt-6M-nb6"/>
                         <outlet property="interestField" destination="xuL-Lz-6CL" id="Ufq-0K-cFL"/>
                         <outlet property="nameField" destination="mhw-MG-VK9" id="oAK-j1-6X9"/>
                         <segue destination="VSJ-bq-mKE" kind="unwind" identifier="ContactAddedSegue" unwindAction="ContactAddedWithSegue:" id="k7u-ki-T4A"/>

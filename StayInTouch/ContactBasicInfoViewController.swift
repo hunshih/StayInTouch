@@ -12,7 +12,7 @@ class ContactBasicInfoViewController: UIViewController {
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var interestField: UITextField!
-    @IBOutlet weak var followUpField: UITextField!
+    
     var basicInfo: BasicInfo!;
     
     override func viewDidLoad() {
@@ -42,8 +42,8 @@ class ContactBasicInfoViewController: UIViewController {
         let name = StringUtil.trimKeepCase(nameField.text!);
         let email = StringUtil.trim(emailField.text!);
         let interest = StringUtil.trim(interestField.text!);
-        let followUp = StringUtil.trimKeepCase(followUpField.text!);
-        self.basicInfo = BasicInfo(name: name,email: email,interest: interest,follow: followUp);
+    
+        self.basicInfo = BasicInfo(name: name,email: email,interest: interest);
         if let destination = segue.destination as? ProfessionalProfileTableViewController{
             destination.basicInfo = basicInfo;
         }
@@ -51,7 +51,6 @@ class ContactBasicInfoViewController: UIViewController {
         self.nameField.text = "";
         self.emailField.text = "";
         self.interestField.text = "";
-        self.followUpField.text = "";
     }
     
     @IBAction func saveContact(_ sender: Any) {
