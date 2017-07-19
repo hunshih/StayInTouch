@@ -43,7 +43,8 @@
 		BAFFF1B61F1AC4610015D943 /* PastConvoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1B51F1AC4610015D943 /* PastConvoTableViewController.swift */; };
 		BAFFF1B81F1AC5D20015D943 /* ConvoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1B71F1AC5D20015D943 /* ConvoTableViewCell.swift */; };
 		BAFFF1BA1F1BC7670015D943 /* FollowUpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1B91F1BC7670015D943 /* FollowUpUtil.swift */; };
-		BAFFF1BD1F1DC14B0015D943 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1BC1F1DC14B0015D943 /* TipsViewController.swift */; };
+		BAFFF1BD1F1DC14B0015D943 /* TipsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1BC1F1DC14B0015D943 /* TipsPageViewController.swift */; };
+		BAFFF1BF1F1EF74A0015D943 /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1BE1F1EF74A0015D943 /* TipViewController.swift */; };
 		DE4E1BF75DC1572CA540B300 /* Pods_StayInTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */; };
 /* End PBXBuildFile section */
 
@@ -103,7 +104,8 @@
 		BAFFF1B51F1AC4610015D943 /* PastConvoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PastConvoTableViewController.swift; sourceTree = "<group>"; };
 		BAFFF1B71F1AC5D20015D943 /* ConvoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConvoTableViewCell.swift; sourceTree = "<group>"; };
 		BAFFF1B91F1BC7670015D943 /* FollowUpUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FollowUpUtil.swift; sourceTree = "<group>"; };
-		BAFFF1BC1F1DC14B0015D943 /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
+		BAFFF1BC1F1DC14B0015D943 /* TipsPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsPageViewController.swift; sourceTree = "<group>"; };
+		BAFFF1BE1F1EF74A0015D943 /* TipViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipViewController.swift; sourceTree = "<group>"; };
 		D07EDD4CEB75DFC56A2BABCC /* Pods-StayInTouchTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayInTouchTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-StayInTouchTests/Pods-StayInTouchTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -260,7 +262,8 @@
 		BAFFF1BB1F1DC1170015D943 /* Tips */ = {
 			isa = PBXGroup;
 			children = (
-				BAFFF1BC1F1DC14B0015D943 /* TipsViewController.swift */,
+				BAFFF1BC1F1DC14B0015D943 /* TipsPageViewController.swift */,
+				BAFFF1BE1F1EF74A0015D943 /* TipViewController.swift */,
 			);
 			name = Tips;
 			sourceTree = "<group>";
@@ -497,12 +500,13 @@
 				BA5CD7B71E8707BF00196BE6 /* ProfessionalProfileTableViewController.swift in Sources */,
 				BA1C0D5C1F1213BC002569C9 /* ContactPageViewController.swift in Sources */,
 				BA9B648F1E56C18000DD6414 /* SessionCheckViewController.swift in Sources */,
+				BAFFF1BF1F1EF74A0015D943 /* TipViewController.swift in Sources */,
 				BA1C0D541F112E9D002569C9 /* Contact.swift in Sources */,
 				BAFFF1B61F1AC4610015D943 /* PastConvoTableViewController.swift in Sources */,
 				BAFDC8781E993B4C009E6BBB /* StringUtil.swift in Sources */,
 				BA5CD7BB1E887F7A00196BE6 /* InterestsTableViewController.swift in Sources */,
 				BA90BB781E67CA850062E419 /* HomeTabBarController.swift in Sources */,
-				BAFFF1BD1F1DC14B0015D943 /* TipsViewController.swift in Sources */,
+				BAFFF1BD1F1DC14B0015D943 /* TipsPageViewController.swift in Sources */,
 				BA1C0D5A1F116710002569C9 /* ConversationTableViewController.swift in Sources */,
 				BA4274EB1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift in Sources */,
 				BAD94FD21EC7928B0077A355 /* FollowUpTableViewController.swift in Sources */,

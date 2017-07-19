@@ -1,5 +1,5 @@
 //
-//  TipsViewController.swift
+//  TipViewController.swift
 //  StayInTouch
 //
 //  Created by Hung-Yuan Shih on 7/18/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class TipsViewController: UIPageViewController {
+class TipViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +21,7 @@ class TipsViewController: UIPageViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
     /*
     // MARK: - Navigation
 

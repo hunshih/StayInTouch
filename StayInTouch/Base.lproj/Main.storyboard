@@ -143,7 +143,7 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Add Contact" id="OVB-un-muP">
-                        <barButtonItem key="backBarButtonItem" title=" " id="E05-39-Hfv"/>
+                        <barButtonItem key="backBarButtonItem" title=" " id="VwJ-Xi-DCV"/>
                     </navigationItem>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
@@ -767,7 +767,7 @@
         <!--Useful Tips-->
         <scene sceneID="GlB-w0-zdg">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="pageCurl" navigationOrientation="horizontal" spineLocation="min" id="QqY-3R-yge" customClass="TipsViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QqY-3R-yge" customClass="TipsPageViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Useful Tips" id="Zoo-i6-Tia">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2Hd-v2-i9t">
@@ -1141,10 +1141,10 @@
             </objects>
             <point key="canvasLocation" x="258" y="4128"/>
         </scene>
-        <!--View Controller-->
+        <!--Tip View Controller-->
         <scene sceneID="jDz-cM-Akq">
             <objects>
-                <viewController id="n7S-PM-7cj" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipOne" id="n7S-PM-7cj" customClass="TipViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Ro-pe-lcK"/>
                         <viewControllerLayoutGuide type="bottom" id="DIb-B0-n3A"/>
@@ -1152,17 +1152,30 @@
                     <view key="view" contentMode="scaleToFill" id="gZz-AX-0tb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tip One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajO-vI-DOk">
+                                <rect key="frame" x="16" y="295" width="343" height="77"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="ajO-vI-DOk" secondAttribute="trailing" id="LLB-DS-Mjk"/>
+                            <constraint firstItem="ajO-vI-DOk" firstAttribute="leading" secondItem="gZz-AX-0tb" secondAttribute="leadingMargin" id="Mxg-d7-678"/>
+                            <constraint firstItem="ajO-vI-DOk" firstAttribute="centerY" secondItem="gZz-AX-0tb" secondAttribute="centerY" id="e2l-EU-NKu"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lp-N2-bhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1217" y="4128"/>
+            <point key="canvasLocation" x="925.60000000000002" y="4124.8875562218891"/>
         </scene>
-        <!--View Controller-->
+        <!--Tip View Controller-->
         <scene sceneID="6p3-jX-KXe">
             <objects>
-                <viewController id="QgG-Mg-sWK" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipTwo" id="QgG-Mg-sWK" customClass="TipViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BRb-aj-vwG"/>
                         <viewControllerLayoutGuide type="bottom" id="Aet-3U-fvs"/>
@@ -1170,17 +1183,30 @@
                     <view key="view" contentMode="scaleToFill" id="5Pd-u9-9Vf">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Two" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j43-b1-pxl">
+                                <rect key="frame" x="0.0" y="315.5" width="375" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="j43-b1-pxl" secondAttribute="trailing" id="JSu-d0-MYz"/>
+                            <constraint firstItem="j43-b1-pxl" firstAttribute="centerY" secondItem="5Pd-u9-9Vf" secondAttribute="centerY" id="Ltw-c6-DbX"/>
+                            <constraint firstItem="j43-b1-pxl" firstAttribute="leading" secondItem="5Pd-u9-9Vf" secondAttribute="leading" id="wgU-e7-gNa"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaq-3s-UF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1912" y="4125"/>
+            <point key="canvasLocation" x="1590" y="4125"/>
         </scene>
-        <!--View Controller-->
+        <!--Tip View Controller-->
         <scene sceneID="sez-Kj-fv8">
             <objects>
-                <viewController id="pjg-PU-M73" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipThree" id="pjg-PU-M73" customClass="TipViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qma-a9-8bB"/>
                         <viewControllerLayoutGuide type="bottom" id="9cd-zA-gff"/>
@@ -1188,12 +1214,25 @@
                     <view key="view" contentMode="scaleToFill" id="K4E-O7-O9X">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Three" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2i-bN-mt7">
+                                <rect key="frame" x="16" y="315.5" width="343" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="T2i-bN-mt7" firstAttribute="leading" secondItem="K4E-O7-O9X" secondAttribute="leadingMargin" id="SVf-Vy-Ygg"/>
+                            <constraint firstItem="T2i-bN-mt7" firstAttribute="centerY" secondItem="K4E-O7-O9X" secondAttribute="centerY" id="Toe-dL-awL"/>
+                            <constraint firstItem="T2i-bN-mt7" firstAttribute="trailing" secondItem="K4E-O7-O9X" secondAttribute="trailingMargin" id="t9N-Gz-WGc"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qff-Zc-o5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1932" y="4818"/>
+            <point key="canvasLocation" x="2252" y="4125"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="dpH-S9-S8N">
@@ -1224,7 +1263,7 @@
         <image name="tips" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="0ly-3V-1xD"/>
+        <segue reference="Cex-oQ-Okc"/>
         <segue reference="uiB-zN-mtI"/>
         <segue reference="5H6-hf-JR1"/>
     </inferredMetricsTieBreakers>
