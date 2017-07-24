@@ -113,7 +113,7 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
         self.pageControl.numberOfPages = pages.count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = self.view.tintColor
-        self.pageControl.pageIndicatorTintColor = UIColor.gray
+        self.pageControl.pageIndicatorTintColor = UIColor.lightGray
         self.pageControl.currentPageIndicatorTintColor = self.view.tintColor
         //self.view.addSubview(pageControl)
         self.navigationController?.navigationBar.addSubview(pageControl);

@@ -7,13 +7,16 @@
 //
 
 import UIKit
+import SearchTextField
 
-class ContactBasicInfoViewController: UIViewController {
+class ContactBasicInfoViewController: UIViewController{
+    
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
-    @IBOutlet weak var interestField: UITextField!
-    
+    @IBOutlet weak var interestField: SearchTextField!
     var basicInfo: BasicInfo!;
+    static var topics: [String] = [];
+    static var loadedTopics: Bool = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +25,9 @@ class ContactBasicInfoViewController: UIViewController {
         self.nameField.autocorrectionType = .no;
         self.emailField.keyboardType = UIKeyboardType.emailAddress;
         self.emailField.autocorrectionType = .no;
+        
+        //Adding customized autocomplete
+        self.configureInterest();
     }
 
     override func didReceiveMemoryWarning() {
@@ -97,4 +103,12 @@ class ContactBasicInfoViewController: UIViewController {
         self.view.endEditing(true)
     }
 
+    func configureInterest()
+    {
+        //Need to load topics from DB on the first time
+        //set boolean to true afterward
+        //also reload with filter strings
+        self.interestField.filterStrings(["BlockChain","Machine Learning","Education"]);
+        self.interestField.inlineMode = true;
+    }
 }

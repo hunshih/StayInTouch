@@ -10,6 +10,7 @@
 		46E2FEEA743E863A7BD90064 /* Pods_StayInTouchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C9F885A28C255E5DB07B84 /* Pods_StayInTouchTests.framework */; };
 		BA0561371EF8D21F006D7FC8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0561361EF8D21F006D7FC8 /* WelcomeViewController.swift */; };
 		BA10C6051E510DC10014C47C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA10C6041E510DC10014C47C /* GoogleService-Info.plist */; };
+		BA115B201F256CD4006D682D /* SearchTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA115B1F1F256CD4006D682D /* SearchTextField.framework */; };
 		BA1C0D541F112E9D002569C9 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D531F112E9D002569C9 /* Contact.swift */; };
 		BA1C0D581F116262002569C9 /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D571F116262002569C9 /* ContactViewCell.swift */; };
 		BA1C0D5A1F116710002569C9 /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D591F116710002569C9 /* ConversationTableViewController.swift */; };
@@ -66,6 +67,7 @@
 		82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayInTouch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA0561361EF8D21F006D7FC8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		BA10C6041E510DC10014C47C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA115B1F1F256CD4006D682D /* SearchTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SearchTextField.framework; path = "../../../Library/Developer/Xcode/DerivedData/StayInTouch-fhtrjtvlufcaaefjkljzktdgnlro/Build/Products/Debug-iphonesimulator/SearchTextField/SearchTextField.framework"; sourceTree = "<group>"; };
 		BA1C0D531F112E9D002569C9 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BA1C0D571F116262002569C9 /* ContactViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewCell.swift; sourceTree = "<group>"; };
 		BA1C0D591F116710002569C9 /* ConversationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConversationTableViewController.swift; sourceTree = "<group>"; };
@@ -114,6 +116,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA115B201F256CD4006D682D /* SearchTextField.framework in Frameworks */,
 				DE4E1BF75DC1572CA540B300 /* Pods_StayInTouch.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -132,6 +135,7 @@
 		2C8BAFA26B55A69EF42AF0FC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA115B1F1F256CD4006D682D /* SearchTextField.framework */,
 				82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */,
 				50C9F885A28C255E5DB07B84 /* Pods_StayInTouchTests.framework */,
 			);

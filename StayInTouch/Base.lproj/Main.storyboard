@@ -181,7 +181,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Common Interest*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xuL-Lz-6CL" userLabel="Common Interests">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Common Interest*" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xuL-Lz-6CL" userLabel="Common Interests" customClass="SearchTextField" customModule="SearchTextField">
                                 <rect key="frame" x="66" y="230" width="243" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -221,7 +221,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="emailField" destination="dM5-AV-fSE" id="I0J-UT-qet"/>
-                        <outlet property="interestField" destination="xuL-Lz-6CL" id="Ufq-0K-cFL"/>
+                        <outlet property="interestField" destination="xuL-Lz-6CL" id="u5T-9e-8h0"/>
                         <outlet property="nameField" destination="mhw-MG-VK9" id="oAK-j1-6X9"/>
                         <segue destination="VSJ-bq-mKE" kind="unwind" identifier="ContactAddedSegue" unwindAction="ContactAddedWithSegue:" id="k7u-ki-T4A"/>
                     </connections>
@@ -770,7 +770,7 @@
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QqY-3R-yge" customClass="TipsPageViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Useful Tips" id="Zoo-i6-Tia">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="2Hd-v2-i9t">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="2Hd-v2-i9t">
                             <connections>
                                 <action selector="cancelTips:" destination="QqY-3R-yge" id="7TF-fy-6eV"/>
                                 <segue destination="gJC-3c-WvG" kind="unwind" unwindAction="cancelToContactViewControllerWithSegue:" id="0EM-6M-3Mw"/>
