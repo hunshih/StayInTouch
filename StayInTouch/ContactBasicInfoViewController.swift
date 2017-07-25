@@ -8,6 +8,7 @@
 
 import UIKit
 import SearchTextField
+import FirebaseStorage
 
 class ContactBasicInfoViewController: UIViewController{
     
@@ -15,8 +16,10 @@ class ContactBasicInfoViewController: UIViewController{
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var interestField: SearchTextField!
     var basicInfo: BasicInfo!;
-    static var topics: [String] = [];
-    static var loadedTopics: Bool = false;
+    struct Flag {
+        static var loadedTopics = false;
+        static var topics: [String] = [];
+    };
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +28,12 @@ class ContactBasicInfoViewController: UIViewController{
         self.nameField.autocorrectionType = .no;
         self.emailField.keyboardType = UIKeyboardType.emailAddress;
         self.emailField.autocorrectionType = .no;
+        
+        //load topics from storage
+        if( !Flag.loadedTopics )
+        {
+            self.loadTopics();
+        }
         
         //Adding customized autocomplete
         self.configureInterest();
@@ -108,7 +117,41 @@ class ContactBasicInfoViewController: UIViewController{
         //Need to load topics from DB on the first time
         //set boolean to true afterward
         //also reload with filter strings
-        self.interestField.filterStrings(["BlockChain","Machine Learning","Education"]);
-        self.interestField.inlineMode = true;
+        self.interestField.filterStrings(Flag.topics);
+        self.interestField.inlineMode = false;
+        self.interestField.font = UIFont.systemFont(ofSize: 12);
+        self.interestField.theme.bgColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.3)
+        self.interestField.theme.borderColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 1)
+        self.interestField.theme.separatorColor = UIColor (red: 0.9, green: 0.9, blue: 0.9, alpha: 0.5)
+        self.interestField.theme.cellHeight = 50;
+        
+        // Max number of results - Default: No limit
+        self.interestField.maxNumberOfResults = 5
+        
+        // Max results list height - Default: No limit
+        self.interestField.maxResultsListHeight = 200
+        
+        self.interestField.startVisible = true;
+        
+    }
+    
+    func loadTopics()
+    {
+        let storage = FIRStorage.storage();
+        let ref = storage.reference();
+        let topicRef = ref.child("topics/TopicList");
+        topicRef.data(withMaxSize: 1 * 1024 * 1024) { (data, error) in
+            if let error = error {
+                print("problem loading topics data");
+            }
+            else{
+                let dataString = String(data: data!, encoding: .utf8)
+                Flag.topics = (dataString?.components(separatedBy: "\n"))!;
+                
+                //Adding customized autocomplete
+                self.configureInterest();
+            }
+        }
+        Flag.loadedTopics = true;
     }
 }
