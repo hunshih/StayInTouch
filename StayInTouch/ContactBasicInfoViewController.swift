@@ -10,11 +10,13 @@ import UIKit
 import SearchTextField
 import FirebaseStorage
 
-class ContactBasicInfoViewController: UIViewController{
+class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
     
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var interestField: SearchTextField!
+    
     var basicInfo: BasicInfo!;
     struct Flag {
         static var loadedTopics = false;
@@ -37,6 +39,9 @@ class ContactBasicInfoViewController: UIViewController{
         
         //Adding customized autocomplete
         self.configureInterest();
+        
+        self.interestField.delegate = self;
+        self.setupButton();
     }
 
     override func didReceiveMemoryWarning() {
@@ -153,5 +158,35 @@ class ContactBasicInfoViewController: UIViewController{
             }
         }
         Flag.loadedTopics = true;
+    }
+    
+    func enableButton()
+    {
+        addButton.isEnabled = true;
+        self.addButton.layer.borderColor = self.view.tintColor.cgColor;
+    }
+    
+    func disableButton()
+    {
+        addButton.isEnabled = false;
+        self.addButton.layer.borderColor = UIColor.lightGray.cgColor;
+    }
+    
+    func setupButton()
+    {
+        self.addButton.layer.borderWidth = 1;
+        self.addButton.layer.cornerRadius = 5;
+        self.disableButton();
+    }
+    
+    func textFieldDidEndEditing(_ textField: SearchTextField) {
+        if( !((interestField.text?.isEmpty)!) )
+        {
+            self.enableButton();
+        }
+        else
+        {
+            self.disableButton();
+        }
     }
 }
