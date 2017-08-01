@@ -10,12 +10,40 @@ import UIKit
 import SearchTextField
 import FirebaseStorage
 
+extension UILabel{
+    ///Find the index of character (in the attributedText) at point
+    func indexOfAttributedTextCharacterAtPoint(point: CGPoint) -> Int {
+        assert(self.attributedText != nil, "This method is developed for attributed string")
+        let textStorage = NSTextStorage(attributedString: self.attributedText!)
+        let layoutManager = NSLayoutManager()
+        textStorage.addLayoutManager(layoutManager)
+        let textContainer = NSTextContainer(size: self.frame.size)
+        textContainer.lineFragmentPadding = 0
+        textContainer.maximumNumberOfLines = self.numberOfLines
+        textContainer.lineBreakMode = self.lineBreakMode
+        layoutManager.addTextContainer(textContainer)
+        
+        let index = layoutManager.characterIndex(for: point, in: textContainer, fractionOfDistanceBetweenInsertionPoints: nil)
+        return index
+    }
+}
+
 class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var nameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var interestField: SearchTextField!
+    
+    //All the tags
+    @IBOutlet weak var tag1: UILabel!
+    @IBOutlet weak var tag2: UILabel!
+    @IBOutlet weak var tag3: UILabel!
+    @IBOutlet weak var tag4: UILabel!
+    @IBOutlet weak var tag5: UILabel!
+    var tags: Array<UILabel> = Array();
+    
+    
     
     var basicInfo: BasicInfo!;
     struct Flag {
@@ -42,6 +70,7 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         
         self.interestField.delegate = self;
         self.setupButton();
+        self.setupLabels();
     }
 
     override func didReceiveMemoryWarning() {
@@ -188,5 +217,29 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         {
             self.disableButton();
         }
+    }
+    
+    func setupLabels()
+    {
+        self.tags.append(tag1);
+        self.tags.append(tag2);
+        self.tags.append(tag3);
+        self.tags.append(tag4);
+        self.tags.append(tag5);
+        for tag in self.tags {
+            tag.layer.backgroundColor = UIColor(red:0.87, green:0.91, blue:0.95, alpha:1.0).cgColor;
+            tag.textColor = UIColor(red:0.22, green:0.45, blue:0.61, alpha:1.0);
+            tag.layer.cornerRadius = 5;
+            tag.isUserInteractionEnabled = true;
+            let gesture = UITapGestureRecognizer(target: self, action: #selector(userDidTapLabel(recognizer:)));
+            tag.addGestureRecognizer(gesture);
+        }
+        
+    }
+    func userDidTapLabel(recognizer: UITapGestureRecognizer) {
+        let label = recognizer.view as? UILabel;
+        let tapLocation = recognizer.location(in: label);
+        let index = label?.indexOfAttributedTextCharacterAtPoint(point: tapLocation)
+        print("tap location \(index)")
     }
 }
