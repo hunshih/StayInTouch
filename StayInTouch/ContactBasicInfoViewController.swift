@@ -43,8 +43,6 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var tag5: UILabel!
     var tags: Array<UILabel> = Array();
     
-    
-    
     var basicInfo: BasicInfo!;
     struct Flag {
         static var loadedTopics = false;
@@ -240,6 +238,37 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         let label = recognizer.view as? UILabel;
         let tapLocation = recognizer.location(in: label);
         let index = label?.indexOfAttributedTextCharacterAtPoint(point: tapLocation)
-        print("tap location \(index)")
+        if(index == ((label?.text?.characters.count)! - 1))
+        {
+            print("You clicked X!")
+            refillAction(target: label!);
+
+        }
+    }
+    func refillAction(target: UILabel)
+    {
+        disableLabel(label: target);
+        for (index, tag) in self.tags.enumerated()
+        {
+            if(!tag.isEnabled)
+            {
+                if(index == self.tags.count - 1)
+                {
+                    break;
+                }
+                tags[index].isEnabled = true;
+                tags[index].isUserInteractionEnabled = true;
+                tags[index].isHidden = false;
+                tags[index].text = tags[index+1].text;
+                disableLabel(label: tags[index+1]);
+            }
+        }
+    }
+    func disableLabel(label: UILabel)
+    {
+        label.text = "";
+        label.isUserInteractionEnabled = false;
+        label.isEnabled = false;
+        label.isHidden = true;
     }
 }
