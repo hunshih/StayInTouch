@@ -42,6 +42,8 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var tag4: UILabel!
     @IBOutlet weak var tag5: UILabel!
     var tags: Array<UILabel> = Array();
+    var interestsCollection: Set<String> = Set();
+    var interestsCount = 0;
     
     var basicInfo: BasicInfo!;
     struct Flag {
@@ -66,7 +68,7 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         //Adding customized autocomplete
         self.configureInterest();
         
-        self.interestField.delegate = self;
+        self.setupInterestField()
         self.setupButton();
         self.setupLabels();
     }
@@ -143,6 +145,32 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
     @IBAction func cancelView(_ sender: Any) {
         self.view.endEditing(true)
     }
+    
+    @IBAction func addInterests(_ sender: Any) {
+        let input = self.interestField.text!;
+        if(interestsCount < 5 && !interestsCollection.contains(input))
+        {
+            var end = interestsCount;
+            while(end > 0)
+            {
+                tags[end].text = tags[end - 1].text
+                tags[end].isEnabled = true;
+                tags[end].isUserInteractionEnabled = true;
+                tags[end].isHidden = false;
+                end = end - 1;
+            }
+            //first call to add tag
+            tags[0].text = input + " x";
+            tags[0].isEnabled = true;
+            tags[0].isUserInteractionEnabled = true;
+            tags[0].isHidden = false;
+            
+            interestsCount = interestsCount + 1;
+            interestsCollection.insert(input);
+        }
+        self.interestField.text = "";
+        self.disableButton();
+    }
 
     func configureInterest()
     {
@@ -189,8 +217,11 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
     
     func enableButton()
     {
-        addButton.isEnabled = true;
-        self.addButton.layer.borderColor = self.view.tintColor.cgColor;
+        if(self.interestsCount < 5)
+        {
+            addButton.isEnabled = true;
+            self.addButton.layer.borderColor = self.view.tintColor.cgColor;
+        }
     }
     
     func disableButton()
@@ -217,6 +248,18 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
+    func textFieldDidChange(textField: UITextField)
+    {
+        if((textField.text?.isEmpty)! && self.addButton.isEnabled)
+        {
+            self.disableButton();
+        }
+        else if( (!(textField.text?.isEmpty)!) && !self.addButton.isEnabled )
+        {
+            self.enableButton();
+        }
+    }
+    
     func setupLabels()
     {
         self.tags.append(tag1);
@@ -228,12 +271,19 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
             tag.layer.backgroundColor = UIColor(red:0.87, green:0.91, blue:0.95, alpha:1.0).cgColor;
             tag.textColor = UIColor(red:0.22, green:0.45, blue:0.61, alpha:1.0);
             tag.layer.cornerRadius = 5;
-            tag.isUserInteractionEnabled = true;
             let gesture = UITapGestureRecognizer(target: self, action: #selector(userDidTapLabel(recognizer:)));
             tag.addGestureRecognizer(gesture);
+            disableLabel(label: tag);
         }
         
     }
+    
+    func setupInterestField()
+    {
+        self.interestField.delegate = self;
+        self.interestField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .allEditingEvents);
+    }
+    
     func userDidTapLabel(recognizer: UITapGestureRecognizer) {
         let label = recognizer.view as? UILabel;
         let tapLocation = recognizer.location(in: label);
@@ -242,7 +292,11 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         {
             print("You clicked X!")
             refillAction(target: label!);
-
+            if(!(self.interestField.text?.isEmpty)!)
+            {
+                self.addButton.isEnabled = true;
+            }
+            interestsCount = interestsCount - 1;
         }
     }
     func refillAction(target: UILabel)
@@ -271,4 +325,5 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         label.isEnabled = false;
         label.isHidden = true;
     }
+    
 }
