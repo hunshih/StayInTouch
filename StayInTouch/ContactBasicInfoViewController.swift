@@ -89,9 +89,8 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         // Pass the selected object to the new view controller.
         let name = StringUtil.trimKeepCase(nameField.text!);
         let email = StringUtil.trim(emailField.text!);
-        let interest = StringUtil.trim(interestField.text!);
     
-        self.basicInfo = BasicInfo(name: name,email: email,interest: interest);
+        self.basicInfo = BasicInfo(name: name,email: email,interests: Array(interestsCollection));
         if let destination = segue.destination as? ProfessionalProfileTableViewController{
             destination.basicInfo = basicInfo;
         }
@@ -127,9 +126,9 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
             print("not proper email format");
             return false;
         }
-        if(self.interestField.text?.isEmpty)!
+        if(self.interestsCollection.isEmpty)
         {
-            print("interest field empty!")
+            print("No interests")
             return false;
         }
         return true;
