@@ -66,6 +66,7 @@ exports.followUp = functions.https.onRequest((req, res) => {
   ).then(
   	function(){
   		//test getting random topic and contact
+  		//TODO: Need to fix how actual notifications are generated
   		allUserSubscribe.forEach(function(subscription, user, mapObj){
   			fillNotificationTable(user);
   		});
@@ -233,24 +234,21 @@ function addUnreadNotification()
 	var todayDate = today();
 	allUserSubscribe.forEach(function(item, key, mapObj){
 		var ref = admin.database().ref("users/" + key + "/unread/");
-		item.forEach(function(contacts, topic, userMapObj){
-			var articleDetails = allTopics.get(topic);
-			if(articleDetails !== undefined)
-			{
-				for(var index in contacts)
-				{
-					ref.push().set({
-			            title: articleDetails.get("title"),
-			            link: articleDetails.get("url"),
+		var contactToTopicListTable = pivotContactTable(item);
+		var contactWithSelectedTopicList = [];
+		contactWithSelectedTopicList = pickOneTopicForContact(contactToTopicListTable);
+		for(var index in contactWithSelectedTopicList)
+		{
+			ref.push().set({
+			            title: contactWithSelectedTopicList[index].get("title"),
+			            link: contactWithSelectedTopicList[index].get("url"),
 			            date: todayDate,
-			            contactID: contacts[index].get("id"),
-			            contactName: contacts[index].get("name"),
-			            email: contacts[index].get("email"),
-			            tag: topic
+			            contactID: contactWithSelectedTopicList[index].get("id"),
+			            contactName: contactWithSelectedTopicList[index].get("name"),
+			            email: contactWithSelectedTopicList[index].get("email"),
+			            tag: contactWithSelectedTopicList[index].get("tag")
 		        	});
-				}
-			}
-		})
+		}
 	});
 }
 
@@ -337,5 +335,92 @@ function getRandomTopicAndContact(user){
 	//randomresult is: |topic|[[id1,name1], [id2, name2]], thus 1/index/1 to get name
 	var randomContact = randomResult[1][contactIndex].get("name");
 	var result = [randomTopic, randomContact];
+	return result;
+}
+
+/**
+*Extract fields from given map to create a map key off user
+*@param Map with key being topics, entry being a list of contact object (id, name, email)
+*@return A Map with key being contact object, and entry being list of topics
+*Reason to pivot: We only want to send user one article per contacts of his, instead of say
+*				  5 articles for each contact. That's too much to catch up. The next step
+*				  after this function call is to select topics for each contact by random
+*/
+function pivotContactTable(topicContactMap)
+{
+	var result = new Map();
+	topicContactMap.forEach(function(contacts, topic, mapObj){
+		for(var index in contacts)
+		{
+			var targetKey = contacts[index];
+			var entry = result.get(targetKey);
+			if(entry === undefined)
+			{
+				entry = [];
+			}
+			entry.push(topic);
+			result.set(targetKey, entry);
+		}
+	});
+	return result;
+}
+
+/** 
+* Turn contactMap into an array of maps containing contact info and article details
+* @param contactMap Map with key as contact object, which is a map with "id", "name", "email" fields
+*							entry is a list of topics
+* This function randomly select a topic from the topic list for user, as long as there are content
+* available for such topic. Selected topic would be then added to the resulting contact info.
+* If all topics from a user has no article avaiable, the contact will simply not be added to result list
+*/ 
+function pickOneTopicForContact(contactMap)
+{
+	var result = [];
+	contactMap.forEach(function(topics, contact, mapObj){
+		var contactInfo = new Map();
+		//select a random topic in the list
+		//copy contact info and link to contactInfo
+		var triedIndex = new Set();
+		for(var x = 0; x < topics.length; x++)
+		{
+			triedIndex.add(x);
+		}
+		var articleFound = false;
+		while(triedIndex.size > 0)
+		{
+			var randomIndex = getRandom(triedIndex.size);
+			var articleResult;
+			var val;
+			var count = 0;
+			for (var it = triedIndex.values(), val= null; val=it.next().value; ) {
+				if(count == randomIndex)
+				{
+					articleResult = allTopics.get(topics[val]);
+					break;
+				}
+			    count++;
+			}
+			if(articleResult !== undefined)
+			{
+				articleFound = true;
+				contactInfo.set("id", contact.get("id"));
+				contactInfo.set("name", contact.get("name"));
+				contactInfo.set("email", contact.get("email"));
+				contactInfo.set("title", articleResult.get("title"));
+	            contactInfo.set("url", articleResult.get("url"));
+	            contactInfo.set("source", articleResult.get("source"));
+	            contactInfo.set("tag",val);
+				break;
+			}
+			else
+			{
+				triedIndex.delete(val);
+			}
+		}
+		if(articleFound)
+		{
+			result.push(contactInfo);
+		}
+	});
 	return result;
 }
