@@ -67,7 +67,7 @@ class ContactViewController: UIViewController {
         let contactWithDate = ["name":basic.name,"added": readableDate,"timestamp": timestamp] as [String : Any];
         let last_contacted = ["date": readableDate, "belong": (user?.uid)!,"timestamp": timestamp] as [String : Any];
         let addedBasic = [K.Db.Contacts.name: basic.name, K.Db.Contacts.email: basic.email];
-        let addedInterests = [K.Db.Contacts.common : basic.interests];
+        let addedInterests = basic.interests;
         //let dummy = [K.Db.Contacts.name : basic.name];
         var childUpdates = ["/users/\((user?.uid)!)/contact_ids/\(key)": contactWithDate, "/contact_names/\(key)": addedBasic, "/contact_interests/\(key)": addedInterests, "/last_contacted/\(key)": last_contacted] as [String : Any];
         for interest in basic.interests{

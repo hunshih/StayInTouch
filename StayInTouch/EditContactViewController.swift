@@ -17,15 +17,28 @@ class EditContactViewController: UIViewController {
     
     @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var interestLabel: UILabel!
+    @IBOutlet weak var contactEmail: UITextField!
+    
+    @IBOutlet weak var interest1: UILabel!
+    @IBOutlet weak var interest2: UILabel!
+    @IBOutlet weak var interest3: UILabel!
+    @IBOutlet weak var interest4: UILabel!
+    @IBOutlet weak var interest5: UILabel!
+    var interests: Array<UILabel> = Array();
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.setupLabels();
 
         if let parentView = self.parent as? ContactPageViewController {
             contact = parentView.contact;
-            idLabel.text = contact?.ID;
+            //idLabel.text = contact?.name;
+            idLabel.text = "";
+            contactEmail.text = "";
             self.loadContactInfo();
         }
+        
         // Do any additional setup after loading the view.
     }
 
@@ -39,22 +52,30 @@ class EditContactViewController: UIViewController {
         user = FIRAuth.auth()?.currentUser;
         let ref = FIRDatabase.database().reference().child("contact_interests").child((contact?.ID)!);
         ref.observeSingleEvent(of: .value, with: { (snapshot) in
+            if let interestArray = snapshot.value as? NSArray {
+                print(interestArray);
+                for(index, ele) in interestArray.enumerated()
+                {
+                    let value = ele as? String;
+                    self.interests[index].text = value;
+                    self.interests[index].isHidden = false;
+                    self.interests[index].isEnabled = true;
+                }
+            }
+        });
+        let basicRef = FIRDatabase.database().reference().child("contact_names").child((contact?.ID)!);
+        basicRef.observeSingleEvent(of: .value, with: { (snapshot) in
             if let snapshotValue = snapshot.value as? NSDictionary {
                 for (key, details) in snapshotValue
                 {
                     let value = details as? String;
-                    if(key as? String == "common")
+                    if(key as? String == "email")
                     {
-                        self.interestLabel.text = value;
-                        print("Interest is: \(value)")
-                    }
-                    else
-                    {
-                        print("Follow up is: \(value)")
+                        self.contactEmail.text = value;
                     }
                 }
             }
-        })
+        });
     }
     
     /*
@@ -66,5 +87,28 @@ class EditContactViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    func setupLabels()
+    {
+        self.interests.append(interest1);
+        self.interests.append(interest2);
+        self.interests.append(interest3);
+        self.interests.append(interest4);
+        self.interests.append(interest5);
+        for interest in self.interests {
+            interest.layer.backgroundColor = UIColor(red:0.87, green:0.91, blue:0.95, alpha:1.0).cgColor;
+            interest.textColor = UIColor(red:0.22, green:0.45, blue:0.61, alpha:1.0);
+            interest.layer.cornerRadius = 5;
+            //make up with gester recognizer here later
+            disableLabel(label: interest);
+        }
+        
+    }
+    func disableLabel(label: UILabel)
+    {
+        label.text = "";
+        label.isUserInteractionEnabled = false;
+        label.isEnabled = false;
+        label.isHidden = true;
+    }
 
 }
