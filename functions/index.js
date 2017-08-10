@@ -17,12 +17,22 @@ var allUserSubscribe = new Map();
 //All Users
 var allUserNotification = new Map();
 
+//Key: users
+//Entry: unread notifications
+var usersToUnread = new Map();
+
+//Key: Contact ID
+//Entry: Info of contact, aka name and email...etc
+var contactIdInfo = new Map();
+
 exports.followUp = functions.https.onRequest((req, res) => {
 
 	//clear all global maps
 	allTopics.clear();
 	allUserSubscribe.clear();
 	allUserNotification.clear();
+	usersToUnread.clear();
+	contactIdInfo.clear();
 
   //check the API key
   const key = req.query.key;
@@ -65,11 +75,7 @@ exports.followUp = functions.https.onRequest((req, res) => {
   	}
   ).then(
   	function(){
-  		//test getting random topic and contact
-  		//TODO: Need to fix how actual notifications are generated
-  		allUserSubscribe.forEach(function(subscription, user, mapObj){
-  			fillNotificationTable(user);
-  		});
+  		fillNotificationTable();
   	}
   ).then(
 	function(){
@@ -106,6 +112,7 @@ function getArticles(topics){
 					userInfo.set("name",contact.val().name);
 					userInfo.set("email", contact.val().email);
 					contacts.push(userInfo);
+					contactIdInfo.set(contact.key, userInfo);
 				});
 				userMap.set(topic.key, contacts);
 				allUserSubscribe.set(user.key, userMap);
@@ -159,17 +166,15 @@ function searchArticles(topic) {
 /**
 * fill notification table
 */
-function fillNotificationTable(user) {
-	var topicAndContact = getRandomTopicAndContact(user);
-	var notification = new Map();
-	if(allTopics.has(topicAndContact[0]))
-	{
-		notification.set("name", topicAndContact[1]);
-		notification.set("title", allTopics.get(topicAndContact[0]).get("title"));
-		notification.set("source", allTopics.get(topicAndContact[0]).get("source"));
-		notification.set("tag", topicAndContact[0]);
-	}
-    allUserNotification.set(user, notification);
+function fillNotificationTable() {
+	usersToUnread.forEach(function(notifications, user, mapObj){
+		var notifCount = notifications.length;
+		if( notifCount !== 0 )
+		{
+			var randomNum = getRandom(notifCount);
+			allUserNotification.set(user, notifications[randomNum]);
+		}
+	});
 }
 
 function sendNotification(){
@@ -237,6 +242,7 @@ function addUnreadNotification()
 		var contactToTopicListTable = pivotContactTable(item);
 		var contactWithSelectedTopicList = [];
 		contactWithSelectedTopicList = pickOneTopicForContact(contactToTopicListTable);
+		usersToUnread.set(key,contactWithSelectedTopicList);
 		for(var index in contactWithSelectedTopicList)
 		{
 			ref.push().set({
@@ -352,7 +358,7 @@ function pivotContactTable(topicContactMap)
 	topicContactMap.forEach(function(contacts, topic, mapObj){
 		for(var index in contacts)
 		{
-			var targetKey = contacts[index];
+			var targetKey = contacts[index].get("id");
 			var entry = result.get(targetKey);
 			if(entry === undefined)
 			{
@@ -403,13 +409,14 @@ function pickOneTopicForContact(contactMap)
 			if(articleResult !== undefined)
 			{
 				articleFound = true;
-				contactInfo.set("id", contact.get("id"));
-				contactInfo.set("name", contact.get("name"));
-				contactInfo.set("email", contact.get("email"));
+				var contactDetails = contactIdInfo.get(contact);
+				contactInfo.set("id", contactDetails.get("id"));
+				contactInfo.set("name", contactDetails.get("name"));
+				contactInfo.set("email", contactDetails.get("email"));
 				contactInfo.set("title", articleResult.get("title"));
 	            contactInfo.set("url", articleResult.get("url"));
 	            contactInfo.set("source", articleResult.get("source"));
-	            contactInfo.set("tag",val);
+	            contactInfo.set("tag",topics[val]);
 				break;
 			}
 			else
