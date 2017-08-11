@@ -441,7 +441,7 @@
         <!--Insights-->
         <scene sceneID="J9v-F5-1Yj">
             <objects>
-                <viewController id="Idh-qa-IyL" sceneMemberID="viewController">
+                <viewController id="Idh-qa-IyL" customClass="InsightsViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fef-PI-mK0"/>
                         <viewControllerLayoutGuide type="bottom" id="dgZ-4S-mTp"/>
@@ -456,11 +456,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ok-RQ-YQ0">
+                                <rect key="frame" x="142" y="537" width="91" height="30"/>
+                                <state key="normal" title="Demo Button"/>
+                                <connections>
+                                    <action selector="demoGetNotif:" destination="Idh-qa-IyL" eventType="touchUpInside" id="tKu-OG-v6o"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="4Ok-RQ-YQ0" firstAttribute="centerX" secondItem="2df-lD-WdO" secondAttribute="centerX" id="BQo-bZ-uBV"/>
                             <constraint firstItem="MQl-9K-hSJ" firstAttribute="leading" secondItem="2df-lD-WdO" secondAttribute="leadingMargin" id="MUR-eD-o7r"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MQl-9K-hSJ" secondAttribute="trailing" id="WDA-EY-K1Z"/>
+                            <constraint firstItem="dgZ-4S-mTp" firstAttribute="top" secondItem="4Ok-RQ-YQ0" secondAttribute="bottom" constant="100" id="cvJ-gZ-xn1"/>
                             <constraint firstItem="MQl-9K-hSJ" firstAttribute="centerY" secondItem="2df-lD-WdO" secondAttribute="centerY" id="wmL-ie-Qw9"/>
                         </constraints>
                     </view>
