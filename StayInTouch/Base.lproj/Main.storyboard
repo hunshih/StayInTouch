@@ -457,8 +457,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Ok-RQ-YQ0">
-                                <rect key="frame" x="142" y="537" width="91" height="30"/>
-                                <state key="normal" title="Demo Button"/>
+                                <rect key="frame" x="138" y="537" width="99" height="30"/>
+                                <state key="normal" title=" Demo Button "/>
                                 <connections>
                                     <action selector="demoGetNotif:" destination="Idh-qa-IyL" eventType="touchUpInside" id="tKu-OG-v6o"/>
                                 </connections>
@@ -476,10 +476,13 @@
                     <navigationItem key="navigationItem" title="Insights" id="XhP-eV-e8J">
                         <barButtonItem key="backBarButtonItem" title=" " id="CjT-PK-va4"/>
                     </navigationItem>
+                    <connections>
+                        <outlet property="cheatButton" destination="4Ok-RQ-YQ0" id="dhG-71-zQL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGp-mY-M2D" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3137" y="2687"/>
+            <point key="canvasLocation" x="3136.8000000000002" y="2686.5067466266869"/>
         </scene>
         <!--Settings-->
         <scene sceneID="Ohb-ZV-Isc">
@@ -1393,8 +1396,8 @@
         <image name="tips" width="100" height="100"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="pYN-gc-eO3"/>
         <segue reference="5H6-hf-JR1"/>
+        <segue reference="pYN-gc-eO3"/>
         <segue reference="Cex-oQ-Okc"/>
     </inferredMetricsTieBreakers>
 </document>

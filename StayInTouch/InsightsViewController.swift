@@ -10,9 +10,13 @@ import UIKit
 
 class InsightsViewController: UIViewController {
 
+    @IBOutlet weak var cheatButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.cheatButton.layer.borderWidth = 1.0;
+        self.cheatButton.layer.cornerRadius = 3;
+        self.cheatButton.layer.borderColor = self.view.tintColor.cgColor;
         // Do any additional setup after loading the view.
     }
 
