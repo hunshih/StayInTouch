@@ -212,7 +212,8 @@ function sendMessageToUser(deviceIds, notification) {
           { 
             "notification" : {
               "body" : message,
-              "title" : notification.get("title")
+              "title" : notification.get("title"),
+              "sound": "default"
             },
             "to" : deviceIds,
             "priority" : "high"
