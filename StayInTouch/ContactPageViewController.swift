@@ -32,7 +32,7 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
         self.configurePageControl();
         
         //load top title
-        self.title = contact?.name;
+        self.title = "Contact Info";
         
         //
         self.automaticallyAdjustsScrollViewInsets = false;
@@ -58,7 +58,7 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController)-> UIViewController? {
         
         let cur = pages.index(of: viewController)!
-        
+
         let prev = cur - 1;
         
         //prevent circular scroll
@@ -68,7 +68,6 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
             return nil;
         }
         
-
         return pages[prev]
         
     }
@@ -108,8 +107,8 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
     //create and set location of dots
     func configurePageControl() {
         // The total number of pages that are available is based on how many available colors we have.
-        let barHeight = self.navigationController?.navigationBar.bounds.height;
-        pageControl = UIPageControl(frame: CGRect(x: 0,y: barHeight! - 10,width: UIScreen.main.bounds.width,height: 0))
+        pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 0));
+        
         self.pageControl.numberOfPages = pages.count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = self.view.tintColor
@@ -132,5 +131,13 @@ class ContactPageViewController: UIPageViewController, UIPageViewControllerDataS
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         let pageContentViewController = pageViewController.viewControllers![0]
         self.pageControl.currentPage = pages.index(of: pageContentViewController)!
+        if(self.pageControl.currentPage == 0)
+        {
+            self.title = "Contact Info";
+        }
+        else
+        {
+            self.title = "History";
+        }
     }
 }

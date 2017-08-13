@@ -22,7 +22,7 @@ class PastConvoTableViewController: UITableViewController {
         if let parentView = self.parent as? ContactPageViewController {
             self.contactId = parentView.contact?.ID;
             self.loadConvo();
-        }       
+        }
     }
     
     override func didReceiveMemoryWarning() {

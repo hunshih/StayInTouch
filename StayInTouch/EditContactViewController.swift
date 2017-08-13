@@ -38,8 +38,6 @@ class EditContactViewController: UIViewController {
             contactEmail.text = "";
             self.loadContactInfo();
         }
-        
-        // Do any additional setup after loading the view.
     }
 
     override func didReceiveMemoryWarning() {
