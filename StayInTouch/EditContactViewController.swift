@@ -9,13 +9,13 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import InitialsImageView
 
 class EditContactViewController: UIViewController {
 
     var contact: Contact?;
     var user: FIRUser?
     
-    @IBOutlet weak var idLabel: UILabel!
     @IBOutlet weak var interestLabel: UILabel!
     @IBOutlet weak var contactEmail: UITextField!
     
@@ -26,6 +26,8 @@ class EditContactViewController: UIViewController {
     @IBOutlet weak var interest5: UILabel!
     var interests: Array<UILabel> = Array();
     
+    @IBOutlet weak var initials: UIImageView!
+    @IBOutlet weak var contactName: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,10 +35,10 @@ class EditContactViewController: UIViewController {
 
         if let parentView = self.parent as? ContactPageViewController {
             contact = parentView.contact;
-            //idLabel.text = contact?.name;
-            idLabel.text = "";
+            contactName.text = contact?.name;
             contactEmail.text = "";
             self.loadContactInfo();
+            initials.setImageForName(string: contactName.text!, backgroundColor: UIColor.blue, circular: true, textAttributes: nil);
         }
     }
 

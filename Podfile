@@ -12,6 +12,7 @@ target 'StayInTouch' do
   pod 'Firebase/Messaging'
   pod 'Firebase/Storage'
   pod "SearchTextField"
+  pod 'InitialsImageView', '~> 0.1'
   target 'StayInTouchTests' do
     inherit! :search_paths
     # Pods for testing
