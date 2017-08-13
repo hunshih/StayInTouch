@@ -56,8 +56,9 @@ class PastConvoTableViewController: UITableViewController {
                     let email = map?["email"] as? String;
                     let tag = map?["tag"] as? String;
                     let id = key as! String;
-                    
-                    let convo = Notification(icon: nil, title: title!, name: target!, link: url!, email: email!, tag: tag!, key: key as! String, contact: id)!;
+                    let sourceUnwrap = map?["source"] as? String;
+                    let source = (sourceUnwrap == nil) ? "" : sourceUnwrap;
+                    let convo = Notification(icon: nil, title: title!, name: target!, link: url!, email: email!, tag: tag!, key: key as! String, contact: id, source: source!)!;
                     convo.setDate(date: (map?["date"] as? String)!);
                     self.notifications.append(convo);
                 }

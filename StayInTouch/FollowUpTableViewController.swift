@@ -54,7 +54,9 @@ class FollowUpTableViewController: UITableViewController {
                 let email = map?["email"] as? String;
                 let tag = map?["tag"] as? String;
                 let contactID = map?["contactID"] as? String;
-                self.notifications.append(Notification(icon: icon, title: title!, name: target!, link: url!, email: email!, tag: tag!, key: key as! String, contact:contactID!)!);
+                let sourceUnwrap = map?["source"] as? String;
+                let source = (sourceUnwrap == nil) ? "" : sourceUnwrap;
+                self.notifications.append(Notification(icon: icon, title: title!, name: target!, link: url!, email: email!, tag: tag!, key: key as! String, contact:contactID!, source: source!)!);
             }
             print("length: \(self.notifications.count)")
             self.tableView.reloadData();
@@ -71,8 +73,8 @@ class FollowUpTableViewController: UITableViewController {
         }
 
         let notification = notifications[indexPath.row];
-        cell.name.text = notification.name;
-        //cell.icon.image = notification.icon;
+        cell.icon.image = notification.icon;
+        cell.name.text = "To: " + notification.name;
         cell.title.text = notification.title;
         // Configure the cell...
 
@@ -92,6 +94,8 @@ class FollowUpTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // Delete the row from the data source
+            let ref = FIRDatabase.database().reference().child("users").child((user?.uid)!).child("unread").child(notifications[indexPath.row].key);
+            ref.removeValue();
             notifications.remove(at: indexPath.row);
             tableView.deleteRows(at: [indexPath], with: .fade)
         } else if editingStyle == .insert {

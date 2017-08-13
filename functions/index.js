@@ -253,7 +253,8 @@ function addUnreadNotification()
 			            contactID: contactWithSelectedTopicList[index].get("id"),
 			            contactName: contactWithSelectedTopicList[index].get("name"),
 			            email: contactWithSelectedTopicList[index].get("email"),
-			            tag: contactWithSelectedTopicList[index].get("tag")
+			            tag: contactWithSelectedTopicList[index].get("tag"),
+			            source: contactWithSelectedTopicList[index].get("source")
 		        	});
 		}
 	});

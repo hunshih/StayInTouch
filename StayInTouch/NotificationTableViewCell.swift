@@ -11,6 +11,7 @@ import UIKit
 class NotificationTableViewCell: UITableViewCell {
     
     @IBOutlet weak var name: UILabel!
+    @IBOutlet weak var icon: UIImageView!
     @IBOutlet weak var title: UITextView!
     //@IBOutlet weak var icon: UIImageView!
     
