@@ -9,6 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
+import InitialsImageView
 
 class FollowUpTableViewController: UITableViewController {
     
@@ -38,7 +39,7 @@ class FollowUpTableViewController: UITableViewController {
     
     private func loadNotifications()
     {
-        let icon = UIImage(named: "A");
+        var dummyIcon = UIImage(named: "A");
         user = FIRAuth.auth()?.currentUser;
         let ref = FIRDatabase.database().reference().child("users").child((user?.uid)!).child("unread");
         ref.observe(.value, with: { (snapshot) in
@@ -56,7 +57,7 @@ class FollowUpTableViewController: UITableViewController {
                 let contactID = map?["contactID"] as? String;
                 let sourceUnwrap = map?["source"] as? String;
                 let source = (sourceUnwrap == nil) ? "" : sourceUnwrap;
-                self.notifications.append(Notification(icon: icon, title: title!, name: target!, link: url!, email: email!, tag: tag!, key: key as! String, contact:contactID!, source: source!)!);
+                self.notifications.append(Notification(icon: dummyIcon, title: title!, name: target!, link: url!, email: email!, tag: tag!, key: key as! String, contact:contactID!, source: source!)!);
             }
             print("length: \(self.notifications.count)")
             self.tableView.reloadData();
@@ -73,8 +74,12 @@ class FollowUpTableViewController: UITableViewController {
         }
 
         let notification = notifications[indexPath.row];
-        cell.icon.image = notification.icon;
-        cell.name.text = "To: " + notification.name;
+        
+        let subImage = UIImageView();
+        subImage.frame = CGRect(x: 10, y: 15, width: 60, height: 60);
+        subImage.setImageForName(string: notification.name, backgroundColor: UIColor.red, circular: true, textAttributes: nil);
+        cell.icon.addSubview(subImage);
+        //cell.name.text = notification.source;
         cell.title.text = notification.title;
         // Configure the cell...
 
