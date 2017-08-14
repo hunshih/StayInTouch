@@ -18,6 +18,7 @@
 		BA1C0D5E1F159BC3002569C9 /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D5D1F159BC3002569C9 /* EditContactViewController.swift */; };
 		BA262F561E778D3400E4A614 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA262F551E778D3400E4A614 /* SettingsViewController.swift */; };
 		BA3B06311F3D3B070054232F /* InsightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B06301F3D3B070054232F /* InsightsViewController.swift */; };
+		BA3B06331F414DAF0054232F /* InitialsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B06321F414DAF0054232F /* InitialsUtil.swift */; };
 		BA3C43DC1ECD3BEC003D00A7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */; };
 		BA41189B1E622E2500E25925 /* SignUpInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */; };
 		BA41189F1E6299CC00E25925 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189E1E6299CC00E25925 /* Constants.swift */; };
@@ -77,6 +78,7 @@
 		BA2031461EA9B2C1005CD63C /* StayInTouch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StayInTouch.entitlements; sourceTree = "<group>"; };
 		BA262F551E778D3400E4A614 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BA3B06301F3D3B070054232F /* InsightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightsViewController.swift; sourceTree = "<group>"; };
+		BA3B06321F414DAF0054232F /* InitialsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialsUtil.swift; sourceTree = "<group>"; };
 		BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInfoTableViewController.swift; sourceTree = "<group>"; };
 		BA41189E1E6299CC00E25925 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -192,6 +194,7 @@
 				BAFDC8771E993B4C009E6BBB /* StringUtil.swift */,
 				BA4274EC1E5FE4EC00FED1B0 /* Printer.swift */,
 				BAFFF1B91F1BC7670015D943 /* FollowUpUtil.swift */,
+				BA3B06321F414DAF0054232F /* InitialsUtil.swift */,
 			);
 			name = Utils;
 			sourceTree = "<group>";
@@ -517,6 +520,7 @@
 				BA1C0D5C1F1213BC002569C9 /* ContactPageViewController.swift in Sources */,
 				BA9B648F1E56C18000DD6414 /* SessionCheckViewController.swift in Sources */,
 				BAFFF1BF1F1EF74A0015D943 /* TipViewController.swift in Sources */,
+				BA3B06331F414DAF0054232F /* InitialsUtil.swift in Sources */,
 				BA1C0D541F112E9D002569C9 /* Contact.swift in Sources */,
 				BAFFF1B61F1AC4610015D943 /* PastConvoTableViewController.swift in Sources */,
 				BAFDC8781E993B4C009E6BBB /* StringUtil.swift in Sources */,

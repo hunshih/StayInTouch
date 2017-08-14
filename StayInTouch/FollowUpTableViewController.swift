@@ -77,7 +77,8 @@ class FollowUpTableViewController: UITableViewController {
         
         let subImage = UIImageView();
         subImage.frame = CGRect(x: 10, y: 15, width: 60, height: 60);
-        subImage.setImageForName(string: notification.name, backgroundColor: UIColor.red, circular: true, textAttributes: nil);
+        let initialsColor = InitialsUtil.generateColor(name: notification.name);
+        subImage.setImageForName(string: notification.name, backgroundColor: initialsColor, circular: true, textAttributes: nil);
         cell.icon.addSubview(subImage);
         //cell.name.text = notification.source;
         cell.title.text = notification.title;

@@ -38,7 +38,8 @@ class EditContactViewController: UIViewController {
             contactName.text = contact?.name;
             contactEmail.text = "";
             self.loadContactInfo();
-            initials.setImageForName(string: contactName.text!, backgroundColor: UIColor.blue, circular: true, textAttributes: nil);
+            let initialsColor = InitialsUtil.generateColor(name: contactName.text!);
+            initials.setImageForName(string: contactName.text!, backgroundColor: initialsColor, circular: true, textAttributes: nil);
         }
     }
 
