@@ -66,7 +66,8 @@ class ConversationTableViewController: UITableViewController {
         let contact = contacts[indexPath.row];
         cell.name.text = contact.name;
         //cell.icon.image = notification.icon;
-        cell.date.text = "connected since \(contact.addedDate)";
+        //cell.date.text = "since \(contact.addedDate)"
+        cell.date.text = "";
         // Configure the cell...
         
         return cell

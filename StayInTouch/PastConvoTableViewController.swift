@@ -76,7 +76,15 @@ class PastConvoTableViewController: UITableViewController {
         }
         
         let notification = notifications[indexPath.row];
-        cell.date.text = notification.date;
+        //Convert date format
+        let dateFormatter = DateFormatter();
+        dateFormatter.dateFormat = "MM/dd/yyyy";
+        let date = dateFormatter.date(from: notification.date!);
+        dateFormatter.dateFormat = "MMM dd";
+        let resultDate = dateFormatter.string(from: date!);
+        //print("English Date: \(resultDate)");
+        
+        cell.date.text = resultDate;
         //cell.icon.image = notification.icon;
         cell.title.text = notification.title;
         // Configure the cell...

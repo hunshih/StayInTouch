@@ -82,6 +82,7 @@ class FollowUpTableViewController: UITableViewController {
         cell.icon.addSubview(subImage);
         //cell.name.text = notification.source;
         cell.title.text = notification.title;
+        cell.title.isUserInteractionEnabled = false;
         // Configure the cell...
 
         return cell

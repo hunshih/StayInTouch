@@ -61,7 +61,7 @@ class ContactViewController: UIViewController {
         let year = calendar.component(.year, from: date)
         let month = calendar.component(.month, from: date)
         let day = calendar.component(.day, from: date)
-        let readableDate = "\(month)/\(day)/\(year);"
+        let readableDate = "\(month)/\(day)/\(year)"
         let timestamp = NSDate().timeIntervalSince1970;
         
         let contactWithDate = ["name":basic.name,"added": readableDate,"timestamp": timestamp] as [String : Any];
