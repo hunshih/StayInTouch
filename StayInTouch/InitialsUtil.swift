@@ -40,9 +40,9 @@ class InitialsUtil{
         }
         let fFirst = Float(firstChar);
         let fSecond = Float(secondChar);
-        let red = (((128.0 + fFirst) * (256.0 - fSecond)).truncatingRemainder(dividingBy: 255.0))/255.0;
-        let green = (((128.0 - fFirst) * (256.0 / fSecond)).truncatingRemainder(dividingBy: 255.0))/255.0;
-        let blue = ((77.0 * fFirst) - (256.0 + fSecond)).truncatingRemainder(dividingBy: 255.0);
+        let red = ((fFirst * 10).truncatingRemainder(dividingBy: 255.0))/255.0;
+        let green = ((fFirst * fSecond * 10).truncatingRemainder(dividingBy: 255.0))/255.0;
+        let blue = ((fSecond * 10).truncatingRemainder(dividingBy: 255.0))/255.0;
         print("Name is: \(name)");
         print("RGB:(\(red),\(green),\(blue))");
         return UIColor(red: CGFloat(red), green: CGFloat(green), blue: CGFloat(blue), alpha: 1.0);
