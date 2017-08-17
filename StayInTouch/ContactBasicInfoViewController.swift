@@ -100,7 +100,7 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         self.interestField.text = "";
     }
     
-    @IBAction func saveContact(_ sender: Any) {
+    @IBAction func saveNewContact(_ sender: Any) {
         if(self.allowedToSave())
         {
             performSegue(withIdentifier: "ContactAddedSegue", sender: nil)
