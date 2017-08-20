@@ -180,6 +180,7 @@
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="aky-DS-pYb">
                             <connections>
                                 <action selector="saveNewContact:" destination="CJ7-St-BJU" id="JOo-yi-nk1"/>
+                                <segue destination="VSJ-bq-mKE" kind="unwind" identifier="ContactAddedSegue" unwindAction="ContactAddedWithSegue:" id="nZK-mW-sgW"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1191,7 +1192,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lp-N2-bhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3673" y="812"/>
+            <point key="canvasLocation" x="3318" y="782"/>
         </scene>
         <!--Tip Two View Controller-->
         <scene sceneID="6p3-jX-KXe">
@@ -1241,7 +1242,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaq-3s-UF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4337" y="812"/>
+            <point key="canvasLocation" x="3982" y="782"/>
         </scene>
         <!--Tip Three View Controller-->
         <scene sceneID="sez-Kj-fv8">
@@ -1291,7 +1292,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qff-Zc-o5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4998" y="811"/>
+            <point key="canvasLocation" x="4642" y="781"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="y9g-RR-xyd">
@@ -1319,9 +1320,9 @@
         <image name="Settings" width="25" height="25"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5H6-hf-JR1"/>
+        <segue reference="Cex-oQ-Okc"/>
         <segue reference="I6V-We-ywh"/>
+        <segue reference="5H6-hf-JR1"/>
         <segue reference="kSE-pE-O3h"/>
-        <segue reference="0ly-3V-1xD"/>
     </inferredMetricsTieBreakers>
 </document>

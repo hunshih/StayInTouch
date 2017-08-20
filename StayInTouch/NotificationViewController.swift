@@ -98,7 +98,9 @@ class NotificationViewController: UIViewController, MFMailComposeViewControllerD
     @IBAction func showActionSheet(_ sender: Any) {
         let optionMenu = UIAlertController(title: nil, message: "Choose Option", preferredStyle: .actionSheet)
         
-        let shareAction = UIAlertAction(title: "Share", style: .default, handler: {
+        let shareText = "Share with \(self.notification!.name)";
+        
+        let shareAction = UIAlertAction(title: shareText, style: .default, handler: {
             (alert: UIAlertAction!) -> Void in
             self.createEmail()
         })
