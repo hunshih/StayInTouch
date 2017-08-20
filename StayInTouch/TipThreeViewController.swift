@@ -1,24 +1,22 @@
 //
-//  TipViewController.swift
+//  TipThreeViewController.swift
 //  StayInTouch
 //
-//  Created by Hung-Yuan Shih on 7/18/17.
+//  Created by Hung-Yuan Shih on 8/19/17.
 //  Copyright © 2017 Hung-Yuan Shih. All rights reserved.
 //
 
 import UIKit
-import InitialsImageView
 
-class TipViewController: UIViewController {
+class TipThreeViewController: UIViewController {
 
-    @IBOutlet weak var titleCount: UIImageView!
-    
+    @IBOutlet weak var titleImage: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let teel = UIColor(red:0.00, green:0.50, blue:1.00, alpha:1.0);
-        titleCount.setImageForName(string: "1", backgroundColor: teel, circular: true, textAttributes: nil);
+        let darkGreen = UIColor(red:0.00, green:0.40, blue:0.20, alpha:1.0);
+        titleImage.setImageForName(string: "3", backgroundColor: darkGreen, circular: true, textAttributes: nil);
     }
 
     override func didReceiveMemoryWarning() {

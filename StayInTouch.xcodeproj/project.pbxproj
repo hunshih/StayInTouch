@@ -19,6 +19,8 @@
 		BA262F561E778D3400E4A614 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA262F551E778D3400E4A614 /* SettingsViewController.swift */; };
 		BA3B06311F3D3B070054232F /* InsightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B06301F3D3B070054232F /* InsightsViewController.swift */; };
 		BA3B06331F414DAF0054232F /* InitialsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B06321F414DAF0054232F /* InitialsUtil.swift */; };
+		BA3B06351F48E9410054232F /* TipTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B06341F48E9410054232F /* TipTwoViewController.swift */; };
+		BA3B06371F48E94F0054232F /* TipThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B06361F48E94F0054232F /* TipThreeViewController.swift */; };
 		BA3C43DC1ECD3BEC003D00A7 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */; };
 		BA41189B1E622E2500E25925 /* SignUpInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */; };
 		BA41189F1E6299CC00E25925 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189E1E6299CC00E25925 /* Constants.swift */; };
@@ -79,6 +81,8 @@
 		BA262F551E778D3400E4A614 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BA3B06301F3D3B070054232F /* InsightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightsViewController.swift; sourceTree = "<group>"; };
 		BA3B06321F414DAF0054232F /* InitialsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialsUtil.swift; sourceTree = "<group>"; };
+		BA3B06341F48E9410054232F /* TipTwoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipTwoViewController.swift; sourceTree = "<group>"; };
+		BA3B06361F48E94F0054232F /* TipThreeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipThreeViewController.swift; sourceTree = "<group>"; };
 		BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
 		BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpInfoTableViewController.swift; sourceTree = "<group>"; };
 		BA41189E1E6299CC00E25925 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -282,6 +286,8 @@
 			children = (
 				BAFFF1BC1F1DC14B0015D943 /* TipsPageViewController.swift */,
 				BAFFF1BE1F1EF74A0015D943 /* TipViewController.swift */,
+				BA3B06341F48E9410054232F /* TipTwoViewController.swift */,
+				BA3B06361F48E94F0054232F /* TipThreeViewController.swift */,
 			);
 			name = Tips;
 			sourceTree = "<group>";
@@ -510,6 +516,7 @@
 				BA5CD7B51E86CEC900196BE6 /* ContactViewController.swift in Sources */,
 				BA262F561E778D3400E4A614 /* SettingsViewController.swift in Sources */,
 				BA764A4B1E4FEA0E00B6659A /* AppDelegate.swift in Sources */,
+				BA3B06371F48E94F0054232F /* TipThreeViewController.swift in Sources */,
 				BA0561371EF8D21F006D7FC8 /* WelcomeViewController.swift in Sources */,
 				BA77CDC31ECFF74E009D891B /* ArticleViewController.swift in Sources */,
 				BA5CD7B31E86CE1E00196BE6 /* ContactBasicInfoViewController.swift in Sources */,
@@ -528,6 +535,7 @@
 				BA90BB781E67CA850062E419 /* HomeTabBarController.swift in Sources */,
 				BAFFF1BD1F1DC14B0015D943 /* TipsPageViewController.swift in Sources */,
 				BA1C0D5A1F116710002569C9 /* ConversationTableViewController.swift in Sources */,
+				BA3B06351F48E9410054232F /* TipTwoViewController.swift in Sources */,
 				BA4274EB1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift in Sources */,
 				BAD94FD21EC7928B0077A355 /* FollowUpTableViewController.swift in Sources */,
 				BAFFF1BA1F1BC7670015D943 /* FollowUpUtil.swift in Sources */,

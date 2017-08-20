@@ -20,8 +20,8 @@ class TipsPageViewController: UIPageViewController,UIPageViewControllerDataSourc
         self.dataSource = self
         // Do any additional setup after loading the view.
         let p1: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "TipOne") as! TipViewController;
-        let p2: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "TipTwo") as! TipViewController;
-        let p3: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "TipThree") as! TipViewController;
+        let p2: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "TipTwo") as! TipTwoViewController;
+        let p3: UIViewController! = storyboard?.instantiateViewController(withIdentifier: "TipThree") as! TipThreeViewController;
         
         pages.append(p1);
         pages.append(p2);
@@ -103,24 +103,15 @@ class TipsPageViewController: UIPageViewController,UIPageViewControllerDataSourc
     //create and set location of dots
     func configurePageControl() {
         // The total number of pages that are available is based on how many available colors we have.
-        let barHeight = self.navigationController?.navigationBar.bounds.height;
-        pageControl = UIPageControl(frame: CGRect(x: 0,y: UIScreen.main.bounds.maxY - 50,width: UIScreen.main.bounds.width,height: 0))
+        self.pageControl = UIPageControl(frame: CGRect(x: 0,y: self.view.frame.size.height - 50,width: UIScreen.main.bounds.width, height: 00))
         self.pageControl.numberOfPages = pages.count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = self.view.tintColor
         self.pageControl.pageIndicatorTintColor = UIColor.lightGray
-        self.pageControl.currentPageIndicatorTintColor = self.view.tintColor
-        //self.view.addSubview(pageControl)
+        self.pageControl.currentPageIndicatorTintColor = self.view.tintColor;
+        self.pageControl.transform = CGAffineTransform(scaleX: 1.5, y:1.5);
+        self.view.addSubview(pageControl)
         self.navigationController?.navigationBar.addSubview(pageControl);
-    }
-    
-    //Need to hide dots when leaving
-    override func viewWillDisappear(_ animated : Bool) {
-        super.viewWillDisappear(animated)
-        
-        if (self.isMovingFromParentViewController){
-            self.pageControl.removeFromSuperview();
-        }
     }
     
     //allow dots to update

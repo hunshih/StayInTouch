@@ -24,7 +24,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ubx-T4-3zB" id="d92-I7-jzA" customClass="NotificationTableViewCell" customModule="StayInTouch" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="65M-ly-XHh">
@@ -213,7 +213,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mzW-ix-g08">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                             </webView>
                         </subviews>
@@ -594,6 +594,14 @@
                                     <segue destination="oc2-eF-pKw" kind="presentation" id="Fdc-f2-KQW"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="L3p-HZ-EVT">
+                                <rect key="frame" x="270" y="570" width="46" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Intro"/>
+                                <connections>
+                                    <segue destination="QqY-3R-yge" kind="show" id="kSE-pE-O3h"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -729,12 +737,12 @@
                         <outlet property="OriginalPassword" destination="2fg-JP-FRV" id="IJ4-3L-zdi"/>
                         <outlet property="SubmitButton" destination="Rj3-PZ-Jm6" id="sZQ-1o-42m"/>
                         <outlet property="email" destination="JRx-D2-jXz" id="5VP-ty-7CN"/>
-                        <segue destination="49e-Tb-3d3" kind="presentation" identifier="CompleteUserInfoSeque" id="pYN-gc-eO3"/>
+                        <segue destination="QqY-3R-yge" kind="presentation" identifier="CompleteUserInfoSeque" id="SuP-03-u5N"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QGk-15-eDt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3690.4000000000001" y="26.53673163418291"/>
+            <point key="canvasLocation" x="3980" y="-747"/>
         </scene>
         <!--Home Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -814,27 +822,19 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NHp-69-wA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2751.1999999999998" y="26.53673163418291"/>
+            <point key="canvasLocation" x="2959" y="-747"/>
         </scene>
-        <!--Useful Tips-->
+        <!--Welcome-->
         <scene sceneID="GlB-w0-zdg">
             <objects>
                 <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QqY-3R-yge" customClass="TipsPageViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Useful Tips" id="Zoo-i6-Tia">
-                        <barButtonItem key="leftBarButtonItem" title="Back" id="2Hd-v2-i9t">
-                            <connections>
-                                <action selector="cancelTips:" destination="QqY-3R-yge" id="7TF-fy-6eV"/>
-                                <segue destination="gJC-3c-WvG" kind="unwind" unwindAction="cancelToContactViewControllerWithSegue:" id="0EM-6M-3Mw"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Welcome" id="Zoo-i6-Tia"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="h0J-HW-3fH" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <exit id="gJC-3c-WvG" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1626" y="4191"/>
+            <point key="canvasLocation" x="3980" y="103"/>
         </scene>
         <!--Follow-Up-->
         <scene sceneID="Sth-4W-L28">
@@ -1104,7 +1104,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="geQ-Me-FSz" id="Lgk-8m-w0B" customClass="NotificationTableViewCell" customModule="StayInTouch" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Title" translatesAutoresizingMaskIntoConstraints="NO" id="Lgn-7p-OgM">
@@ -1155,29 +1155,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tip One" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajO-vI-DOk">
-                                <rect key="frame" x="16" y="295" width="343" height="77"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Manage Your Network" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ajO-vI-DOk">
+                                <rect key="frame" x="16" y="190" width="343" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ukR-or-n2b">
+                                <rect key="frame" x="137.5" y="70" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ukR-or-n2b" secondAttribute="height" multiplier="1:1" id="v0g-eo-BMs"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Some Caption on what people should do when adding contact" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Gkt-EX-zu5">
+                                <rect key="frame" x="67" y="254" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ukR-or-n2b" firstAttribute="centerX" secondItem="gZz-AX-0tb" secondAttribute="centerX" id="Gjo-hH-11C"/>
+                            <constraint firstItem="ukR-or-n2b" firstAttribute="width" secondItem="gZz-AX-0tb" secondAttribute="height" multiplier="100:667" id="K6A-t5-BST"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ajO-vI-DOk" secondAttribute="trailing" id="LLB-DS-Mjk"/>
                             <constraint firstItem="ajO-vI-DOk" firstAttribute="leading" secondItem="gZz-AX-0tb" secondAttribute="leadingMargin" id="Mxg-d7-678"/>
-                            <constraint firstItem="ajO-vI-DOk" firstAttribute="centerY" secondItem="gZz-AX-0tb" secondAttribute="centerY" id="e2l-EU-NKu"/>
+                            <constraint firstItem="ajO-vI-DOk" firstAttribute="top" secondItem="ukR-or-n2b" secondAttribute="bottom" constant="20" id="vUB-EK-LoE"/>
+                            <constraint firstItem="ukR-or-n2b" firstAttribute="top" secondItem="5Ro-pe-lcK" secondAttribute="bottom" constant="50" id="xvP-Xq-mf4"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleCount" destination="ukR-or-n2b" id="XWR-eV-DHw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Lp-N2-bhm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1590" y="4883"/>
+            <point key="canvasLocation" x="3673" y="812"/>
         </scene>
-        <!--Tip View Controller-->
+        <!--Tip Two View Controller-->
         <scene sceneID="6p3-jX-KXe">
             <objects>
-                <viewController storyboardIdentifier="TipTwo" id="QgG-Mg-sWK" customClass="TipViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipTwo" id="QgG-Mg-sWK" customClass="TipTwoViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BRb-aj-vwG"/>
                         <viewControllerLayoutGuide type="bottom" id="Aet-3U-fvs"/>
@@ -1186,29 +1205,48 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Two" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j43-b1-pxl">
-                                <rect key="frame" x="0.0" y="316" width="375" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Stay Updated" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j43-b1-pxl">
+                                <rect key="frame" x="0.0" y="190" width="375" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="FlU-vH-5JO">
+                                <rect key="frame" x="137.5" y="70" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="FlU-vH-5JO" secondAttribute="height" multiplier="1:1" id="oBv-D2-suS"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Describe how we send user relevant content from sources" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="A7b-Yt-LJr">
+                                <rect key="frame" x="67" y="254" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="FlU-vH-5JO" firstAttribute="width" secondItem="5Pd-u9-9Vf" secondAttribute="height" multiplier="100:667" id="8Sf-8N-CMr"/>
                             <constraint firstAttribute="trailing" secondItem="j43-b1-pxl" secondAttribute="trailing" id="JSu-d0-MYz"/>
-                            <constraint firstItem="j43-b1-pxl" firstAttribute="centerY" secondItem="5Pd-u9-9Vf" secondAttribute="centerY" id="Ltw-c6-DbX"/>
+                            <constraint firstItem="j43-b1-pxl" firstAttribute="top" secondItem="FlU-vH-5JO" secondAttribute="bottom" constant="20" id="gUy-Uh-nne"/>
+                            <constraint firstItem="FlU-vH-5JO" firstAttribute="top" secondItem="BRb-aj-vwG" secondAttribute="bottom" constant="50" id="l6x-sr-6Z9"/>
+                            <constraint firstItem="FlU-vH-5JO" firstAttribute="centerX" secondItem="5Pd-u9-9Vf" secondAttribute="centerX" id="uXP-UP-cXD"/>
                             <constraint firstItem="j43-b1-pxl" firstAttribute="leading" secondItem="5Pd-u9-9Vf" secondAttribute="leading" id="wgU-e7-gNa"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleImage" destination="FlU-vH-5JO" id="88b-Zo-rrF"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eaq-3s-UF4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2254" y="4883"/>
+            <point key="canvasLocation" x="4337" y="812"/>
         </scene>
-        <!--Tip View Controller-->
+        <!--Tip Three View Controller-->
         <scene sceneID="sez-Kj-fv8">
             <objects>
-                <viewController storyboardIdentifier="TipThree" id="pjg-PU-M73" customClass="TipViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipThree" id="pjg-PU-M73" customClass="TipThreeViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qma-a9-8bB"/>
                         <viewControllerLayoutGuide type="bottom" id="9cd-zA-gff"/>
@@ -1217,24 +1255,43 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Three" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2i-bN-mt7">
-                                <rect key="frame" x="16" y="316" width="343" height="36"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="T2i-bN-mt7">
+                                <rect key="frame" x="16" y="190" width="343" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LXq-fh-iyX">
+                                <rect key="frame" x="137.5" y="70" width="100" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="LXq-fh-iyX" secondAttribute="height" multiplier="1:1" id="A3X-2r-cNp"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Exaplin how sharing content could help users" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="hj9-Pr-zFX">
+                                <rect key="frame" x="67" y="255" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="LXq-fh-iyX" firstAttribute="width" secondItem="K4E-O7-O9X" secondAttribute="height" multiplier="100:667" id="1le-22-SlM"/>
+                            <constraint firstItem="LXq-fh-iyX" firstAttribute="top" secondItem="Qma-a9-8bB" secondAttribute="bottom" constant="50" id="3c1-1E-3Jw"/>
                             <constraint firstItem="T2i-bN-mt7" firstAttribute="leading" secondItem="K4E-O7-O9X" secondAttribute="leadingMargin" id="SVf-Vy-Ygg"/>
-                            <constraint firstItem="T2i-bN-mt7" firstAttribute="centerY" secondItem="K4E-O7-O9X" secondAttribute="centerY" id="Toe-dL-awL"/>
+                            <constraint firstItem="T2i-bN-mt7" firstAttribute="top" secondItem="LXq-fh-iyX" secondAttribute="bottom" constant="20" id="Wea-Pn-RCH"/>
+                            <constraint firstItem="LXq-fh-iyX" firstAttribute="centerX" secondItem="K4E-O7-O9X" secondAttribute="centerX" id="rGT-8u-YgF"/>
                             <constraint firstItem="T2i-bN-mt7" firstAttribute="trailing" secondItem="K4E-O7-O9X" secondAttribute="trailingMargin" id="t9N-Gz-WGc"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="titleImage" destination="LXq-fh-iyX" id="5TC-ea-DgD"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qff-Zc-o5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2916" y="4883"/>
+            <point key="canvasLocation" x="4998" y="811"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="y9g-RR-xyd">
@@ -1263,7 +1320,8 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5H6-hf-JR1"/>
-        <segue reference="pYN-gc-eO3"/>
+        <segue reference="I6V-We-ywh"/>
+        <segue reference="kSE-pE-O3h"/>
         <segue reference="0ly-3V-1xD"/>
     </inferredMetricsTieBreakers>
 </document>
