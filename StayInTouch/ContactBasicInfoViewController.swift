@@ -100,6 +100,9 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         self.interestField.text = "";
     }
     
+    //The "Save" button is connected to this action instead of straight
+    //dragging segue because I want to do contact info check before performing segue.
+    //Be sure that the unwind seque has the identifier set as ContactAddedSegue
     @IBAction func saveNewContact(_ sender: Any) {
         if(self.allowedToSave())
         {
