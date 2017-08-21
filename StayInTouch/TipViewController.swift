@@ -13,6 +13,7 @@ class TipViewController: UIViewController {
 
     @IBOutlet weak var titleCount: UIImageView!
     @IBOutlet weak var tipImage: UIImageView!
+    @IBOutlet weak var caption: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,7 @@ class TipViewController: UIViewController {
         let teel = UIColor(red:0.00, green:0.50, blue:1.00, alpha:1.0);
         titleCount.setImageForName(string: "1", backgroundColor: teel, circular: true, textAttributes: nil);
         tipImage.image = #imageLiteral(resourceName: "tip1");
+        caption.text = "Take notes on the common interests after you meet someone that clicks";
     }
 
     override func didReceiveMemoryWarning() {

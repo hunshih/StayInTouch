@@ -103,7 +103,7 @@ class TipsPageViewController: UIPageViewController,UIPageViewControllerDataSourc
     //create and set location of dots
     func configurePageControl() {
         // The total number of pages that are available is based on how many available colors we have.
-        self.pageControl = UIPageControl(frame: CGRect(x: 0,y: self.view.frame.size.height - 50,width: UIScreen.main.bounds.width, height: 00))
+        self.pageControl = UIPageControl(frame: CGRect(x: 0,y: self.view.frame.size.height - 40,width: UIScreen.main.bounds.width, height: 00))
         self.pageControl.numberOfPages = pages.count
         self.pageControl.currentPage = 0
         self.pageControl.tintColor = self.view.tintColor

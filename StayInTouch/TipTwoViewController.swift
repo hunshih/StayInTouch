@@ -11,13 +11,17 @@ import UIKit
 class TipTwoViewController: UIViewController {
 
     @IBOutlet weak var titleImage: UIImageView!
-     
+    @IBOutlet weak var tipImage: UIImageView!
+    @IBOutlet weak var caption: UITextView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         let blueGreen = UIColor(red:0.00, green:0.60, blue:0.60, alpha:1.0);
         titleImage.setImageForName(string: "2", backgroundColor: blueGreen, circular: true, textAttributes: nil);
+        tipImage.image = #imageLiteral(resourceName: "tip2");
+        caption.text = "We update you with relevant content based on your common interests";
     }
 
     override func didReceiveMemoryWarning() {
