@@ -62,6 +62,7 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
                 print("Successfully Sign Up, you're in!")
                 self.setUserInfo();
                 self.registerDevice();
+                self.createDefaultContact();
                 self.performSegue(withIdentifier: "CompleteUserInfoSeque", sender: "")
                 Printer.printUserDetails(user!)
             }
@@ -159,6 +160,48 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
         userDbRef.childByAutoId().setValue(token);
     }
     
+    //Update contacts in database
+    func createDefaultContact()
+    {
+        let defaultUser = BasicInfo(name: "John Snow",email: "jsnow@notrh.com",interests: ["Dragons","Fashion","Classical Music"]);
+
+        
+        let user = FIRAuth.auth()?.currentUser;
+        let ref = FIRDatabase.database().reference();
+        let key = ref.child((user?.uid)!).childByAutoId().key;
+        
+        let date = Date();
+        let calendar = Calendar.current
+        let year = calendar.component(.year, from: date)
+        let month = calendar.component(.month, from: date)
+        let day = calendar.component(.day, from: date)
+        let readableDate = "\(month)/\(day)/\(year)"
+        let timestamp = NSDate().timeIntervalSince1970;
+        
+        let contactWithDate = ["name":defaultUser.name,"added": readableDate,"timestamp": timestamp] as [String : Any];
+        let last_contacted = ["date": readableDate, "belong": (user?.uid)!,"timestamp": timestamp] as [String : Any];
+        let addedBasic = [K.Db.Contacts.name: defaultUser.name, K.Db.Contacts.email: defaultUser.email];
+        let addedInterests = defaultUser.interests;
+        //let dummy = [K.Db.Contacts.name : basic.name];
+        var childUpdates = ["/users/\((user?.uid)!)/contact_ids/\(key)": contactWithDate, "/contact_names/\(key)": addedBasic, "/contact_interests/\(key)": addedInterests, "/last_contacted/\(key)": last_contacted] as [String : Any];
+        for interest in defaultUser.interests{
+            childUpdates["/topics/\(interest)/\((user?.uid)!)/\(key)"] = addedBasic;
+        }
+        ref.updateChildValues(childUpdates);
+        self.createDefaultNotification(key: key,today: readableDate);
+    }
+    
+    func createDefaultNotification(key: String, today: String)
+    {
+        let user = FIRAuth.auth()?.currentUser;
+        let ref = FIRDatabase.database().reference();
+        let unreadRef = ref.child("users").child((user?.uid)!).child("unread");
+        let notifKey = unreadRef.childByAutoId().key;
+        let notifRef = unreadRef.child(notifKey);
+        let notif = ["contactID":key,"contactName": "John Snow","date": today, "email":"jsnow@notrh.com","link":"https://www.theguardian.com/fashion/2017/aug/22/naomi-campbell-criticises-lack-diversity-vogue","source":"The Guardian", "tag": "Fashion","title":"Naomi Campbell criticises lack of diversity at Vogue"] as [String : Any];
+        notifRef.setValue(notif);
+    }
+
     /*
     // MARK: - Navigation
 
