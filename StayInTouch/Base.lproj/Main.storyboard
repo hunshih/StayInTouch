@@ -963,10 +963,20 @@
                                     <constraint firstItem="1ck-aH-HPo" firstAttribute="leading" secondItem="xPw-e4-XOc" secondAttribute="leading" id="smQ-Tw-9mr"/>
                                 </constraints>
                             </stackView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="error message" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Jc9-gf-mko">
+                                <rect key="frame" x="16" y="444" width="343" height="68"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle3"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailing" secondItem="xPw-e4-XOc" secondAttribute="trailing" id="D9n-NJ-exb"/>
+                            <constraint firstItem="Uzd-nX-ddz" firstAttribute="top" secondItem="Jc9-gf-mko" secondAttribute="bottom" constant="155" id="KBN-NX-N9o"/>
+                            <constraint firstItem="Jc9-gf-mko" firstAttribute="top" secondItem="xPw-e4-XOc" secondAttribute="bottom" constant="10" id="Lrf-P9-Th7"/>
+                            <constraint firstItem="Jc9-gf-mko" firstAttribute="leading" secondItem="MHA-e4-1Xw" secondAttribute="leadingMargin" id="TVd-vQ-WeH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Jc9-gf-mko" secondAttribute="trailing" id="XgO-Ml-CKJ"/>
                             <constraint firstItem="xPw-e4-XOc" firstAttribute="centerY" secondItem="MHA-e4-1Xw" secondAttribute="centerY" id="m2H-ax-dSy"/>
                             <constraint firstItem="xPw-e4-XOc" firstAttribute="leading" secondItem="MHA-e4-1Xw" secondAttribute="leading" id="wqL-Vi-5GP"/>
                         </constraints>
@@ -981,6 +991,7 @@
                     <connections>
                         <outlet property="SignInButton" destination="CoK-Db-jyh" id="2sL-mT-CTr"/>
                         <outlet property="email" destination="qgy-v5-9wq" id="tKB-dN-EGb"/>
+                        <outlet property="errorMessage" destination="Jc9-gf-mko" id="OOm-TG-wB2"/>
                         <outlet property="password" destination="lwk-AT-qWP" id="BrH-Kk-ynk"/>
                         <segue destination="49e-Tb-3d3" kind="presentation" identifier="HomeScreenSegue" id="I6V-We-ywh"/>
                     </connections>
@@ -1374,7 +1385,7 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="5H6-hf-JR1"/>
-        <segue reference="Tch-pR-IVT"/>
+        <segue reference="I6V-We-ywh"/>
         <segue reference="Cex-oQ-Okc"/>
     </inferredMetricsTieBreakers>
 </document>

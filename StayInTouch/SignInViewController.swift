@@ -16,6 +16,7 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var SignInButton: UIButton!
     @IBOutlet weak var SignUpButton: UIButton!
     let ref = FIRDatabase.database().reference().child("users");
+    @IBOutlet weak var errorMessage: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,7 +28,8 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         self.password.returnKeyType = UIReturnKeyType.go
         self.email.autocorrectionType = .no
         self.email.keyboardType = UIKeyboardType.emailAddress;
-        
+        self.errorMessage.text = "";
+        self.errorMessage.textColor = UIColor.red;
         
         // check keychain, if not signed out, continue
     }
@@ -74,14 +76,22 @@ class SignInViewController: UIViewController, UITextFieldDelegate {
         switch error {
         case .errorCodeInvalidEmail:
             print("Invalid email")
+            self.errorMessage.text = "This email is invalid";
         case .errorCodeUserDisabled:
             print("User is disabled")
+            self.errorMessage.text = "This user is disabled. Please contact support";
         case .errorCodeOperationNotAllowed:
             print("Account not enabled")
+            self.errorMessage.text = "This account is not enabled. Please contact support";
         case .errorCodeWrongPassword:
             print("Incorrect Password")
+            self.errorMessage.text = "Incorrect password";
+        case .errorCodeUserNotFound:
+            self.errorMessage.text = "User not found";
         default:
             print("Sign In Error: \(error)")
+            self.errorMessage.text = "Sign In Error: \(error)";
+
         }
     }    
     
