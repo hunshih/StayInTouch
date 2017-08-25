@@ -209,7 +209,6 @@
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="aky-DS-pYb">
                             <connections>
-                                <action selector="saveNewContact:" destination="CJ7-St-BJU" id="JOo-yi-nk1"/>
                                 <segue destination="VSJ-bq-mKE" kind="unwind" identifier="ContactAddedSegue" unwindAction="ContactAddedWithSegue:" id="9Jm-un-Pp6"/>
                             </connections>
                         </barButtonItem>

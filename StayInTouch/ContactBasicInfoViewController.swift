@@ -110,13 +110,6 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
     //The "Save" button is connected to this action instead of straight
     //dragging segue because I want to do contact info check before performing segue.
     //Be sure that the unwind seque has the identifier set as ContactAddedSegue
-    @IBAction func saveNewContact(_ sender: Any) {
-        if(self.allowedToSave())
-        {
-            performSegue(withIdentifier: "ContactAddedSegue", sender: nil)
-        }
-    }
-    
     override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
         if identifier == "ContactAddedSegue"
         {
@@ -372,7 +365,7 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
     func transform(input: String) -> String
     {
         var str = String(input.characters.dropLast());
-        str = String(input.characters.dropLast());
+        str = String(str.characters.dropLast());
         return str.lowercased();
     }
 }
