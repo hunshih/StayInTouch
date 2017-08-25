@@ -18,6 +18,7 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var FirstName: UITextField!
     @IBOutlet weak var LastName: UITextField!
     @IBOutlet weak var SubmitButton: UIButton!
+    @IBOutlet weak var errorMessage: UITextView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,8 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
         email.autocorrectionType = .no
         SubmitButton.isEnabled = false
         self.email.keyboardType = UIKeyboardType.emailAddress;
+        self.errorMessage.textColor = UIColor.red;
+        self.errorMessage.text = "";
     }
     
 
@@ -47,6 +50,11 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func submitAction(_ sender: UIButton) {
+        if(OriginalPassword.text != ConfirmPassword.text)
+        {
+            self.errorMessage.text = "Password does not match the confirm password";
+            return;
+        }
         executeSignUp()
     }
     
@@ -74,14 +82,19 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
         switch error {
         case .errorCodeInvalidEmail:
             print("Invalid email")
+            self.errorMessage.text = "Invalid email";
         case .errorCodeEmailAlreadyInUse:
-            print("Email in use")
+            print("Email in use");
+            self.errorMessage.text = "Email already used";
         case .errorCodeOperationNotAllowed:
             print("Account not enabled")
+            self.errorMessage.text = "Account not enabled";
         case .errorCodeWeakPassword:
-            print("Password too weak")
+            print("Password too weak");
+            self.errorMessage.text = "Password too weak";
         default:
-            print("Create User Error: \(error)")
+            print("Create User Error: \(error)");
+            self.errorMessage.text = "Create User Error: \(error)";
         }
         self.SubmitButton.isEnabled = false
         self.OriginalPassword.text = ""
@@ -112,8 +125,9 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        if( !(OriginalPassword.text?.isEmpty)! &&
-            (OriginalPassword.text == ConfirmPassword.text) && !((FirstName.text?.isEmpty)!) && !((LastName.text?.isEmpty)!))
+        if( !(OriginalPassword.text?.isEmpty)!
+            && !(ConfirmPassword.text?.isEmpty)!
+            && !((FirstName.text?.isEmpty)!) && !((LastName.text?.isEmpty)!))
         {
             SubmitButton.isEnabled = true;
         }

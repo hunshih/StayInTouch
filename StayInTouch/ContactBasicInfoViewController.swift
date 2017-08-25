@@ -41,6 +41,12 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
     @IBOutlet weak var tag3: UILabel!
     @IBOutlet weak var tag4: UILabel!
     @IBOutlet weak var tag5: UILabel!
+    
+    //Error messages
+    @IBOutlet weak var nameError: UITextView!
+    @IBOutlet weak var emailError: UITextView!
+    @IBOutlet weak var interestsError: UITextView!
+    
     var tags: Array<UILabel> = Array();
     var interestsCollection: Set<String> = Set();
     
@@ -70,6 +76,7 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         self.setupInterestField()
         self.setupButton();
         self.setupLabels();
+        self.setupErrorMessages();
     }
 
     override func didReceiveMemoryWarning() {
@@ -110,6 +117,17 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         }
     }
     
+    override func shouldPerformSegue(withIdentifier identifier: String, sender: Any?) -> Bool {
+        if identifier == "ContactAddedSegue"
+        {
+            if(!self.allowedToSave())
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+    
     func isValidEmail(testStr:String) -> Bool {
         // print("validate calendar: \(testStr)")
         let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
@@ -122,17 +140,32 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
         if(self.nameField.text?.isEmpty)!
         {
             print("Name not filled!");
+            self.nameError.text = "Name not filled!";
             return false;
+        }
+        else
+        {
+            self.nameError.text = "";
         }
         if(!(isValidEmail(testStr: self.emailField.text!)))
         {
             print("not proper email format");
+            self.emailError.text = "Not proper email format";
             return false;
+        }
+        else
+        {
+            self.emailError.text = "";
         }
         if(self.interestsCollection.isEmpty)
         {
             print("No interests")
+            self.interestsError.text = "Must add at least one common interest";
             return false;
+        }
+        else
+        {
+            self.interestsError.text = "";
         }
         return true;
     }
@@ -282,6 +315,16 @@ class ContactBasicInfoViewController: UIViewController, UITextFieldDelegate{
     {
         self.interestField.delegate = self;
         self.interestField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: .allEditingEvents);
+    }
+    
+    func setupErrorMessages()
+    {
+        self.nameError.text = "";
+        self.nameError.textColor = UIColor.red;
+        self.emailError.text = "";
+        self.emailError.textColor = UIColor.red;
+        self.interestsError.text = "";
+        self.interestsError.textColor = UIColor.red;
     }
     
     func userDidTapLabel(recognizer: UITapGestureRecognizer) {
