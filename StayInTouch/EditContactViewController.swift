@@ -37,6 +37,7 @@ class EditContactViewController: UIViewController {
             contact = parentView.contact;
             contactName.text = contact?.name;
             contactEmail.text = "";
+            contactEmail.textColor = UIColor.gray;
             self.loadContactInfo();
             let initialsColor = InitialsUtil.generateColor(name: contactName.text!);
             initials.setImageForName(string: contactName.text!, backgroundColor: initialsColor, circular: true, textAttributes: nil);
