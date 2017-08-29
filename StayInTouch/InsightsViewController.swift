@@ -17,6 +17,7 @@ class InsightsViewController: UIViewController {
         self.cheatButton.layer.borderWidth = 1.0;
         self.cheatButton.layer.cornerRadius = 3;
         self.cheatButton.layer.borderColor = self.view.tintColor.cgColor;
+        self.cheatButton.isHidden = true;
         // Do any additional setup after loading the view.
     }
 
