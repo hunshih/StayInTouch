@@ -25,6 +25,14 @@ var usersToUnread = new Map();
 //Entry: Info of contact, aka name and email...etc
 var contactIdInfo = new Map();
 
+//Used to identify the env
+var env = "";
+
+//API key for notification
+const prodKey = 'key=AAAAJh4i8mU:APA91bF1nMMWxv693VuJT7Yha-FLDQ8-7w9GEDxP_vsicVQ3u5KDXru-XBqiWtJnpGTjwUbfF6nA4SzLMhnIsaQl4PUZptDpt-ok2ZNmz7byo-xMj5hO5Tky_pN4b_BZFvMQQm4R8lHiUYyPosaVME-5pwLxHdrL7g'
+const devKey = 'key=AAAAW1m9Gpw:APA91bH0m4UEy-vMigBeQDyelj0ztFwl6thQGjzyqfKZXLD5g3NE486Yu4MtA7jtoXXi8XaIfhN5i0qfEyMG4FkaIq0zFnCxWsylT9Im-RQnVoM050hqBMq9mZRTjXexKiMQZwD6-tN-'
+var serverKey = "";
+
 exports.followUp = functions.https.onRequest((req, res) => {
 
 	//clear all global maps
@@ -33,9 +41,24 @@ exports.followUp = functions.https.onRequest((req, res) => {
 	allUserNotification.clear();
 	usersToUnread.clear();
 	contactIdInfo.clear();
+	env = "";
+	serverKey = "";
 
   //check the API key
   const key = req.query.key;
+
+  // get the env value
+  env = req.query.env;
+  console.log("Running this request for: " + env);
+
+  if(env === "dev")
+  {
+  	serverKey = devKey;
+  }
+  else
+  {
+  	serverKey = prodKey;
+  }
 
   // Exit if the keys don't match
   if (!secureCompare(key, functions.config().cron.key)) {
@@ -206,7 +229,7 @@ function sendMessageToUser(deviceIds, notification) {
         method: 'POST',
         headers: {
           'Content-Type' :' application/json',
-          'Authorization': 'key=AAAAJh4i8mU:APA91bF1nMMWxv693VuJT7Yha-FLDQ8-7w9GEDxP_vsicVQ3u5KDXru-XBqiWtJnpGTjwUbfF6nA4SzLMhnIsaQl4PUZptDpt-ok2ZNmz7byo-xMj5hO5Tky_pN4b_BZFvMQQm4R8lHiUYyPosaVME-5pwLxHdrL7g'
+          'Authorization': serverKey
         },
         body: JSON.stringify(
           { 
