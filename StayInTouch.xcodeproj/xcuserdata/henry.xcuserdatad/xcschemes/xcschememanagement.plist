@@ -4,7 +4,12 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
-		<key>StayInTouch.xcscheme</key>
+		<key>WeLynk DEV.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
+		</dict>
+		<key>WeLynk PROD.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
 			<integer>0</integer>
@@ -12,6 +17,11 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>BA2537AB1F5F7E6D00CBE87D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>BA764A461E4FEA0E00B6659A</key>
 		<dict>
 			<key>primary</key>

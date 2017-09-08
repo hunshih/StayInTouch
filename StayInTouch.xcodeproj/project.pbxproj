@@ -9,13 +9,55 @@
 /* Begin PBXBuildFile section */
 		46E2FEEA743E863A7BD90064 /* Pods_StayInTouchTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50C9F885A28C255E5DB07B84 /* Pods_StayInTouchTests.framework */; };
 		BA0561371EF8D21F006D7FC8 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0561361EF8D21F006D7FC8 /* WelcomeViewController.swift */; };
-		BA10C6051E510DC10014C47C /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA10C6041E510DC10014C47C /* GoogleService-Info.plist */; };
 		BA115B201F256CD4006D682D /* SearchTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA115B1F1F256CD4006D682D /* SearchTextField.framework */; };
 		BA1C0D541F112E9D002569C9 /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D531F112E9D002569C9 /* Contact.swift */; };
 		BA1C0D581F116262002569C9 /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D571F116262002569C9 /* ContactViewCell.swift */; };
 		BA1C0D5A1F116710002569C9 /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D591F116710002569C9 /* ConversationTableViewController.swift */; };
 		BA1C0D5C1F1213BC002569C9 /* ContactPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D5B1F1213BC002569C9 /* ContactPageViewController.swift */; };
 		BA1C0D5E1F159BC3002569C9 /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D5D1F159BC3002569C9 /* EditContactViewController.swift */; };
+		BA2537AE1F5F7E6D00CBE87D /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A6C1E5013C300B6659A /* SignInViewController.swift */; };
+		BA2537AF1F5F7E6D00CBE87D /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A4E1E4FEA0E00B6659A /* SecondViewController.swift */; };
+		BA2537B01F5F7E6D00CBE87D /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CD7B41E86CEC900196BE6 /* ContactViewController.swift */; };
+		BA2537B11F5F7E6D00CBE87D /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA262F551E778D3400E4A614 /* SettingsViewController.swift */; };
+		BA2537B21F5F7E6D00CBE87D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A4A1E4FEA0E00B6659A /* AppDelegate.swift */; };
+		BA2537B31F5F7E6D00CBE87D /* TipThreeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B06361F48E94F0054232F /* TipThreeViewController.swift */; };
+		BA2537B41F5F7E6D00CBE87D /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA0561361EF8D21F006D7FC8 /* WelcomeViewController.swift */; };
+		BA2537B51F5F7E6D00CBE87D /* ArticleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA77CDC21ECFF74E009D891B /* ArticleViewController.swift */; };
+		BA2537B61F5F7E6D00CBE87D /* ContactBasicInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CD7B21E86CE1E00196BE6 /* ContactBasicInfoViewController.swift */; };
+		BA2537B71F5F7E6D00CBE87D /* NotificationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD94FD51EC79CD50077A355 /* NotificationTableViewCell.swift */; };
+		BA2537B81F5F7E6D00CBE87D /* InsightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B06301F3D3B070054232F /* InsightsViewController.swift */; };
+		BA2537B91F5F7E6D00CBE87D /* ContactInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CD7B81E8877C600196BE6 /* ContactInfo.swift */; };
+		BA2537BA1F5F7E6D00CBE87D /* ProfessionalProfileTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CD7B61E8707BF00196BE6 /* ProfessionalProfileTableViewController.swift */; };
+		BA2537BB1F5F7E6D00CBE87D /* ContactPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D5B1F1213BC002569C9 /* ContactPageViewController.swift */; };
+		BA2537BC1F5F7E6D00CBE87D /* SessionCheckViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA9B648E1E56C18000DD6414 /* SessionCheckViewController.swift */; };
+		BA2537BD1F5F7E6D00CBE87D /* TipViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1BE1F1EF74A0015D943 /* TipViewController.swift */; };
+		BA2537BE1F5F7E6D00CBE87D /* InitialsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B06321F414DAF0054232F /* InitialsUtil.swift */; };
+		BA2537BF1F5F7E6D00CBE87D /* Contact.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D531F112E9D002569C9 /* Contact.swift */; };
+		BA2537C01F5F7E6D00CBE87D /* PastConvoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1B51F1AC4610015D943 /* PastConvoTableViewController.swift */; };
+		BA2537C11F5F7E6D00CBE87D /* StringUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFDC8771E993B4C009E6BBB /* StringUtil.swift */; };
+		BA2537C21F5F7E6D00CBE87D /* InterestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA5CD7BA1E887F7A00196BE6 /* InterestsTableViewController.swift */; };
+		BA2537C31F5F7E6D00CBE87D /* HomeTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA90BB771E67CA850062E419 /* HomeTabBarController.swift */; };
+		BA2537C41F5F7E6D00CBE87D /* TipsPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1BC1F1DC14B0015D943 /* TipsPageViewController.swift */; };
+		BA2537C51F5F7E6D00CBE87D /* ConversationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D591F116710002569C9 /* ConversationTableViewController.swift */; };
+		BA2537C61F5F7E6D00CBE87D /* TipTwoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B06341F48E9410054232F /* TipTwoViewController.swift */; };
+		BA2537C71F5F7E6D00CBE87D /* SubmitSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4274EA1E5FE18F00FED1B0 /* SubmitSignUpViewController.swift */; };
+		BA2537C81F5F7E6D00CBE87D /* FollowUpTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAD94FD11EC7928B0077A355 /* FollowUpTableViewController.swift */; };
+		BA2537C91F5F7E6D00CBE87D /* FollowUpUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1B91F1BC7670015D943 /* FollowUpUtil.swift */; };
+		BA2537CA1F5F7E6D00CBE87D /* ConvoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFFF1B71F1AC5D20015D943 /* ConvoTableViewCell.swift */; };
+		BA2537CB1F5F7E6D00CBE87D /* Printer.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4274EC1E5FE4EC00FED1B0 /* Printer.swift */; };
+		BA2537CC1F5F7E6D00CBE87D /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3C43DB1ECD3BEC003D00A7 /* Notification.swift */; };
+		BA2537CD1F5F7E6D00CBE87D /* NotificationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA77CDC01ECFEEF8009D891B /* NotificationViewController.swift */; };
+		BA2537CE1F5F7E6D00CBE87D /* EditContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D5D1F159BC3002569C9 /* EditContactViewController.swift */; };
+		BA2537CF1F5F7E6D00CBE87D /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA764A4C1E4FEA0E00B6659A /* FirstViewController.swift */; };
+		BA2537D01F5F7E6D00CBE87D /* SignUpInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189A1E622E2500E25925 /* SignUpInfoTableViewController.swift */; };
+		BA2537D11F5F7E6D00CBE87D /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA41189E1E6299CC00E25925 /* Constants.swift */; };
+		BA2537D21F5F7E6D00CBE87D /* ContactViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1C0D571F116262002569C9 /* ContactViewCell.swift */; };
+		BA2537D41F5F7E6D00CBE87D /* SearchTextField.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA115B1F1F256CD4006D682D /* SearchTextField.framework */; };
+		BA2537D51F5F7E6D00CBE87D /* Pods_StayInTouch.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */; };
+		BA2537D81F5F7E6D00CBE87D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA764A531E4FEA0F00B6659A /* Assets.xcassets */; };
+		BA2537D91F5F7E6D00CBE87D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA764A501E4FEA0E00B6659A /* Main.storyboard */; };
+		BA2537EC1F60F48300CBE87D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA2537EB1F60F48300CBE87D /* GoogleService-Info.plist */; };
+		BA2537EE1F60F4DE00CBE87D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = BA2537ED1F60F4DE00CBE87D /* GoogleService-Info.plist */; };
 		BA262F561E778D3400E4A614 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA262F551E778D3400E4A614 /* SettingsViewController.swift */; };
 		BA3B06311F3D3B070054232F /* InsightsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B06301F3D3B070054232F /* InsightsViewController.swift */; };
 		BA3B06331F414DAF0054232F /* InitialsUtil.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA3B06321F414DAF0054232F /* InitialsUtil.swift */; };
@@ -70,7 +112,6 @@
 		5F754D2EBDB079A69C36E6CE /* Pods-StayInTouchTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StayInTouchTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-StayInTouchTests/Pods-StayInTouchTests.release.xcconfig"; sourceTree = "<group>"; };
 		82426BF26336EF93DEF6949B /* Pods_StayInTouch.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StayInTouch.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA0561361EF8D21F006D7FC8 /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		BA10C6041E510DC10014C47C /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA115B1F1F256CD4006D682D /* SearchTextField.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SearchTextField.framework; path = "../../../Library/Developer/Xcode/DerivedData/StayInTouch-fhtrjtvlufcaaefjkljzktdgnlro/Build/Products/Debug-iphonesimulator/SearchTextField/SearchTextField.framework"; sourceTree = "<group>"; };
 		BA1C0D531F112E9D002569C9 /* Contact.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Contact.swift; sourceTree = "<group>"; };
 		BA1C0D571F116262002569C9 /* ContactViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactViewCell.swift; sourceTree = "<group>"; };
@@ -78,6 +119,10 @@
 		BA1C0D5B1F1213BC002569C9 /* ContactPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactPageViewController.swift; sourceTree = "<group>"; };
 		BA1C0D5D1F159BC3002569C9 /* EditContactViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditContactViewController.swift; sourceTree = "<group>"; };
 		BA2031461EA9B2C1005CD63C /* StayInTouch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = StayInTouch.entitlements; sourceTree = "<group>"; };
+		BA2537DF1F5F7E6D00CBE87D /* WeLynk DEV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeLynk DEV.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA2537E01F5F7E6E00CBE87D /* StayInTouch Dev-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "StayInTouch Dev-Info.plist"; path = "/Users/henry/Desktop/StayInTouch/StayInTouch/StayInTouch Dev-Info.plist"; sourceTree = "<absolute>"; };
+		BA2537EB1F60F48300CBE87D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		BA2537ED1F60F4DE00CBE87D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		BA262F551E778D3400E4A614 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		BA3B06301F3D3B070054232F /* InsightsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InsightsViewController.swift; sourceTree = "<group>"; };
 		BA3B06321F414DAF0054232F /* InitialsUtil.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialsUtil.swift; sourceTree = "<group>"; };
@@ -93,7 +138,7 @@
 		BA5CD7B61E8707BF00196BE6 /* ProfessionalProfileTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfessionalProfileTableViewController.swift; sourceTree = "<group>"; };
 		BA5CD7B81E8877C600196BE6 /* ContactInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactInfo.swift; sourceTree = "<group>"; };
 		BA5CD7BA1E887F7A00196BE6 /* InterestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterestsTableViewController.swift; sourceTree = "<group>"; };
-		BA764A471E4FEA0E00B6659A /* StayInTouch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StayInTouch.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA764A471E4FEA0E00B6659A /* WeLynk PROD.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "WeLynk PROD.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA764A4A1E4FEA0E00B6659A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA764A4C1E4FEA0E00B6659A /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
 		BA764A4E1E4FEA0E00B6659A /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
@@ -120,6 +165,15 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BA2537D31F5F7E6D00CBE87D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2537D41F5F7E6D00CBE87D /* SearchTextField.framework in Frameworks */,
+				BA2537D51F5F7E6D00CBE87D /* Pods_StayInTouch.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA764A441E4FEA0E00B6659A /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -148,6 +202,23 @@
 				50C9F885A28C255E5DB07B84 /* Pods_StayInTouchTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BA2537E71F60F06D00CBE87D /* Prod */ = {
+			isa = PBXGroup;
+			children = (
+				BA2537ED1F60F4DE00CBE87D /* GoogleService-Info.plist */,
+			);
+			name = Prod;
+			sourceTree = "<group>";
+		};
+		BA2537EA1F60F37000CBE87D /* Dev */ = {
+			isa = PBXGroup;
+			children = (
+				BA2537EB1F60F48300CBE87D /* GoogleService-Info.plist */,
+			);
+			name = Dev;
+			path = ..;
 			sourceTree = "<group>";
 		};
 		BA262F521E778CDD00E4A614 /* Settings */ = {
@@ -246,8 +317,9 @@
 		BA764A481E4FEA0E00B6659A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA764A471E4FEA0E00B6659A /* StayInTouch.app */,
+				BA764A471E4FEA0E00B6659A /* WeLynk PROD.app */,
 				BA764A5D1E4FEA1100B6659A /* StayInTouchTests.xctest */,
+				BA2537DF1F5F7E6D00CBE87D /* WeLynk DEV.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -255,6 +327,8 @@
 		BA764A491E4FEA0E00B6659A /* StayInTouch */ = {
 			isa = PBXGroup;
 			children = (
+				BA2537EA1F60F37000CBE87D /* Dev */,
+				BA2537E71F60F06D00CBE87D /* Prod */,
 				BA2031461EA9B2C1005CD63C /* StayInTouch.entitlements */,
 				BA3B062F1F3D3AE20054232F /* Insights */,
 				BA41189C1E62992600E25925 /* Utils */,
@@ -266,8 +340,8 @@
 				BA764A501E4FEA0E00B6659A /* Main.storyboard */,
 				BA764A4A1E4FEA0E00B6659A /* AppDelegate.swift */,
 				BA764A531E4FEA0F00B6659A /* Assets.xcassets */,
-				BA10C6041E510DC10014C47C /* GoogleService-Info.plist */,
 				BA764A581E4FEA0F00B6659A /* Info.plist */,
+				BA2537E01F5F7E6E00CBE87D /* StayInTouch Dev-Info.plist */,
 			);
 			path = StayInTouch;
 			sourceTree = "<group>";
@@ -306,9 +380,29 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BA764A461E4FEA0E00B6659A /* StayInTouch */ = {
+		BA2537AB1F5F7E6D00CBE87D /* WeLynk DEV */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA764A661E4FEA1100B6659A /* Build configuration list for PBXNativeTarget "StayInTouch" */;
+			buildConfigurationList = BA2537DC1F5F7E6D00CBE87D /* Build configuration list for PBXNativeTarget "WeLynk DEV" */;
+			buildPhases = (
+				BA2537AC1F5F7E6D00CBE87D /* [CP] Check Pods Manifest.lock */,
+				BA2537AD1F5F7E6D00CBE87D /* Sources */,
+				BA2537D31F5F7E6D00CBE87D /* Frameworks */,
+				BA2537D61F5F7E6D00CBE87D /* Resources */,
+				BA2537DA1F5F7E6D00CBE87D /* [CP] Embed Pods Frameworks */,
+				BA2537DB1F5F7E6D00CBE87D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "WeLynk DEV";
+			productName = StayInTouch;
+			productReference = BA2537DF1F5F7E6D00CBE87D /* WeLynk DEV.app */;
+			productType = "com.apple.product-type.application";
+		};
+		BA764A461E4FEA0E00B6659A /* WeLynk PROD */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA764A661E4FEA1100B6659A /* Build configuration list for PBXNativeTarget "WeLynk PROD" */;
 			buildPhases = (
 				DABEA5A12669305EAD6CE09E /* [CP] Check Pods Manifest.lock */,
 				BA764A431E4FEA0E00B6659A /* Sources */,
@@ -321,9 +415,9 @@
 			);
 			dependencies = (
 			);
-			name = StayInTouch;
+			name = "WeLynk PROD";
 			productName = StayInTouch;
-			productReference = BA764A471E4FEA0E00B6659A /* StayInTouch.app */;
+			productReference = BA764A471E4FEA0E00B6659A /* WeLynk PROD.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BA764A5C1E4FEA1100B6659A /* StayInTouchTests */ = {
@@ -357,6 +451,9 @@
 				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = "Hung-Yuan Shih";
 				TargetAttributes = {
+					BA2537AB1F5F7E6D00CBE87D = {
+						DevelopmentTeam = KAFJCUEKP3;
+					};
 					BA764A461E4FEA0E00B6659A = {
 						CreatedOnToolsVersion = 8.2;
 						DevelopmentTeam = KAFJCUEKP3;
@@ -387,20 +484,31 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BA764A461E4FEA0E00B6659A /* StayInTouch */,
+				BA764A461E4FEA0E00B6659A /* WeLynk PROD */,
 				BA764A5C1E4FEA1100B6659A /* StayInTouchTests */,
+				BA2537AB1F5F7E6D00CBE87D /* WeLynk DEV */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BA2537D61F5F7E6D00CBE87D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2537D81F5F7E6D00CBE87D /* Assets.xcassets in Resources */,
+				BA2537D91F5F7E6D00CBE87D /* Main.storyboard in Resources */,
+				BA2537EC1F60F48300CBE87D /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA764A451E4FEA0E00B6659A /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA10C6051E510DC10014C47C /* GoogleService-Info.plist in Resources */,
 				BA764A541E4FEA0F00B6659A /* Assets.xcassets in Resources */,
 				BA764A521E4FEA0E00B6659A /* Main.storyboard in Resources */,
+				BA2537EE1F60F4DE00CBE87D /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -489,6 +597,51 @@
 			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		BA2537AC1F5F7E6D00CBE87D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		BA2537DA1F5F7E6D00CBE87D /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StayInTouch/Pods-StayInTouch-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA2537DB1F5F7E6D00CBE87D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-StayInTouch/Pods-StayInTouch-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		DABEA5A12669305EAD6CE09E /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -507,6 +660,50 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BA2537AD1F5F7E6D00CBE87D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA2537AE1F5F7E6D00CBE87D /* SignInViewController.swift in Sources */,
+				BA2537AF1F5F7E6D00CBE87D /* SecondViewController.swift in Sources */,
+				BA2537B01F5F7E6D00CBE87D /* ContactViewController.swift in Sources */,
+				BA2537B11F5F7E6D00CBE87D /* SettingsViewController.swift in Sources */,
+				BA2537B21F5F7E6D00CBE87D /* AppDelegate.swift in Sources */,
+				BA2537B31F5F7E6D00CBE87D /* TipThreeViewController.swift in Sources */,
+				BA2537B41F5F7E6D00CBE87D /* WelcomeViewController.swift in Sources */,
+				BA2537B51F5F7E6D00CBE87D /* ArticleViewController.swift in Sources */,
+				BA2537B61F5F7E6D00CBE87D /* ContactBasicInfoViewController.swift in Sources */,
+				BA2537B71F5F7E6D00CBE87D /* NotificationTableViewCell.swift in Sources */,
+				BA2537B81F5F7E6D00CBE87D /* InsightsViewController.swift in Sources */,
+				BA2537B91F5F7E6D00CBE87D /* ContactInfo.swift in Sources */,
+				BA2537BA1F5F7E6D00CBE87D /* ProfessionalProfileTableViewController.swift in Sources */,
+				BA2537BB1F5F7E6D00CBE87D /* ContactPageViewController.swift in Sources */,
+				BA2537BC1F5F7E6D00CBE87D /* SessionCheckViewController.swift in Sources */,
+				BA2537BD1F5F7E6D00CBE87D /* TipViewController.swift in Sources */,
+				BA2537BE1F5F7E6D00CBE87D /* InitialsUtil.swift in Sources */,
+				BA2537BF1F5F7E6D00CBE87D /* Contact.swift in Sources */,
+				BA2537C01F5F7E6D00CBE87D /* PastConvoTableViewController.swift in Sources */,
+				BA2537C11F5F7E6D00CBE87D /* StringUtil.swift in Sources */,
+				BA2537C21F5F7E6D00CBE87D /* InterestsTableViewController.swift in Sources */,
+				BA2537C31F5F7E6D00CBE87D /* HomeTabBarController.swift in Sources */,
+				BA2537C41F5F7E6D00CBE87D /* TipsPageViewController.swift in Sources */,
+				BA2537C51F5F7E6D00CBE87D /* ConversationTableViewController.swift in Sources */,
+				BA2537C61F5F7E6D00CBE87D /* TipTwoViewController.swift in Sources */,
+				BA2537C71F5F7E6D00CBE87D /* SubmitSignUpViewController.swift in Sources */,
+				BA2537C81F5F7E6D00CBE87D /* FollowUpTableViewController.swift in Sources */,
+				BA2537C91F5F7E6D00CBE87D /* FollowUpUtil.swift in Sources */,
+				BA2537CA1F5F7E6D00CBE87D /* ConvoTableViewCell.swift in Sources */,
+				BA2537CB1F5F7E6D00CBE87D /* Printer.swift in Sources */,
+				BA2537CC1F5F7E6D00CBE87D /* Notification.swift in Sources */,
+				BA2537CD1F5F7E6D00CBE87D /* NotificationViewController.swift in Sources */,
+				BA2537CE1F5F7E6D00CBE87D /* EditContactViewController.swift in Sources */,
+				BA2537CF1F5F7E6D00CBE87D /* FirstViewController.swift in Sources */,
+				BA2537D01F5F7E6D00CBE87D /* SignUpInfoTableViewController.swift in Sources */,
+				BA2537D11F5F7E6D00CBE87D /* Constants.swift in Sources */,
+				BA2537D21F5F7E6D00CBE87D /* ContactViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA764A431E4FEA0E00B6659A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -564,7 +761,7 @@
 /* Begin PBXTargetDependency section */
 		BA764A5F1E4FEA1100B6659A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA764A461E4FEA0E00B6659A /* StayInTouch */;
+			target = BA764A461E4FEA0E00B6659A /* WeLynk PROD */;
 			targetProxy = BA764A5E1E4FEA1100B6659A /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -581,6 +778,38 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BA2537DD1F5F7E6D00CBE87D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EAB95E939505C80B7C390CA /* Pods-StayInTouch.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
+				CODE_SIGN_ENTITLEMENTS = StayInTouch/StayInTouch.entitlements;
+				DEVELOPMENT_TEAM = KAFJCUEKP3;
+				INFOPLIST_FILE = "StayInTouch Dev-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEVELOPMENT";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beta.WeLynk-Dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		BA2537DE1F5F7E6D00CBE87D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4A5A5ACEDDD661838FC9157B /* Pods-StayInTouch.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "AppIcon-Dev";
+				CODE_SIGN_ENTITLEMENTS = StayInTouch/StayInTouch.entitlements;
+				DEVELOPMENT_TEAM = KAFJCUEKP3;
+				INFOPLIST_FILE = "StayInTouch Dev-Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" -DDEVELOPMENT";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.beta.WeLynk-Dev";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
 		BA764A641E4FEA1100B6659A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -737,6 +966,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BA2537DC1F5F7E6D00CBE87D /* Build configuration list for PBXNativeTarget "WeLynk DEV" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA2537DD1F5F7E6D00CBE87D /* Debug */,
+				BA2537DE1F5F7E6D00CBE87D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BA764A421E4FEA0E00B6659A /* Build configuration list for PBXProject "StayInTouch" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -746,7 +984,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA764A661E4FEA1100B6659A /* Build configuration list for PBXNativeTarget "StayInTouch" */ = {
+		BA764A661E4FEA1100B6659A /* Build configuration list for PBXNativeTarget "WeLynk PROD" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA764A671E4FEA1100B6659A /* Debug */,
