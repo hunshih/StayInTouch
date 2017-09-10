@@ -87,6 +87,8 @@ exports.followUp = functions.https.onRequest((req, res) => {
   var articles;
   var articleSearchPromises = [];
   var fillNotificationPromises = [];
+
+  /* Was testing different env
   console.log("db ref: " + admin.database().ref('/topics'));
   admin.database().ref('/topics').once('value', function(topics){
   	console.log("got callback!");
@@ -96,13 +98,12 @@ exports.followUp = functions.https.onRequest((req, res) => {
   }, function(error){
   		console.log("callback failed: " + error.code);
   });
+  */
 
-  /*
   var promise = getAllTopics();
   promise
   .then(
   	function(topics){
-  		console.log("got all topics results");
   		articles = getArticles(topics);
   	}, function(error) {
 	  // The Promise was rejected.
@@ -117,7 +118,6 @@ exports.followUp = functions.https.onRequest((req, res) => {
   	})
   .then(
   	function(){
-  		console.log("breakpoint 2");
   	return Promise.all(articleSearchPromises);
   })
   .then(
@@ -128,16 +128,14 @@ exports.followUp = functions.https.onRequest((req, res) => {
   	}
   ).then(
   	function(){
-  		console.log("now fill notification");
   		fillNotificationTable();
   	}
   ).then(
 	function(){
-		console.log("send notification");
 		sendNotification();
 	}
   );
-  */
+  
   res.end();
 });
 
