@@ -5,8 +5,21 @@ const secureCompare = require('secure-compare');
 const admin = require('firebase-admin');
 const https = require('https');
 const querystring = require('querystring');
-admin.initializeApp(functions.config().firebase);
+//admin.initializeApp(functions.config().firebase);
+
+const serviceAccount = functions.config().app.environment === 'dev' ?
+'WeLynk-DEV.json' : 'WeLynk-PROD.json';
+const dbUrl = functions.config().app.environment === 'dev' ?
+'https://welynk-dev.firebaseio.com' : 'https://stayintouch-cf7b5.firebaseio.com';
+
+admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: dbUrl
+});
 // [END import]
+
+//Helpful debug logging
+//admin.database.enableLogging(true);
 
 //Global Variable
 var allTopics = new Map();
@@ -70,15 +83,31 @@ exports.followUp = functions.https.onRequest((req, res) => {
   }  
 
   //getContacts is a promise, thus non-blocking
+  //Def reached here
   var articles;
   var articleSearchPromises = [];
   var fillNotificationPromises = [];
+  console.log("db ref: " + admin.database().ref('/topics'));
+  admin.database().ref('/topics').once('value', function(topics){
+  	console.log("got callback!");
+	topics.forEach(function(topic) {
+		console.log("topic is: " + topic.key);
+	})
+  }, function(error){
+  		console.log("callback failed: " + error.code);
+  });
+
+  /*
   var promise = getAllTopics();
   promise
   .then(
   	function(topics){
+  		console.log("got all topics results");
   		articles = getArticles(topics);
-  	})
+  	}, function(error) {
+	  // The Promise was rejected.
+	  console.error(error);
+	})
   .then(
   	function(){
   		articles.forEach(function(topic)
@@ -88,30 +117,34 @@ exports.followUp = functions.https.onRequest((req, res) => {
   	})
   .then(
   	function(){
+  		console.log("breakpoint 2");
   	return Promise.all(articleSearchPromises);
   })
   .then(
   	function(){
-  		//printAllTopics();
-  		//printAllUserSubscribe();
+  		printAllTopics();
+  		printAllUserSubscribe();
   		addUnreadNotification();
   	}
   ).then(
   	function(){
+  		console.log("now fill notification");
   		fillNotificationTable();
   	}
   ).then(
 	function(){
+		console.log("send notification");
 		sendNotification();
 	}
   );
+  */
   res.end();
 });
 
 /**
 This function returns a promise
 */
-function getAllTopics(){
+function getAllTopics(){ 
     return admin.database().ref('/topics').once('value');
 }
 
