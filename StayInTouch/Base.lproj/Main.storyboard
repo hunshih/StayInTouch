@@ -14,16 +14,16 @@
         <!--Follow Up-->
         <scene sceneID="Mx1-f4-6Bg">
             <objects>
-                <tableViewController id="pcd-s3-mzp" customClass="FollowUpTableViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="pcd-s3-mzp" customClass="FollowUpTableViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="bVg-4q-eEL">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationTableViewCell" rowHeight="90" id="ubx-T4-3zB" customClass="NotificationTableViewCell" customModule="StayInTouch" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="NotificationTableViewCell" rowHeight="90" id="ubx-T4-3zB" customClass="NotificationTableViewCell" customModule="WeLynk_DEV" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ubx-T4-3zB" id="d92-I7-jzA" customClass="NotificationTableViewCell" customModule="StayInTouch" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ubx-T4-3zB" id="d92-I7-jzA" customClass="NotificationTableViewCell" customModule="WeLynk_DEV" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -70,7 +70,7 @@
         <!--New Connection-->
         <scene sceneID="Ndg-6Z-za4">
             <objects>
-                <viewController id="CJ7-St-BJU" customClass="ContactBasicInfoViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="CJ7-St-BJU" customClass="ContactBasicInfoViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qUI-2s-CBx"/>
                         <viewControllerLayoutGuide type="bottom" id="Kef-tX-G0A"/>
@@ -236,7 +236,7 @@
         <!--Notification View Controller-->
         <scene sceneID="Tch-DL-UdF">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qlg-zA-D1a" customClass="NotificationViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="qlg-zA-D1a" customClass="NotificationViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="49q-fQ-6a1"/>
                         <viewControllerLayoutGuide type="bottom" id="Npq-sU-9wy"/>
@@ -278,7 +278,7 @@
         <!--Contact Page View Controller-->
         <scene sceneID="UgH-ef-GG6">
             <objects>
-                <pageViewController storyboardIdentifier="ContactPageBoard" autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="FNP-rv-ITb" customClass="ContactPageViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="ContactPageBoard" autoresizesArchivedViewToFullSize="NO" hidesBottomBarWhenPushed="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="FNP-rv-ITb" customClass="ContactPageViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <extendedEdge key="edgesForExtendedLayout" bottom="YES"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5nR-sV-xmA" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -288,7 +288,7 @@
         <!--Edit Contact View Controller-->
         <scene sceneID="5Du-xe-0rp">
             <objects>
-                <viewController storyboardIdentifier="ContactInfoBoard" id="65y-M7-2Md" customClass="EditContactViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ContactInfoBoard" id="65y-M7-2Md" customClass="EditContactViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="6Z3-rC-h78"/>
                         <viewControllerLayoutGuide type="bottom" id="ohu-dO-eXp"/>
@@ -394,7 +394,7 @@
         <!--Insights-->
         <scene sceneID="J9v-F5-1Yj">
             <objects>
-                <viewController id="Idh-qa-IyL" customClass="InsightsViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Idh-qa-IyL" customClass="InsightsViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Fef-PI-mK0"/>
                         <viewControllerLayoutGuide type="bottom" id="dgZ-4S-mTp"/>
@@ -440,7 +440,7 @@
         <!--Settings-->
         <scene sceneID="Ohb-ZV-Isc">
             <objects>
-                <viewController id="Tn1-kS-YQO" customClass="SettingsViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Tn1-kS-YQO" customClass="SettingsViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ZLn-yK-g28"/>
                         <viewControllerLayoutGuide type="bottom" id="clp-4j-DDS"/>
@@ -602,7 +602,7 @@
         <!--Welcome-->
         <scene sceneID="3sh-ul-SUC">
             <objects>
-                <viewController title="Welcome" id="2mO-dW-8lD" customClass="WelcomeViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController title="Welcome" id="2mO-dW-8lD" customClass="WelcomeViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Me9-B9-xas"/>
                         <viewControllerLayoutGuide type="bottom" id="98E-it-Xmc"/>
@@ -611,9 +611,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFl-yU-tz5">
-                                <rect key="frame" x="145" y="387" width="85" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFl-yU-tz5">
+                                <rect key="frame" x="164" y="390.5" width="47" height="30"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <segue destination="jkU-s9-NCa" kind="presentation" id="Qcg-7v-bSQ"/>
@@ -625,9 +624,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOW-hN-WK4">
-                                <rect key="frame" x="145" y="437" width="85" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOW-hN-WK4">
+                                <rect key="frame" x="160" y="440.5" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <segue destination="oc2-eF-pKw" kind="presentation" id="Fdc-f2-KQW"/>
@@ -636,8 +634,12 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="lOW-hN-WK4" firstAttribute="centerX" secondItem="WFl-yU-tz5" secondAttribute="centerX" id="9rv-io-2wv"/>
                             <constraint firstItem="ymu-F0-4Wh" firstAttribute="centerY" secondItem="faK-6C-Qej" secondAttribute="centerY" id="BXp-LU-wAC"/>
+                            <constraint firstItem="WFl-yU-tz5" firstAttribute="centerX" secondItem="ymu-F0-4Wh" secondAttribute="centerX" id="Lnc-Kk-CTU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ymu-F0-4Wh" secondAttribute="trailing" id="a0R-hm-fJO"/>
+                            <constraint firstItem="WFl-yU-tz5" firstAttribute="top" secondItem="ymu-F0-4Wh" secondAttribute="bottom" constant="40" id="eud-bL-1g3"/>
+                            <constraint firstItem="lOW-hN-WK4" firstAttribute="top" secondItem="WFl-yU-tz5" secondAttribute="bottom" constant="20" id="rur-rA-3hx"/>
                             <constraint firstItem="ymu-F0-4Wh" firstAttribute="leading" secondItem="faK-6C-Qej" secondAttribute="leadingMargin" id="uSy-du-1ci"/>
                         </constraints>
                     </view>
@@ -649,7 +651,7 @@
         <!--Submit Sign Up View Controller-->
         <scene sceneID="fVW-lu-S36">
             <objects>
-                <viewController id="Ncd-3K-LfQ" customClass="SubmitSignUpViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ncd-3K-LfQ" customClass="SubmitSignUpViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sc8-JL-z23"/>
                         <viewControllerLayoutGuide type="bottom" id="qbM-tk-C0r"/>
@@ -794,7 +796,7 @@
         <!--Home Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
-                <tabBarController id="49e-Tb-3d3" customClass="HomeTabBarController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <tabBarController id="49e-Tb-3d3" customClass="HomeTabBarController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -815,7 +817,7 @@
         <!--Session Check View Controller-->
         <scene sceneID="FRp-6g-WfE">
             <objects>
-                <viewController id="Ylz-YK-S22" customClass="SessionCheckViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Ylz-YK-S22" customClass="SessionCheckViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2jY-iH-6iJ"/>
                         <viewControllerLayoutGuide type="bottom" id="e3x-uf-5oR"/>
@@ -874,7 +876,7 @@
         <!--Welcome-->
         <scene sceneID="GlB-w0-zdg">
             <objects>
-                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QqY-3R-yge" customClass="TipsPageViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="QqY-3R-yge" customClass="TipsPageViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationItem key="navigationItem" title="Welcome" id="Zoo-i6-Tia"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
@@ -943,7 +945,7 @@
         <!--Sign In-->
         <scene sceneID="rDN-Mv-8h4">
             <objects>
-                <viewController id="h2W-kK-jER" customClass="SignInViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="h2W-kK-jER" customClass="SignInViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pEb-fE-KsH"/>
                         <viewControllerLayoutGuide type="bottom" id="Uzd-nX-ddz"/>
@@ -1076,16 +1078,16 @@
         <!--Contact-->
         <scene sceneID="24E-Zg-daf">
             <objects>
-                <tableViewController id="ua8-sV-EJz" userLabel="Contact" customClass="ConversationTableViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController id="ua8-sV-EJz" userLabel="Contact" customClass="ConversationTableViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="50" sectionHeaderHeight="28" sectionFooterHeight="28" id="Ww8-TR-Pn3">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="0.99484291599999997" green="0.98672604230000005" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="50" id="YuG-Bh-cPG" customClass="ContactViewCell" customModule="StayInTouch" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContactTableViewCell" rowHeight="50" id="YuG-Bh-cPG" customClass="ContactViewCell" customModule="WeLynk_DEV" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="50"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YuG-Bh-cPG" id="81L-bg-ZtB" customClass="NotificationTableViewCell" customModule="StayInTouch" customModuleProvider="target">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YuG-Bh-cPG" id="81L-bg-ZtB" customClass="NotificationTableViewCell" customModule="WeLynk_DEV" customModuleProvider="target">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
@@ -1152,17 +1154,17 @@
         <!--Follow Up-->
         <scene sceneID="rG1-LN-qAY">
             <objects>
-                <tableViewController storyboardIdentifier="PastMessageBoard" id="AbB-67-KvT" customClass="PastConvoTableViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="PastMessageBoard" id="AbB-67-KvT" customClass="PastConvoTableViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" restorationIdentifier="PastMessageBoard" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="90" sectionHeaderHeight="28" sectionFooterHeight="28" id="D7X-zz-P5a">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConvoTableViewCell" rowHeight="90" id="geQ-Me-FSz" customClass="ConvoTableViewCell" customModule="StayInTouch" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConvoTableViewCell" rowHeight="90" id="geQ-Me-FSz" customClass="ConvoTableViewCell" customModule="WeLynk_DEV" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="90"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="geQ-Me-FSz" id="Lgk-8m-w0B" customClass="NotificationTableViewCell" customModule="StayInTouch" customModuleProvider="target">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="90"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="geQ-Me-FSz" id="Lgk-8m-w0B" customClass="NotificationTableViewCell" customModule="WeLynk_DEV" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="89"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" text="Title" translatesAutoresizingMaskIntoConstraints="NO" id="Lgn-7p-OgM">
@@ -1204,7 +1206,7 @@
         <!--Tip View Controller-->
         <scene sceneID="jDz-cM-Akq">
             <objects>
-                <viewController storyboardIdentifier="TipOne" id="n7S-PM-7cj" customClass="TipViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipOne" id="n7S-PM-7cj" customClass="TipViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5Ro-pe-lcK"/>
                         <viewControllerLayoutGuide type="bottom" id="DIb-B0-n3A"/>
@@ -1271,7 +1273,7 @@
         <!--Tip Two View Controller-->
         <scene sceneID="6p3-jX-KXe">
             <objects>
-                <viewController storyboardIdentifier="TipTwo" id="QgG-Mg-sWK" customClass="TipTwoViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipTwo" id="QgG-Mg-sWK" customClass="TipTwoViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="BRb-aj-vwG"/>
                         <viewControllerLayoutGuide type="bottom" id="Aet-3U-fvs"/>
@@ -1338,7 +1340,7 @@
         <!--Tip Three View Controller-->
         <scene sceneID="sez-Kj-fv8">
             <objects>
-                <viewController storyboardIdentifier="TipThree" id="pjg-PU-M73" customClass="TipThreeViewController" customModule="StayInTouch" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="TipThree" id="pjg-PU-M73" customClass="TipThreeViewController" customModule="WeLynk_DEV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Qma-a9-8bB"/>
                         <viewControllerLayoutGuide type="bottom" id="9cd-zA-gff"/>
