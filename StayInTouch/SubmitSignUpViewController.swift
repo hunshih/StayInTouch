@@ -19,6 +19,8 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var LastName: UITextField!
     @IBOutlet weak var SubmitButton: UIButton!
     @IBOutlet weak var errorMessage: UITextView!
+    @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var scrollView: UIScrollView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -41,6 +43,12 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
         self.email.keyboardType = UIKeyboardType.emailAddress;
         self.errorMessage.textColor = UIColor.red;
         self.errorMessage.text = "";
+        
+        //set scrollview size
+        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height + 100);
+        
+        //scroll dismiss keyboard
+        scrollView.keyboardDismissMode = .onDrag;
     }
     
 
@@ -124,7 +132,12 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func textFieldDidBeginEditing(_ textField: UITextField){
+        self.animateTextField(textField: textField, up:true);
+    }
+    
     func textFieldDidEndEditing(_ textField: UITextField) {
+        self.animateTextField(textField: textField, up:false);
         if( !(OriginalPassword.text?.isEmpty)!
             && !(ConfirmPassword.text?.isEmpty)!
             && !((FirstName.text?.isEmpty)!) && !((LastName.text?.isEmpty)!))
@@ -225,5 +238,24 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
         // Pass the selected object to the new view controller.
     }
     */
-
+    func animateTextField(textField: UITextField, up: Bool)
+    {
+        let movementDistance:CGFloat = -130
+        let movementDuration: Double = 0.3
+        
+        var movement:CGFloat = 0
+        if up
+        {
+            movement = movementDistance
+        }
+        else
+        {
+            movement = -movementDistance
+        }
+        UIView.beginAnimations("animateTextField", context: nil)
+        UIView.setAnimationBeginsFromCurrentState(true)
+        UIView.setAnimationDuration(movementDuration)
+        self.view.frame = self.view.frame.offsetBy(dx: 0, dy: movement)
+        UIView.commitAnimations()
+    }
 }
