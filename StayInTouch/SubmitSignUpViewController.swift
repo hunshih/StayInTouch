@@ -21,6 +21,7 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var errorMessage: UITextView!
     @IBOutlet weak var bottomConstraint: NSLayoutConstraint!
     @IBOutlet weak var scrollView: UIScrollView!
+    var shouldMoveKeyboard = false;
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,7 +46,7 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
         self.errorMessage.text = "";
         
         //set scrollview size
-        self.scrollView.contentSize = CGSize(width: self.view.frame.size.width, height: self.view.frame.size.height + 100);
+        self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.height);
         
         //scroll dismiss keyboard
         scrollView.keyboardDismissMode = .onDrag;
@@ -133,11 +134,18 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField){
-        self.animateTextField(textField: textField, up:true);
+        if(textField.restorationIdentifier == "SignUpFirstName" || textField.restorationIdentifier == "SignUpLastName")
+        {
+            self.animateTextField(textField: textField, up:true);
+        }
+
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        self.animateTextField(textField: textField, up:false);
+        if(textField.restorationIdentifier == "SignUpFirstName" || textField.restorationIdentifier == "SignUpLastName")
+        {
+            self.animateTextField(textField: textField, up:false);
+        }
         if( !(OriginalPassword.text?.isEmpty)!
             && !(ConfirmPassword.text?.isEmpty)!
             && !((FirstName.text?.isEmpty)!) && !((LastName.text?.isEmpty)!))
@@ -190,7 +198,7 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
     //Update contacts in database
     func createDefaultContact()
     {
-        let defaultUser = BasicInfo(name: "John Snow",email: "jsnow@notrh.com",interests: ["Dragons","Fashion","Classical Music"]);
+        let defaultUser = BasicInfo(name: "Jon Snow",email: "jsnow@notrh.com",interests: ["Dragons","Fashion","Classical Music"]);
 
         
         let user = FIRAuth.auth()?.currentUser;
@@ -225,7 +233,7 @@ class SubmitSignUpViewController: UIViewController, UITextFieldDelegate {
         let unreadRef = ref.child("users").child((user?.uid)!).child("unread");
         let notifKey = unreadRef.childByAutoId().key;
         let notifRef = unreadRef.child(notifKey);
-        let notif = ["contactID":key,"contactName": "John Snow","date": today, "email":"jsnow@notrh.com","link":"https://www.theguardian.com/fashion/2017/aug/22/naomi-campbell-criticises-lack-diversity-vogue","source":"The Guardian", "tag": "Fashion","title":"Naomi Campbell criticises lack of diversity at Vogue"] as [String : Any];
+        let notif = ["contactID":key,"contactName": "Jon Snow","date": today, "email":"jsnow@notrh.com","link":"https://www.theguardian.com/fashion/2017/aug/22/naomi-campbell-criticises-lack-diversity-vogue","source":"The Guardian", "tag": "Fashion","title":"Naomi Campbell criticises lack of diversity at Vogue"] as [String : Any];
         notifRef.setValue(notif);
     }
 
