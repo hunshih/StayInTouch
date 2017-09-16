@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import UserNotifications
 
 class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarControllerDelegate {
 
@@ -67,14 +68,7 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
         }
     }
     @IBAction func SignoutUser(_ sender: UIButton) {
-        let firebaseAuth = FIRAuth.auth()
-        do {
-            self.unregisterDevice();
-            try firebaseAuth?.signOut();
-            self.performSegue(withIdentifier: "SignOutSegue", sender: "");
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
+        self.signoutConfirmation();
     }
     /**
      * Called when the user click on the view (outside the UITextField).
@@ -200,5 +194,40 @@ class SettingsViewController: UIViewController, UITextFieldDelegate, UITabBarCon
         // Pass the selected object to the new view controller.
     }
     */
+    func clearBadges()
+    {
+        let badgeCount = 0;
+        let application = UIApplication.shared
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
+        application.applicationIconBadgeNumber = badgeCount
+    }
 
+    func signoutConfirmation()
+    {
+        let signOutAlert = UIAlertController(title: "Sign Out", message: "Are you sure you want to sign out?", preferredStyle: UIAlertControllerStyle.alert)
+        
+        signOutAlert.addAction(UIAlertAction(title: "Yes", style: .default, handler: { (action: UIAlertAction!) in
+            print("Confirmed Sign out");
+            let firebaseAuth = FIRAuth.auth()
+            do {
+                self.unregisterDevice();
+                try firebaseAuth?.signOut();
+                self.performSegue(withIdentifier: "SignOutSegue", sender: "");
+                self.clearBadges();
+                
+            } catch let signOutError as NSError {
+                print ("Error signing out: %@", signOutError)
+            }
+        }))
+        
+        signOutAlert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (action: UIAlertAction!) in
+            print("Do nothing");
+        }))
+        
+        present(signOutAlert, animated: true, completion: nil)
+    }
 }

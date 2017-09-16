@@ -10,6 +10,7 @@ import UIKit
 import FirebaseAuth
 import FirebaseDatabase
 import InitialsImageView
+import UserNotifications
 
 class FollowUpTableViewController: UITableViewController {
     
@@ -61,10 +62,24 @@ class FollowUpTableViewController: UITableViewController {
             }
             print("length: \(self.notifications.count)")
             self.tableView.reloadData();
+                //load up notification badge
+                self.loadBadge();
             }
         })
     }
 
+    func loadBadge()
+    {
+        let badgeCount = self.notifications.count;
+        let application = UIApplication.shared
+        let center = UNUserNotificationCenter.current()
+        center.requestAuthorization(options:[.badge, .alert, .sound]) { (granted, error) in
+            // Enable or disable features based on authorization.
+        }
+        application.registerForRemoteNotifications()
+        application.applicationIconBadgeNumber = badgeCount
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cellIdentifier = "NotificationTableViewCell";
