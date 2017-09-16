@@ -612,41 +612,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WFl-yU-tz5">
-                                <rect key="frame" x="164" y="390.5" width="47" height="30"/>
+                                <rect key="frame" x="164" y="434" width="47" height="30"/>
                                 <state key="normal" title="Sign In"/>
                                 <connections>
                                     <segue destination="jkU-s9-NCa" kind="presentation" id="Qcg-7v-bSQ"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WeLync" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymu-F0-4Wh">
-                                <rect key="frame" x="16" y="317" width="343" height="33.5"/>
-                                <fontDescription key="fontDescription" style="UICTFontTextStyleTitle1"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WeLynk" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ymu-F0-4Wh">
+                                <rect key="frame" x="16" y="354.5" width="343" height="39.5"/>
+                                <fontDescription key="fontDescription" name="PingFangSC-Thin" family="PingFang SC" pointSize="28"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lOW-hN-WK4">
-                                <rect key="frame" x="160" y="440.5" width="55" height="30"/>
+                                <rect key="frame" x="160" y="484" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <segue destination="oc2-eF-pKw" kind="presentation" id="Fdc-f2-KQW"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eNC-Sl-t5Y">
+                                <rect key="frame" x="67" y="74.5" width="240" height="240"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="eNC-Sl-t5Y" secondAttribute="height" multiplier="1:1" id="goA-7d-5LY"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="lOW-hN-WK4" firstAttribute="centerX" secondItem="WFl-yU-tz5" secondAttribute="centerX" id="9rv-io-2wv"/>
-                            <constraint firstItem="ymu-F0-4Wh" firstAttribute="centerY" secondItem="faK-6C-Qej" secondAttribute="centerY" id="BXp-LU-wAC"/>
+                            <constraint firstItem="ymu-F0-4Wh" firstAttribute="centerY" secondItem="faK-6C-Qej" secondAttribute="centerY" constant="40" id="DDW-aG-1AS"/>
+                            <constraint firstItem="eNC-Sl-t5Y" firstAttribute="centerX" secondItem="faK-6C-Qej" secondAttribute="centerX" id="EcJ-6O-Whz"/>
                             <constraint firstItem="WFl-yU-tz5" firstAttribute="centerX" secondItem="ymu-F0-4Wh" secondAttribute="centerX" id="Lnc-Kk-CTU"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ymu-F0-4Wh" secondAttribute="trailing" id="a0R-hm-fJO"/>
+                            <constraint firstItem="ymu-F0-4Wh" firstAttribute="top" secondItem="eNC-Sl-t5Y" secondAttribute="bottom" constant="40" id="aZZ-XY-C9l"/>
                             <constraint firstItem="WFl-yU-tz5" firstAttribute="top" secondItem="ymu-F0-4Wh" secondAttribute="bottom" constant="40" id="eud-bL-1g3"/>
+                            <constraint firstItem="eNC-Sl-t5Y" firstAttribute="width" secondItem="faK-6C-Qej" secondAttribute="height" multiplier="240:667" id="jgc-4g-txM"/>
                             <constraint firstItem="lOW-hN-WK4" firstAttribute="top" secondItem="WFl-yU-tz5" secondAttribute="bottom" constant="20" id="rur-rA-3hx"/>
                             <constraint firstItem="ymu-F0-4Wh" firstAttribute="leading" secondItem="faK-6C-Qej" secondAttribute="leadingMargin" id="uSy-du-1ci"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="logoView" destination="eNC-Sl-t5Y" id="cLw-Fa-kXB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nsj-eZ-Yii" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="812" y="-747"/>
+            <point key="canvasLocation" x="812" y="-747.07646176911555"/>
         </scene>
         <!--Submit Sign Up View Controller-->
         <scene sceneID="fVW-lu-S36">

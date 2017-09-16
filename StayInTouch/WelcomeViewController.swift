@@ -10,10 +10,12 @@ import UIKit
 
 class WelcomeViewController: UIViewController {
 
+    @IBOutlet weak var logoView: UIImageView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        self.logoView.image = #imageLiteral(resourceName: "logo");
     }
 
     override func didReceiveMemoryWarning() {
